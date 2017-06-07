@@ -21,6 +21,7 @@
 /web/css
 /web/js
 /web/img
+/web/webfonts
 /web/*/*.html
 /app/Resources/node_modules/
 composer.phar
