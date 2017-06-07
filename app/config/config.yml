@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -68,3 +68,14 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# Easy Admin Configuration
+easy_admin:
+    entities:
+        HomeBlock:
+            class: AppBundle\Entity\HomeBlock
+            list:
+                sort: ['position', 'ASC']
+    design:
+        assets:
+            css: ['/css/vendor/dragula.min.css']

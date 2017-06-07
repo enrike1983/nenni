@@ -1,13 +1,13 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
-#    options:
-#      expose: true
-#
-#easy_admin_bundle:
-#    resource: "@EasyAdminBundle/Controller/"
-#    type:     annotation
-#    prefix:   /admin
+    options:
+      expose: true
 
-#fos_js_routing:
-#    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
