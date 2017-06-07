@@ -1,6 +1,7 @@
 import TweenLite from 'gsap'
 // import inView from 'inview'
 import inView from 'in-view'
+import splitText from '../modules/_m-splittext'
 import VanillaTilt from 'vanilla-tilt'
 
 const Animations = function() {
@@ -16,26 +17,37 @@ const Animations = function() {
 
         if (_phrases) {
 
+
+
             inView('.a-fade-letter')
-            .on('enter', el => {
-                // el.classList.add('is-animated');
-                Array.prototype.forEach.call(el.querySelectorAll('span'), function(_el, i){
-                    TweenLite.to(_el, 2, {
-                        opacity: 1,
-                        y: 0,
-                        delay: .1 * i
-                    })
-                });
+            .on('enter', phrase => {
+
+                if (!phrase.classList.contains('is-animated')) {
+
+                    var tl = new TimelineLite,
+                        mySplitText = new SplitText(phrase, {type:"words, chars"}),
+                        chars = mySplitText.chars;
+
+                    phrase.style.opacity = 1;
+
+                    tl.staggerFromTo(chars, 2,
+                        {
+                            opacity: 0,
+                            y: 10,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                        }, .1, "+=.1");
+
+                    phrase.classList.add('is-animated');
+
+                }
+
+
             });
 
-            Array.prototype.forEach.call(_phrases, function(phrase, i){
-                var _wordList = phrase.textContent.split(" ");
-                phrase.innerHTML = "";
-                _wordList.forEach(function(el, i){
-                    var _word = el.replace(/([^\x00-\x80]|\w)/g, "<span>$&</span>");
-                    phrase.innerHTML += '<div>' + _word + '</div>';
-                });
-            });
+
         }
 
     }

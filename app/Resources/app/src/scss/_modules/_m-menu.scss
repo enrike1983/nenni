@@ -12,9 +12,7 @@
     will-change: transform, opacity;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    .a-fade-letter div {
-        margin-right: rem(5);
-    }
+    font-family: 'perpetua';
     &__languages {
         padding: 15%;
         @media screen and (min-width: $tablet) {

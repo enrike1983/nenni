@@ -21,6 +21,7 @@
         position: relative;
         overflow: hidden;
         padding-bottom: rem(40);
+        font-family: 'perpetua';
         @media screen and (min-width: $tabletUp) {
             &:after {
                 background: map-get($colors, white);
@@ -100,10 +101,11 @@
         }
     }
     &__time {
-        font-size: rem(14);
+        font-size: rem(12);
         letter-spacing: rem(2);
         display: block;
         margin-bottom: rem(10);
         color: map-get($colors, white);
+        font-family: 'montserratregular';
     }
 }

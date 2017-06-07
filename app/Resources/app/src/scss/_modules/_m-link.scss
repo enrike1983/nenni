@@ -6,6 +6,7 @@
     position: relative;
     padding: rem(2) rem(4);
     transition: all .3s;
+    font-family: 'montserratregular';
     .no-touch &{
         &:hover {
             color: map-get($colors, white);

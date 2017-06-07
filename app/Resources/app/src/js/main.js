@@ -40,14 +40,14 @@ window.onload = function() {
     setTimeout(()=> {
         Animations().removeLoader(function(){
             Animations().init()
-            TweenLite.set('.m-intro-site .m-title', {
-                opacity: 1
-            })
+            // TweenLite.set('.m-intro-site .m-title', {
+            //     opacity: 1
+            // })
             TweenLite.to('.m-intro-site .m-logo', 1, {
                 y: "-200%",
                 ease: Expo.easeInOut
             })
         });
-    }, 10000000)
+    }, 1)
 }
 
