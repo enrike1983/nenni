@@ -81,6 +81,7 @@ class SiteController extends Controller
       $this->container->get('app.home_blocks_manager')->updateHomeBlockPosition(
         $ids
       );
+
       $message = 'Sort updated!';
 
     } catch (InvalidArgumentException $e) {
