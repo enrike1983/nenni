@@ -78,4 +78,4 @@ easy_admin:
                 sort: ['position', 'ASC']
     design:
         assets:
-            css: ['/css/vendor/dragula.min.css']
+            css: ['/vendor/dragula.min.css']
