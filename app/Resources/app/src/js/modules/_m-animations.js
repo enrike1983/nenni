@@ -8,16 +8,13 @@ const Animations = function() {
 
     var _doc = document;
 
-    inView.threshold(0.5);
+    inView.offset(10);
 
     function _fadeLetters() {
 
         var _phrases = _doc.querySelectorAll('.a-fade-letter');
 
-
         if (_phrases) {
-
-
 
             inView('.a-fade-letter')
             .on('enter', phrase => {
@@ -38,15 +35,79 @@ const Animations = function() {
                         {
                             opacity: 1,
                             y: 0,
-                        }, .1, "+=.1");
+                        }, .1);
 
                     phrase.classList.add('is-animated');
 
                 }
 
+            });
+
+        }
+
+    }
+
+    function _fadeWord() {
+
+        var _phrases = _doc.querySelectorAll('.a-fade-word');
+
+        if (_phrases) {
+
+            inView('.a-fade-word')
+            .on('enter', phrase => {
+
+                if (!phrase.classList.contains('is-animated')) {
+
+                    var tl = new TimelineLite,
+                        mySplitText = new SplitText(phrase, {type:"words"}),
+                        words = mySplitText.words;
+
+                    phrase.style.opacity = 1;
+
+                    tl.staggerFromTo(words, 2,
+                        {
+                            opacity: 0,
+                            y: 10,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                        }, .2, "+=.2");
+
+                    phrase.classList.add('is-animated');
+
+                }
 
             });
 
+        }
+
+    }
+
+    function _staggerY() {
+
+        var _elements = _doc.querySelectorAll('.a-stagger-y');
+
+        if (_elements) {
+
+            inView('.a-stagger-y')
+            .on('enter', element => {
+
+                if (!element.classList.contains('is-animated')) {
+
+                    var tl = new TimelineLite;
+                    var _elementsChild = element.querySelectorAll('.a-stagger-y__el');
+
+                    tl.staggerTo(_elementsChild, 1,
+                        {
+                            y: 0
+                        }, .2, "-=.7");
+
+                    element.classList.add('is-animated');
+
+                }
+
+            });
 
         }
 
@@ -116,6 +177,8 @@ const Animations = function() {
         _tilt();
         _fadeIn();
         _fadeLetters();
+        _fadeWord();
+        _staggerY();
         _scaleOpacity();
         _handlerVideo();
     }
