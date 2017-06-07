@@ -3,6 +3,7 @@
     padding: rem(40);
     color: map-get($colors, white);
     font-size: rem(12);
+    font-family: 'perpetua';
     &__bottom, &__top {
         width: 100%;
         @media screen and (min-width: $tabletUp) {
