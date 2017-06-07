@@ -1,7 +1,9 @@
 #!/bin/bash
 
+branch_name=$1
+
 # Update master branch
-git pull origin develop
+git pull origin "$branch_name"
 
 # Update repository libraries dependencies
 cd app/Resources
@@ -19,8 +21,8 @@ git add -f web/css web/img web/js
 git commit -m "New release"
 git push heroku releasing:master --force
 
-#Back to develop
-git checkout develop
+#Back to "$branch_name"
+git checkout "$branch_name"
 
 #Delete releasing branch
 git branch -D releasing
