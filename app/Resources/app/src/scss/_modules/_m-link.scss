@@ -1,0 +1,29 @@
+.m-link {
+    text-transform: uppercase;
+    font-size: rem(16);
+    display: inline-block;
+    margin-top: rem(30);
+    position: relative;
+    padding: rem(2) rem(4);
+    transition: all .3s;
+    .no-touch &{
+        &:hover {
+            color: map-get($colors, white);
+            &:after {
+                height: 100%;
+            }
+        }
+    }
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: rem(2);
+        background: map-get($colors, black);
+        transition: all .3s;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+}

@@ -1,0 +1,113 @@
+.m-video-full {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.4);
+    }
+    video {
+        position: absolute;
+    }
+    video::-webkit-media-controls {
+        display: none;
+    }
+
+    /* Could Use thise as well for Individual Controls */
+    video::-webkit-media-controls-play-button {
+        // background: red;
+    }
+
+    video::-webkit-media-controls-volume-slider {
+        // display: none;
+    }
+
+    video::-webkit-media-controls-mute-button {
+        // display: none;
+    }
+
+    video::-webkit-media-controls-timeline {
+        // display: none;
+    }
+
+    video::-webkit-media-controls-current-time-display {
+        // display: none;
+    }
+}
+
+
+.m-video-ratio {
+    width: 100%;
+    height: 0;
+    position: relative;
+    padding-bottom: 36.6%;
+    background: #fff;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 6;
+    }
+    video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 6;
+    }
+    .m-media-info {
+        z-index: 7;
+        text-align: center;
+        color: map-get($colors, white);
+    }
+}
+
+.m-media-info {
+    display: none;
+    @media screen and (min-width: $tablet) {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.m-video-ratio__mobile-box {
+    text-align: center;
+    background: map-get($colors, black);
+    display: block;
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 70%;
+        background: map-get($colors, yellow);
+        position: absolute;
+        top: -35%;
+        left: 5%;
+        z-index: 9;
+    }
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+    .m-text-media__text {
+        color: map-get($colors, white);
+        position: relative;
+    }
+}

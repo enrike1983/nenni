@@ -1,0 +1,121 @@
+.m-footer {
+    background: #1b1b1b;
+    padding: rem(40);
+    color: map-get($colors, white);
+    font-size: rem(12);
+    &__bottom, &__top {
+        width: 100%;
+        @media screen and (min-width: $tabletUp) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    &__top {
+        padding-bottom: rem(30);
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .m-footer__left {
+            margin-bottom: rem(40);
+            @media screen and (min-width: $tablet) {
+                width: rem(100);
+                margin-bottom: 0;
+            }
+        }
+        .m-footer__right {
+            justify-content: space-around;
+            @media screen and (min-width: $tablet) {
+                justify-content: flex-end;
+            }
+        }
+    }
+    &__bottom {
+        padding-top: rem(30);
+        border-top: 1px solid map-get($colors, yellow);
+        .m-footer__left{
+            text-align: center;
+            margin-bottom: rem(20);
+            @media screen and (min-width: $tabletUp) {
+                text-align: left;
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__right, &__left {
+        width: 100%;
+        @media screen and (min-width: $tabletUp) {
+            width: 50%;
+        }
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &__links {
+        text-transform: uppercase;
+        opacity: .6;
+        transition: opacity .3s;
+        .no-touch &{
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    ul {
+        display: flex;
+        margin: 0 auto;
+        @media screen and (min-width: $tabletUp) {
+            margin: 0;
+        }
+        li{
+            &+li{
+                margin-left: rem(30);
+            }
+        }
+    }
+    .m-logo {
+        margin: 0 auto;
+        width: rem(80);
+        height: rem(80);
+        @media screen and (min-width: $tablet) {
+            width: rem(60);
+            height: rem(60);
+        }
+    }
+    .m-list-social {
+        display: flex;
+        margin: 0;
+        @media screen and (min-width: $tablet) {
+            margin-right: rem(30);
+        }
+        li {
+            margin: 0;
+            &+li {
+                margin-left: rem(30);
+            }
+        }
+        a {
+            transition: opacity .3s;
+            .no-touch &{
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+        a, span, svg {
+            display: block;
+        }
+        svg {
+            height: rem(20);
+            width: rem(25);
+            fill: map-get($colors, white);
+            path {
+                fill: map-get($colors, white);
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Team Member -- Role -- Social Link
+    Nicholas Ruggeri -- Frontend Developer
+    Luca De Blasio -- Frontend Developer
+    Enrico Bortoletto -- Art Director
+
+# THANKS
+
+    Coffee.
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Javascript, BRick

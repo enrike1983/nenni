@@ -1,0 +1,14 @@
+.m-logo {
+    svg {
+        display: block;
+        fill: map-get($colors, black);
+    }
+    &--center {
+        width: rem(130);
+    }
+    &--white {
+        svg, path {
+            fill: map-get($colors, white);
+        }
+    }
+}

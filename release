@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Update master branch
+git pull origin develop
+
+# Update repository libraries dependencies
+cd app/Resources
+yarn install
+
+# Compile static assets
+gulp build
+
+cd ..
+cd ..
+
+# Tag new release
+git checkout -b releasing
+git add -f web/css web/img web/js
+git commit -m "New release"
+git push heroku releasing:master --force
+
+#Back to develop
+git checkout develop
+
+#Delete releasing branch
+git branch -D releasing
+

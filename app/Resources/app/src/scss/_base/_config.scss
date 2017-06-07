@@ -1,0 +1,49 @@
+// Fonts
+$mainFont: 'Roboto', sans-serif;
+$baseFontSize: 10;
+$fonts: (
+    "l": (
+        "fontFamily": $mainFont,
+        "fontWeight": 300,
+    ),
+    "r": (
+        "fontFamily": $mainFont,
+        "fontWeight": 400,
+    ),
+    "m": (
+        "fontFamily": $mainFont,
+        "fontWeight": 500,
+    ),
+    "b": (
+        "fontFamily": $mainFont,
+        "fontWeight": 700,
+    ),
+);
+
+// Mq
+$phablet: 500px;
+$tablet: 768px;
+$tabletUp: 769px;
+$desktop: 1024px;
+$wide: 1440px;
+$large: 1978px;
+
+// Colors
+$colors : (
+    white: #fffdfd,
+    black: #161616,
+    yellow: #c69c6d
+);
+
+// Z Indexes
+$layers: (
+    behind: -1,
+    base: 0,
+    above: 1,
+    modal: 10,
+    loader: 100,
+    max: 9999
+);
+
+// Eases
+$ease: cubic-bezier(0.785, 0.135, 0.150, 0.860);

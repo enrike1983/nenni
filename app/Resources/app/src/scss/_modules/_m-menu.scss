@@ -1,0 +1,130 @@
+.m-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: map-get($layers, max)+2;
+    background: map-get($colors, white);
+    display: none;
+    opacity: 0;
+    transform: scale(.99);
+    will-change: transform, opacity;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    .a-fade-letter div {
+        margin-right: rem(5);
+    }
+    &__languages {
+        padding: 15%;
+        @media screen and (min-width: $tablet) {
+            padding: rem(50) rem(100) rem(100) rem(100);
+        }
+        z-index: 9;
+        position: relative;
+        a {
+            color: map-get($colors, black);
+            text-transform: uppercase;
+            font-size: rem(14);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: map-get($colors, black);
+                transform: translateX(-100%);
+                transition: transform .3s $ease;
+            }
+            &+a {
+                margin-left: rem(30);
+            }
+            .no-touch &{
+                &:hover {
+                    &:after {
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+    }
+    &__box-list {
+        background: map-get($colors, black);
+        position: relative;
+        padding: 15%;
+        @media screen and (min-width: $tablet) {
+            min-height: rem(400);
+            padding: rem(100);
+        }
+        ul {
+            z-index: 9;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: rem(200);
+        }
+        li {
+            a {
+                font-size: rem(20);
+                color: map-get($colors, white);
+                text-transform: uppercase;
+            }
+            &+li {
+                margin-top: rem(40);
+            }
+        }
+    }
+    &__square {
+        display: none;
+        @media screen and (min-width: $tablet) {
+            width: 80%;
+            height: 80%;
+            left: 5%;
+            top: 5%;
+            position: absolute;
+            border: 2px solid map-get($colors, yellow);
+            z-index: 8;
+            min-height: rem(680);
+            display: block;
+        }
+    }
+    &__square-wrapper, &__square-wrapper > div, &__square-wrapper > div:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__square-wrapper > div {
+        opacity: 0;
+        will-change: opacity;
+        &:after {
+            content: "";
+            background: rgba(0,0,0,0.7);
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        padding: rem(20);
+        transition: background 1s $ease;;
+        &:hover {
+            background: rgba(255,255,255,.1);
+        }
+        svg {
+            height: rem(30);
+            width: rem(30);
+            display: block;
+        }
+        path {
+            fill: map-get($colors, white);
+        }
+    }
+}

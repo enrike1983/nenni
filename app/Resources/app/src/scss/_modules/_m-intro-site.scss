@@ -1,0 +1,52 @@
+.m-intro-site {
+    position: absolute;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    &__title.m-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        text-align: center;
+        max-width: rem(500);
+        opacity: 0;
+    }
+    &__explore {
+        position: absolute;
+        bottom: 7%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        padding: 10px;
+        border-radius: 100%;
+        background: rgba(255,255,255,0);
+        transition: background .5s;
+        .no-touch &{
+            &:hover {
+                background: rgba(255,255,255,0.1);
+            }
+        }
+        svg {
+            transform: rotate(90deg);
+            display: block;
+            height: rem(30);
+            width: rem(30);
+        }
+        path {
+            fill: map-get($colors, white);
+        }
+    }
+    .m-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+}

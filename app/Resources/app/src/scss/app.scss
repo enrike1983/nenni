@@ -1,0 +1,109 @@
+// https://github.com/timhartmann/Scss-Styleguide
+
+@charset 'UTF-8';
+
+// 1.Base
+@import '_base/fonts',
+        '_base/mixins',
+        '_base/config',
+        '_base/presets',
+        '_base/icons';
+
+// 2.Layouts
+@import '_layouts/l-default';
+
+// 3.Modules
+@import '_modules/m-logo';
+@import '_modules/m-menu';
+@import '_modules/m-link';
+@import '_modules/m-preloader';
+@import '_modules/m-header';
+@import '_modules/m-intro-site';
+@import '_modules/m-text-media';
+@import '_modules/m-footer';
+@import '_modules/m-video-full';
+@import '_modules/m-hamburger';
+@import '_modules/m-news';
+
+.m-wrapper {
+    max-width: rem(1600);
+    margin: 0 auto;
+}
+
+.a-scale-opacity {
+    transform: scale(1.1);
+    opacity: 0;
+    will-change: transform;
+}
+
+.a-fade-in {
+    opacity: 0;
+    transform: translateY(20px) rotate(3deg);
+    transform-origin: 0;
+    will-change: opacity;
+}
+
+.a-fade-letter {
+    div {
+        display: inline-block;
+        margin-right: rem(20);
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    span {
+        opacity: 0;
+        display: inline-block;
+        transform: translateY(10px);
+        will-change: transform;
+    }
+}
+
+.m-title {
+    display: block;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: map-get($colors, black);
+    margin-bottom: rem(20);
+    font-size: 7vmin;
+    @media screen and (min-width: $phablet) {
+        font-size: 4vmin;
+    }
+    @media screen and (min-width: $tabletUp) {
+        font-size: rem(40);
+    }
+    &--white {
+        color: map-get($colors, white);
+    }
+}
+
+.m-subtitle {
+    display: block;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: map-get($colors, black);
+    margin-bottom: rem(10);
+    font-size: rem(16);
+    letter-spacing: rem(5);
+    &--white {
+        color: map-get($colors, white);
+    }
+}
+
+.m-country {
+    border: 2px solid map-get($colors, white);
+    color: map-get($colors, white);
+    width: rem(50);
+    height: rem(50);
+    text-transform: uppercase;
+    display: flex;
+    &__trigger {
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: rem(16);
+    }
+}

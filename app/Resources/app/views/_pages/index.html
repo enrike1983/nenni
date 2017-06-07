@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="barba-container" data-namespace="homepage">
+
+    <div class="m-video-full">
+
+        <div class="m-intro-site">
+            <div class="m-logo  m-logo--white  m-logo--center">
+                {% include "_partials/logo.html" %}
+            </div>
+            <span class="m-intro-site__title   m-title  m-title--white  a-fade-letter">mastering excellence since 1272</span>
+        </div>
+
+        <video class="m-video-tag" width="640" height="360" preload loop>
+            <source src="/img/hp.mp4" />
+        </video>
+
+        <a href="#" class="m-intro-site__explore">
+            <svg class="svg-icon" viewBox="0 0 20 20">
+                <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
+            </svg>
+        </a>
+
+    </div>
+
+    <div class="m-text-media">
+        <div class="m-text-media__text">
+            <article>
+                <span class="m-title  a-fade-letter">lorem ipsum 1</span>
+                <p class="a-fade-in">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit minus voluptas, ad totam tenetur veritatis obcaecati nisi, doloribus voluptate adipisci!
+                </p>
+                <a href="#" class="m-link  a-fade-in">
+                    lorem ipsum
+                </a>
+            </article>
+        </div>
+        <div class="m-text-media__media  m-text-media__media--img">
+            <img src="/img/test-1.jpg" alt="" class="a-scale-opacity">
+        </div>
+    </div>
+
+    <div class="m-text-media">
+        <div class="m-text-media__media  m-text-media__media--img">
+            <img src="/img/test-1.jpg" alt="" class="a-scale-opacity">
+        </div>
+        <div class="m-text-media__text">
+            <article>
+                <span class="m-title  a-fade-letter">lorem ipsum 2</span>
+                <p class="a-fade-in">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit minus voluptas, ad totam tenetur veritatis obcaecati nisi, doloribus voluptate adipisci!
+                </p>
+            </article>
+        </div>
+    </div>
+
+    {% import "_macro/_m-video-ratio.html" as mVideoRatio %}
+    {{ mVideoRatio.build('lorem ipsum 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit minus voluptas, ad totam tenetur veritatis obcaecati nisi, doloribus voluptate adipisci!', '/img/vigna_bg.mp4') }}
+
+    <div class="m-text-media">
+        <div class="m-text-media__text">
+            <article>
+                <span class="m-title  a-fade-letter">lorem ipsum 2</span>
+                <p class="a-fade-in">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit minus voluptas, ad totam tenetur veritatis obcaecati nisi, doloribus voluptate adipisci!
+                </p>
+                <a href="#" class="m-link  a-fade-in">
+                    lorem ipsum
+                </a>
+            </article>
+        </div>
+        <div class="m-text-media__media  m-text-media__media--video">
+            <video class="m-video-tag" width="724" height="900" preload loop>
+                <source src="/img/hp-vertical.mp4" />
+            </video>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

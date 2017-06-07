@@ -1,0 +1,29 @@
+{% macro build(title,text,video) %}
+
+    <div class="m-video-ratio">
+
+        <div class="m-media-info">
+            <span class="m-title  m-title--white  a-fade-letter">{{title}}</span>
+            <p class="a-fade-in">
+                {{text}}
+            </p>
+        </div>
+
+        <video class="m-video-tag" width="640" height="360" preload loop>
+            <source src="{{video}}"/>
+        </video>
+
+    </div>
+
+    <div class="m-video-ratio__mobile-box">
+        <div class="m-text-media__text">
+            <article>
+                <span class="m-title  m-title--white  a-fade-letter">{{title}}</span>
+                <p class="a-fade-in">
+                    {{text}}
+                </p>
+            </article>
+        </div>
+    </div>
+
+{% endmacro %}

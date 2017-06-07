@@ -1,0 +1,14 @@
+@function rem($pxval) {
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+    @return ($pxval / $baseFontSize) * 1rem;
+}
+
+
+@mixin font($w,$s,$lh:1.2) {
+    font-family: map-get(map-get($fonts,$w),"fontFamily");
+    font-weight: map-get(map-get($fonts,$w),"fontWeight");
+    font-size: rem($s);
+    line-height: $lh;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{site_name}}</title>
+        <base href="/">
+        <meta name="description" content="{{site_description}}">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+        <link rel="Shortcut Icon" type="image/x-icon" href="/img/favicon.ico" />
+
+        <link rel="stylesheet" href="../css/app.css">
+
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="theme-color" content="#9dccd5">
+
+        <!-- Basic meta data, share -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{site_name}}">
+        <meta property="og:description" content="{{site_description}}">
+        <meta property="og:site_name" content="{{site_name}}">
+
+        <meta name="twitter:card" content="summary_large_image">
+
+        <meta name="twitter:title" content="{{site_name}}">
+        <meta name="twitter:description" content="{{site_description}}">
+
+        {% block socialImage %}
+            <meta name="twitter:image" content="http://mdw2017.nidi.it/img/share/twitter_share_generale.jpg">
+            <meta property="og:image" content="http://mdw2017.nidi.it/img/share/fb_share_generale.jpg">
+            <meta name="twitter:url" content="http://mdw2017.nidi.it/{{lang}}">
+            <meta property="og:url" content="http://mdw2017.nidi.it/{{lang}}">
+        {% endblock %}
+
+        <!-- Google Tag Manager -->
+        <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NR48HZV');</script> -->
+        <!-- End Google Tag Manager -->
+
+    </head>
+    <body>
+
+        {% include "_partials/preloader.html" %}
+        {% include "_partials/menu.html" %}
+        {% include "_partials/header.html" %}
+
+        <div id="barba-wrapper">
+            {% block content %} {% endblock %}
+            {% include "_partials/footer.html" %}
+        </div>
+
+        <script src="/js/app.js"></script>
+
+    </body>
+</html>
