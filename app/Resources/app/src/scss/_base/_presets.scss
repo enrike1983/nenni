@@ -71,13 +71,13 @@ table {
 }
 
 html {
-   font-size: 10px;
-   min-width: 320px;
-   background: map-get($colors,white);
+    font-size: 10px;
+    min-width: 320px;
+    background: map-get($colors,white);
 }
 
 body {
-    font-family: 'Nexa-Book';
+    font-family: 'crimson_textitalic';
     color: map-get($colors, black);
     font-size: 16px;
     &.lock {

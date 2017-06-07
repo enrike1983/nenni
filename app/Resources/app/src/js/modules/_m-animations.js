@@ -1,41 +1,114 @@
 import TweenLite from 'gsap'
 // import inView from 'inview'
 import inView from 'in-view'
+import splitText from '../modules/_m-splittext'
 import VanillaTilt from 'vanilla-tilt'
 
 const Animations = function() {
 
     var _doc = document;
 
-    inView.threshold(0.5);
+    inView.offset(10);
 
     function _fadeLetters() {
 
         var _phrases = _doc.querySelectorAll('.a-fade-letter');
 
-
         if (_phrases) {
 
             inView('.a-fade-letter')
-            .on('enter', el => {
-                // el.classList.add('is-animated');
-                Array.prototype.forEach.call(el.querySelectorAll('span'), function(_el, i){
-                    TweenLite.to(_el, 2, {
-                        opacity: 1,
-                        y: 0,
-                        delay: .1 * i
-                    })
-                });
+            .on('enter', phrase => {
+
+                if (!phrase.classList.contains('is-animated')) {
+
+                    var tl = new TimelineLite,
+                        mySplitText = new SplitText(phrase, {type:"words, chars"}),
+                        chars = mySplitText.chars;
+
+                    phrase.style.opacity = 1;
+
+                    tl.staggerFromTo(chars, 2,
+                        {
+                            opacity: 0,
+                            y: 10,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                        }, .1);
+
+                    phrase.classList.add('is-animated');
+
+                }
+
             });
 
-            Array.prototype.forEach.call(_phrases, function(phrase, i){
-                var _wordList = phrase.textContent.split(" ");
-                phrase.innerHTML = "";
-                _wordList.forEach(function(el, i){
-                    var _word = el.replace(/([^\x00-\x80]|\w)/g, "<span>$&</span>");
-                    phrase.innerHTML += '<div>' + _word + '</div>';
-                });
+        }
+
+    }
+
+    function _fadeWord() {
+
+        var _phrases = _doc.querySelectorAll('.a-fade-word');
+
+        if (_phrases) {
+
+            inView('.a-fade-word')
+            .on('enter', phrase => {
+
+                if (!phrase.classList.contains('is-animated')) {
+
+                    var tl = new TimelineLite,
+                        mySplitText = new SplitText(phrase, {type:"words"}),
+                        words = mySplitText.words;
+
+                    phrase.style.opacity = 1;
+
+                    tl.staggerFromTo(words, 2,
+                        {
+                            opacity: 0,
+                            y: 10,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                        }, .2, "+=.2");
+
+                    phrase.classList.add('is-animated');
+
+                }
+
             });
+
+        }
+
+    }
+
+    function _staggerY() {
+
+        var _elements = _doc.querySelectorAll('.a-stagger-y');
+
+        if (_elements) {
+
+            inView('.a-stagger-y')
+            .on('enter', element => {
+
+                if (!element.classList.contains('is-animated')) {
+
+                    var tl = new TimelineLite;
+                    var _elementsChild = element.querySelectorAll('.a-stagger-y__el');
+
+                    tl.staggerTo(_elementsChild, 1,
+                        {
+                            y: 0
+                        }, .2, "-=.7");
+
+                    element.classList.add('is-animated');
+
+                }
+
+            });
+
         }
 
     }
@@ -104,6 +177,8 @@ const Animations = function() {
         _tilt();
         _fadeIn();
         _fadeLetters();
+        _fadeWord();
+        _staggerY();
         _scaleOpacity();
         _handlerVideo();
     }

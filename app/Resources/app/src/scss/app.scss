@@ -24,6 +24,7 @@
 @import '_modules/m-video-full';
 @import '_modules/m-hamburger';
 @import '_modules/m-news';
+@import '_modules/m-people';
 
 .m-wrapper {
     max-width: rem(1600);
@@ -44,18 +45,25 @@
 }
 
 .a-fade-letter {
+    opacity: 0;
     div {
-        display: inline-block;
-        margin-right: rem(20);
-        &:last-of-type {
-            margin-right: 0;
+        div {
+            will-change: transform, opacity;
         }
     }
-    span {
-        opacity: 0;
-        display: inline-block;
-        transform: translateY(10px);
+}
+
+.a-fade-word {
+    opacity: 0;
+    div {
+        will-change: transform, opacity;
+    }
+}
+
+.a-stagger-y {
+    &__el {
         will-change: transform;
+        transform: translateY(200px);
     }
 }
 
@@ -66,6 +74,7 @@
     color: map-get($colors, black);
     margin-bottom: rem(20);
     font-size: 7vmin;
+    font-family: 'perpetua';
     @media screen and (min-width: $phablet) {
         font-size: 4vmin;
     }
@@ -97,6 +106,7 @@
     height: rem(50);
     text-transform: uppercase;
     display: flex;
+    font-family: 'montserratregular';
     &__trigger {
         height: 100%;
         width: 100%;
@@ -104,6 +114,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: rem(16);
+        font-size: rem(14);
     }
 }
