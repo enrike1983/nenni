@@ -31,42 +31,35 @@ class HomeBlocksManager {
   }
 
   /**
-   * @param $block_id
-   * @param $index
+   * @param $ids
    *
    * @throws \RuntimeException
    * @throws \Doctrine\ORM\ORMInvalidArgumentException
    * @throws \Doctrine\ORM\OptimisticLockException
    * @throws \Psr\Log\InvalidArgumentException
    */
-  public function updateHomeBlockPosition($block_id, $index)
+  public function updateHomeBlockPosition(array $ids = [])
   {
-    if($block_id === null || $index === null) {
+    if($ids === null) {
       throw new InvalidArgumentException('Some parameter was not set up');
     }
 
-    $block = $this->entityManager->getRepository('AppBundle:HomeBlock')
-      ->findOneBy(['id' => $block_id]);
-
-    if(!$block) {
-      throw new \RuntimeException('Something bad happened');
+    if(!count($ids)) {
+      throw new InvalidArgumentException('Ids must be an array of values, comma separated');
     }
 
-    $old_index = $block->getPosition();
+    foreach($ids as $i => $block_id) {
+      $block = $this->entityManager->getRepository('AppBundle:HomeBlock')
+            ->findOneBy(['id' => $block_id]);
 
-    // sposto elemento a nuovo index;
-    $block->setPosition($index);
-    $this->entityManager->persist($block);
-    $this->entityManager->flush();
-
-    // tutti gli elementi fino al vecchio index aumentano di 1 il proprio index
-    $blocks = $this->getHomeBlocks();
-    foreach ($blocks as $i => $bl) {
-      if($i > $index && $i < $old_index) {
-        $bl->setPosition($bl->getPosition() + 1);
-        $this->entityManager->persist($bl);
-        $this->entityManager->flush();
+      if(!$block) {
+        throw new \RuntimeException('Something bad happened');
       }
+
+      $block->setPosition($i);
+      $this->entityManager->persist($block);
     }
+
+    $this->entityManager->flush();
   }
 }

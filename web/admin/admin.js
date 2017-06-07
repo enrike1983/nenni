@@ -4,10 +4,12 @@ dragula([document.getElementsByTagName('tbody')[0]])
   // })
   .on('drop', function (el) {
 
-      ids = 
+      var ids = [];
+      $.each($('.table tbody tr'), function(key, value) {
+          ids.push($(value).attr('data-id'));
+      });
 
       $.post( Routing.generate('update_home_block_sort'), {
-          home_block_id: $(el).attr('data-id'),
-          index: $(el).index()
+          ids: ids.join(",")
       });
   });
