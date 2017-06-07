@@ -8,7 +8,7 @@ const Animations = function() {
 
     var _doc = document;
 
-    inView.offset(10);
+    inView.threshold(0.05);
 
     function _fadeLetters() {
 

@@ -1,10 +1,11 @@
 .m-news-list {
-    height: 90vh;
+    height: 80vh;
     min-height: rem(600);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     background: map-get($colors, black);
+    overflow: hidden;
     @media screen and (min-width: $tabletUp) {
         flex-wrap: no-wrap;
     }
