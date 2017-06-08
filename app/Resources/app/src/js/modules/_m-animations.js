@@ -135,6 +135,14 @@ const Animations = function() {
         });
     }
 
+    function _showCta() {
+        inView('.m-cta')
+        .on('enter', el => {
+            console.log('d8iboin')
+            el.classList.add('is-animated');
+        });
+    }
+
     function _handlerVideo() {
         inView('.m-video-tag')
         .on('enter', el => {
@@ -181,6 +189,7 @@ const Animations = function() {
         _staggerY();
         _scaleOpacity();
         _handlerVideo();
+        _showCta();
     }
 
     return {
