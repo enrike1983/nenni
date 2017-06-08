@@ -13,24 +13,30 @@ const Animations = function() {
     function _fadeLetters() {
 
         var _phrases = _doc.querySelectorAll('.a-fade-letter');
+        var delay;
 
         if (_phrases) {
 
             inView('.a-fade-letter')
             .on('enter', phrase => {
 
+                delay = phrase.getAttribute('data-delay') || 0;
+
                 if (!phrase.classList.contains('is-animated')) {
 
-                    var tl = new TimelineLite,
+                    var tl = new TimelineLite({
+                            delay: delay*.5
+                        }),
                         mySplitText = new SplitText(phrase, {type:"words, chars"}),
                         chars = mySplitText.chars;
+
 
                     phrase.style.opacity = 1;
 
                     tl.staggerFromTo(chars, 2,
                         {
                             opacity: 0,
-                            y: 10,
+                            y: 10
                         },
                         {
                             opacity: 1,
@@ -38,6 +44,7 @@ const Animations = function() {
                         }, .1);
 
                     phrase.classList.add('is-animated');
+
 
                 }
 
@@ -154,10 +161,7 @@ const Animations = function() {
     }
 
     function _tilt() {
-        VanillaTilt.init(document.querySelector(".a-tilt"), {
-            max: 5,
-            speed: 100
-        });
+        VanillaTilt.init(document.querySelectorAll(".a-tilt"));
     }
 
     function _removeLoader(cb) {

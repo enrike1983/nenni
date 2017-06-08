@@ -17,6 +17,8 @@
         display: block;
         height: 100%;
         width: 100%;
+        will-change: transform;
+        transition: all .4s;
     }
     .m-news__title {
         max-width: rem(300);
@@ -91,6 +93,9 @@
                         transform: translateX(0);
                         transition-delay: .5s;
                     }
+                }
+                .m-news-list__img {
+                    transform: scale(1.1);
                 }
             }
         }
