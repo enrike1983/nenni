@@ -53,7 +53,7 @@ class HomeBlocksManager {
             ->findOneBy(['id' => $block_id]);
 
       if(!$block) {
-        throw new \RuntimeException('Something bad happened');
+        throw new \RuntimeException('No block found inside ids array!');
       }
 
       $block->setPosition($i);

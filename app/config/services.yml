@@ -7,3 +7,9 @@ services:
     app.home_blocks_manager:
         class: AppBundle\Manager\HomeBlocksManager
         arguments: ['@doctrine.orm.entity_manager']
+
+    admin.home_blocks:
+        class: AppBundle\Admin\HomeBlocksAdmin
+        arguments: [~, AppBundle\Entity\HomeBlock, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Home Block }

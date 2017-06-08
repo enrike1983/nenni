@@ -5,8 +5,8 @@ dragula([document.getElementsByTagName('tbody')[0]])
   .on('drop', function (el) {
 
       var ids = [];
-      $.each($('.table tbody tr'), function(key, value) {
-          ids.push($(value).attr('data-id'));
+      $.each($('.sonata-ba-list tbody tr'), function(key, value) {
+          ids.push($(value).find('td').attr('objectid'));
       });
 
       $.post( Routing.generate('update_home_block_sort'), {
