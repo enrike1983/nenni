@@ -53,7 +53,7 @@ const Header = function() {
         init: _init
     }
 
-}
+}()
 
 export default Header
 

@@ -16,20 +16,15 @@ if(isTouch) {
 
 
 Menu.init();
-Header().init();
+Header.init();
 
 const HomePage = Barba.BaseView.extend({
     namespace: 'homepage',
     onLeave: function() {
     },
     onEnter: function() {
-        // TweenLite.to('.m-intro-site .m-logo', 1.5, {
-        //     y: "-200%",
-        //     ease: Expo.easeInOut
-        // })
     },
     onEnterCompleted: function() {
-        console.log('asd')
     }
 });
 
@@ -38,13 +33,7 @@ window.onload = function() {
     var preloader = new Preloader({
         resources: [
             'https://source.unsplash.com/random/800x650',
-            'https://source.unsplash.com/random/800x610',
-            'https://source.unsplash.com/random/770x610',
-            'https://source.unsplash.com/random/710x610',
-            'https://source.unsplash.com/random/720x610',
-            'https://source.unsplash.com/random/730x610',
-            'https://source.unsplash.com/random/740x610',
-            'https://source.unsplash.com/random/790x610'
+            'https://source.unsplash.com/random/800x610'
         ],
         concurrency: 2
     })
@@ -68,9 +57,9 @@ window.onload = function() {
 
     preloader.addCompletionListener(function () {
         HomePage.init();
-        Barba.Pjax.start()
+        Barba.Pjax.start();
         Barba.Prefetch.init();
-        VideoFull.init()
+        VideoFull.init();
         setTimeout(()=> {
             Animations().removeLoader(function(){
                 Animations().init();
@@ -82,5 +71,6 @@ window.onload = function() {
         }, 1)
     });
     preloader.start();
+
 }
 
