@@ -1,68 +1,57 @@
-// .m-preloader {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     z-index: map-get($layers, max);
-//     &__bg {
-//         background: map-get($colors, white);
-//         background: linear-gradient(to top, map-get($colors, white) 0%, #ededed 100%);
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//     }
-//     &__logo {
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         height: rem(130);
-//         width: rem(130);
-//         .m-logo {
-//             border-radius: 100%;
-//             background: map-get($colors, white);
-//             will-change: transform;
-//             backface-visibility: hidden;
-//             transform: rotateY(180deg);
-//             position: absolute;
-//             top: 0;
-//             left: 0;
-//             width: 100%;
-//             height: 100%;
-//         }
-//     }
-//     &__loading {
-//         // background: red;
-//         height: 100%;
-//         width: 100%;
-//         position: absolute;
-//         border-radius: 100%;
-//         backface-visibility: hidden;
-//         will-change: transform;
-//         // border: 1px solid map-get($colors, black);
-//     }
-// }
-
-
-.m-preloader-new {
+.m-preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    font-family: 'perpetua';
     z-index: map-get($layers, max);
-    background: linear-gradient(to top, map-get($colors, white) 0%, #ededed 100%);
+    &__bg {
+        background: map-get($colors, white);
+        background: linear-gradient(to top, map-get($colors, white) 0%, #ededed 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: rem(130);
+        width: rem(130);
+        .m-logo {
+            border-radius: 100%;
+            background: map-get($colors, white);
+            will-change: transform;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__loading {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        border-radius: 100%;
+        backface-visibility: hidden;
+        will-change: transform;
+        border: 2px solid map-get($colors, black);
+    }
 }
 
+
 .m-preloader__counter {
+    color: map-get($colors, black);
     position: absolute;
-    font-size: 25vw;
+    font-size: rem(60);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: .1;
+    font-family: 'perpetua';
 }

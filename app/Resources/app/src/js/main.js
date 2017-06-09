@@ -80,7 +80,7 @@ window.onload = function() {
                 })
             });
         }, 1)
-    })
-    preloader.start()
+    });
+    preloader.start();
 }
 
