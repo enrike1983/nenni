@@ -20,6 +20,7 @@
     "barba.js": "^1.0.0",
     "gsap": "^1.19.1",
     "in-view": "^0.6.1",
+    "preloader.js": "^1.1.2",
     "scrollmonitor-parallax": "^1.0.1",
     "sticky-js": "^1.1.9",
     "swiper": "^3.4.2",

@@ -188,24 +188,33 @@ const Animations = function() {
     }
 
     function _removeLoader(cb) {
-        TweenLite.to('.m-preloader__loading', 1.5, {
-            rotationY: '180deg',
-            ease: Expo.easeInOut
-        });
-        TweenLite.to('.m-preloader__logo .m-logo', 1.5, {
-            rotationY: 0,
+        // TweenLite.to('.m-preloader__loading', 1.5, {
+        //     rotationY: '180deg',
+        //     ease: Expo.easeInOut
+        // });
+        // TweenLite.to('.m-preloader__logo .m-logo', 1.5, {
+        //     rotationY: 0,
+        //     ease: Expo.easeInOut,
+        //     onComplete: function(){
+        //         TweenLite.to('.m-preloader', 1, {
+        //             opacity: 0,
+        //             display: 'none',
+        //             ease: Expo.easeInOut,
+        //             onComplete: function(){
+        //                 cb()
+        //             }
+        //         })
+        //     }
+        // })
+
+        TweenLite.to('.m-preloader-new', 1.5, {
+            opacity: 0,
+            display: 'none',
             ease: Expo.easeInOut,
             onComplete: function(){
-                TweenLite.to('.m-preloader', 1, {
-                    opacity: 0,
-                    display: 'none',
-                    ease: Expo.easeInOut,
-                    onComplete: function(){
-                        cb()
-                    }
-                })
+                cb()
             }
-        })
+        });
     }
 
     function _init() {
