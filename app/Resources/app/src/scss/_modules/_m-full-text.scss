@@ -1,0 +1,14 @@
+.m-full-text {
+    padding: rem(40) 0;
+    &__wrapper {
+        max-width: rem(800);
+        margin: 0 auto;
+    }
+    &__img {
+        margin-top: rem(50);
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

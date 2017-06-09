@@ -7,7 +7,8 @@
         '_base/mixins',
         '_base/config',
         '_base/presets',
-        '_base/icons';
+        '_base/icons',
+        '_base/helpers';
 
 // 2.Layouts
 @import '_layouts/l-default';
@@ -25,6 +26,7 @@
 @import '_modules/m-hamburger';
 @import '_modules/m-news';
 @import '_modules/m-people';
+@import '_modules/m-full-text';
 
 .m-wrapper {
     max-width: rem(1600);
