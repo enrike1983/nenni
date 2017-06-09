@@ -30,17 +30,22 @@ const HomePage = Barba.BaseView.extend({
 
 window.onload = function() {
 
+    var _images = document.querySelectorAll('[data-preload]');
+    var _resources = [];
+
+    Array.prototype.forEach.call(_images, function(img, i){
+        _resources.push(img.getAttribute('src'));
+    });
+
     var preloader = new Preloader({
-        resources: [
-            'https://source.unsplash.com/random/800x650',
-            'https://source.unsplash.com/random/800x610'
-        ],
+        resources: _resources,
         concurrency: 2
     })
 
     var counter = {score: 0};
 
     preloader.addProgressListener(function (loaded, length) {
+        console.log(loaded, length)
 
         var preloaderDisplay = document.querySelector('.m-preloader__num');
 
