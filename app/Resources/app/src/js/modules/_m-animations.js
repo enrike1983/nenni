@@ -3,12 +3,33 @@ import TweenLite from 'gsap'
 import inView from 'in-view'
 import splitText from '../modules/_m-splittext'
 import VanillaTilt from 'vanilla-tilt'
+import parallaxMonitor from 'scrollmonitor-parallax'
 
 const Animations = function() {
 
     var _doc = document;
 
     inView.threshold(0.05);
+
+    function _parallax() {
+
+        var _elements = _doc.querySelectorAll('.a-parallax');
+        if (_elements) {
+            Array.prototype.forEach.call(_elements, function(el, i){
+                var child = el.querySelector('.a-parallax__child');
+                var parallaxRoot = parallaxMonitor.create(el);
+                var parallaxChild = parallaxRoot.add(child, {
+                    start: {
+                        y: -100
+                    },
+                    end: {
+                        y: 100
+                    }
+                });
+            });
+        }
+
+    }
 
     function _fadeLetters() {
 
@@ -186,6 +207,7 @@ const Animations = function() {
     }
 
     function _init() {
+        _parallax();
         _tilt();
         _fadeIn();
         _fadeLetters();
