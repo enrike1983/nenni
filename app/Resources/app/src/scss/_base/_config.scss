@@ -18,11 +18,11 @@ $fonts: (
         "fontFamily": $mainFont,
         "fontWeight": 700,
     ),
-);
+); 
 
 // Mq
 $phablet: 500px;
-$tablet: 768px;
+$tablet: 768px; 
 $tabletUp: 769px;
 $desktop: 1024px;
 $wide: 1440px;
@@ -47,3 +47,12 @@ $layers: (
 
 // Eases
 $ease: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+
+
+#__bs_notify__ { 
+  /* Move notification to bottom */
+  top: auto !important;
+  bottom: 0 !important;
+  border-top-left-radius: 5px !important; 
+  border-bottom-left-radius: 0 !important;
+}

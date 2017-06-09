@@ -22,7 +22,7 @@ gulp.task('apply-prod-environment', function() {
     }
 });
 
-gulp.task('watch', ['sass','svgsprite','browserify', 'media', 'fonts'], function() {
+gulp.task('watch', ['sass','svgsprite','browserify', 'media', 'fonts','server'], function() {
     watch(config.dev.sass+'**/*.scss', { usePolling: true }, function() {
         gulp.start(['sass']);
     });
