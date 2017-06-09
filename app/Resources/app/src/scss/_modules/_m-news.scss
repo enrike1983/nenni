@@ -9,6 +9,15 @@
     @media screen and (min-width: $tabletUp) {
         flex-wrap: no-wrap;
     }
+    &--complete {
+        height: auto;
+        .m-news-list__el {
+            min-height: rem(300);
+            @media screen and (min-width: $tabletUp) {
+                min-height: rem(600);
+            }
+        }
+    }
     &__img {
         top: 0;
         left: 0;

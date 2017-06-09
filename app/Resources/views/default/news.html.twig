@@ -1,5 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    Pagina delle news
+    <div class="barba-container" data-namespace="homepage">
+        <div class="m-news-list  m-news-list--complete">
+            {% for i in 0..10 %}
+                <article class="m-news-list__el">
+                    <img src="https://source.unsplash.com/random/80{{i}}x60{{i}}" alt="" class="m-news-list__img" data-preload>
+                    <a href="#" class="m-news-list__wrapper-info">
+                        <div class="a-fade-in">
+                            <time datetime="2008-02-14 20:00" class="m-news__time">14.01.1989</time>
+                            <h1 class="m-news__title  a-fade-word">
+                                lorem ipsum dolor sit amet {{ i }}
+                            </h1>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
