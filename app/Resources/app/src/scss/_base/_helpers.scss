@@ -1,3 +1,7 @@
+.h-color-white {
+    color: map-get($colors, white);
+}
+
 .h-align-center {
     text-align: center;
 }

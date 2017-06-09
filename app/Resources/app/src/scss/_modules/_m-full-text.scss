@@ -1,5 +1,8 @@
 .m-full-text {
     padding: rem(40) 0;
+    &--dark {
+        background: map-get($colors, black);
+    }
     &__wrapper {
         max-width: rem(800);
         margin: 0 auto;
