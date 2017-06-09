@@ -7,7 +7,7 @@
     z-index: map-get($layers, max);
     &__bg {
         background: map-get($colors, white);
-        background: linear-gradient(to top, map-get($colors, yellow) 0%, #B0DAB9 100%);
+        background: linear-gradient(to top, map-get($colors, white) 0%, #ededed 100%);
         position: absolute;
         top: 0;
         left: 0;

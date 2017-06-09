@@ -20,10 +20,12 @@ const Animations = function() {
                 var parallaxRoot = parallaxMonitor.create(el);
                 var parallaxChild = parallaxRoot.add(child, {
                     start: {
-                        y: -100
+                        y: -200,
+                        scale: 1.3
                     },
                     end: {
-                        y: 100
+                        y: 200,
+                        scale: 1
                     }
                 });
             });

@@ -31,6 +31,12 @@
     margin: 0 auto;
 }
 
+.a-parallax {
+    &__child {
+        will-change: transform;
+    }
+}
+
 .a-scale-opacity {
     transform: scale(1.1);
     opacity: 0;
