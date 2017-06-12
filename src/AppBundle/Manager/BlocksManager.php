@@ -49,7 +49,7 @@ class BlocksManager {
     }
 
     foreach($ids as $i => $block_id) {
-      $block = $this->entityManager->getRepository('AppBundle:HomeBlock')
+      $block = $this->entityManager->getRepository('AppBundle:Block')
             ->findOneBy(['id' => $block_id]);
 
       if(!$block) {
