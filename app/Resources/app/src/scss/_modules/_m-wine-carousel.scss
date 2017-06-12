@@ -29,6 +29,7 @@
         opacity: 0;
         visibility: hidden;
         overflow: hidden;
+        transition: all .6s;
         &.visible {
             opacity: 1;
             visibility: visible;
@@ -46,63 +47,58 @@
         background-blend-mode: difference;
         background-size: 100% 100%;
         .play & {
-            -webkit-animation: sequence 1.5s steps(17);
-            -moz-animation: sequence 1.5s steps(17);
-            animation: sequence 1.5s steps(17);
-            -webkit-animation-fill-mode: forwards;
-            -moz-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+            -webkit-animation: sequence .8s steps(17);
+            -moz-animation: sequence .8s steps(17);
+            animation: sequence .8s steps(17);
+            -webkit-animation-fill-mode: reverse;
+            -moz-animation-fill-mode: reverse;
+            animation-fill-mode: reverse;
+            -webkit-animation-timing-function: cubic-bezier(.01,1.1,0,.98)  steps(17);
+            animation-timing-function: cubic-bezier(.01,1.1,0,.98)  steps(17);
         }
     }
 }
 
 @-webkit-keyframes sequence {
-  0% {
-    /* translateX(-2.78%) is used to horizontally center the first frame inside the viewport */
-    -webkit-transform: translateY(-50%) translateX(-2.78%);
-  }
-  50% {
-    /* translateX(-97.22%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
+    0% {
     -webkit-transform: translateY(-50%) translateX(-97.22%);
   }
   100% {
-    /* translateX(-97.22%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
     -webkit-transform: translateY(-50%) translateX(-2.78%);
   }
+  
+  // 100% {
+  //   -webkit-transform: translateY(-50%) translateX(-2.78%);
+  // }
 }
 @-moz-keyframes sequence {
   0% {
-    /* translateX(-2.78%) is used to horizontally center the first frame inside the viewport */
     -moz-transform: translateY(-50%) translateX(-2.78%);
   }
   100% {
-    /* translateX(-97.22%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
     -moz-transform: translateY(-50%) translateX(-97.22%);
   }
 }
 @keyframes sequence {
   0% {
-    /* translateX(-2.78%) is used to horizontally center the first frame inside the viewport */
-    -webkit-transform: translateY(-50%) translateX(-2.78%);
-    -moz-transform: translateY(-50%) translateX(-2.78%);
-    -ms-transform: translateY(-50%) translateX(-2.78%);
-    -o-transform: translateY(-50%) translateX(-2.78%);
-    transform: translateY(-50%) translateX(-2.78%);
-  }
-  50% {
-    /* translateX(-97.22%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
     -webkit-transform: translateY(-50%) translateX(-97.22%);
     -moz-transform: translateY(-50%) translateX(-97.22%);
     -ms-transform: translateY(-50%) translateX(-97.22%);
     -o-transform: translateY(-50%) translateX(-97.22%);
     transform: translateY(-50%) translateX(-97.22%);
   }
-  100% {
-    /* translateX(-97.22%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
+    100% {
     -webkit-transform: translateY(-50%) translateX(-2.78%);
     -moz-transform: translateY(-50%) translateX(-2.78%);
     -ms-transform: translateY(-50%) translateX(-2.78%);
     -o-transform: translateY(-50%) translateX(-2.78%);
     transform: translateY(-50%) translateX(-2.78%);
   }
+  // 100% {
+  //   -webkit-transform: translateY(-50%) translateX(-2.78%);
+  //   -moz-transform: translateY(-50%) translateX(-2.78%);
+  //   -ms-transform: translateY(-50%) translateX(-2.78%);
+  //   -o-transform: translateY(-50%) translateX(-2.78%);
+  //   transform: translateY(-50%) translateX(-2.78%);
+  // }
 }
