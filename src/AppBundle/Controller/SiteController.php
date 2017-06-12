@@ -74,14 +74,14 @@ class SiteController extends Controller
    */
   public function updateBlockSortAction(Request $request)
   {
-    $block_id = $request->request->get('home_block_id');
-    $block_index = $request->request->get('index');
+    $ids_string = $request->request->get('ids');
+    $ids = explode(',', $ids_string);
 
     try {
       $this->container->get('app.home_blocks_manager')->updateBlockPosition(
-        $block_id,
-        $block_index
+        $ids
       );
+
       $message = 'Sort updated!';
 
     } catch (InvalidArgumentException $e) {
