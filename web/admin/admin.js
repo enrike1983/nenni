@@ -9,7 +9,7 @@ dragula([document.getElementsByTagName('tbody')[0]])
           ids.push($(value).find('td').attr('objectid'));
       });
 
-      $.post( Routing.generate('update_home_block_sort'), {
+      $.post( Routing.generate('update_block_sort'), {
           ids: ids.join(",")
       });
   });
