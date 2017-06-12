@@ -4,14 +4,14 @@
         <div class="m-wine-sheet__id">
             <div class="id-logo"><img src="{{ asset('img/wine-logo.png') }}" alt=""></div>
             <div class="id-wings"><img src="{{ asset('img/wine-wings.png') }}" alt=""></div>
-            <p class="id-caption">Donec auctor interdum metus. Sed condimentum  ac neque non auctor. Integer a purus pulvina</p>
+            <p class="id-caption">{{ block.getTitle() }}</p>
         </div>
         <div class="m-wine-sheet__bottle">
             <img src="{{ asset('img/wine-bottle-' ~ index ~ '.png') }}" alt="">
         </div>
         <div class="m-wine-sheet__info">
-            <p class="info-text">{{index}} Donec auctor interdum metus. Sed condimentum ac neque non auctor. Integer a purus pulvinar. Bibendum leo sodales, dictu nunc. Duis iaculis.</p>
-            <a class="info-cta" href="#">Lorem ipsum</a>
+            <p class="info-text">{{index}} {{ block.getContent() }}</p>
+            <a class="info-cta" href="{{ block.getLink() }}">{{ block.getLinkLabel() }}</a>
         </div>
     </div>
 </div>

@@ -11,3 +11,16 @@ yarn install
 
 # Compile static assets
 gulp build
+
+cd ..
+cd ..
+
+# Symfony stuffs
+
+php bin/console doc:sc:up --force
+
+php bin/consle doc:fix:lo
+
+php bin/console ca:cl --env=prod
+
+php bin/console ca:cl --env=dev
