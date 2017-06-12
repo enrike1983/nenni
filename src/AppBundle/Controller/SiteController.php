@@ -51,8 +51,11 @@ class SiteController extends Controller
    */
   public function viniAction()
   {
+    $blocks = $this->container->get('app.home_blocks_manager')->getBlocks(BlocksManager::BLOCK_GROUP_VINI);
+
     return $this->render(
-        'default/vini.html.twig'
+        'default/vini.html.twig',
+        array('blocks' => $blocks)
     );
   }
 

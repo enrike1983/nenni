@@ -73,7 +73,7 @@ class LoadBlocksData implements FixtureInterface
             'title' => 'Vino 1',
             'subtitle' => 'lorem ipsum sic dolorem',
             'content' => '<h2>Lorem Ipsum 1</h2>',
-            'template' => 'default/_wine_sheet.html.twig',
+            'template' => 'default/_wine-sheet.html.twig',
             'link' => 'www.google.com',
             'link_label' => 'discover more'
           ],
@@ -81,7 +81,7 @@ class LoadBlocksData implements FixtureInterface
             'title' => 'Vino 2',
             'subtitle' => 'lorem ipsum sic dolorem',
             'content' => '<h2>Lorem Ipsum 2</h2>',
-            'template' => 'default/_wine_sheet.html.twig',
+            'template' => 'default/_wine-sheet.html.twig',
             'link' => 'www.google.com',
             'link_label' => 'discover more'
           ],
@@ -89,7 +89,7 @@ class LoadBlocksData implements FixtureInterface
             'title' => 'Vino 3',
             'subtitle' => 'lorem ipsum sic dolorem',
             'content' => '<h2>Lorem Ipsum 3</h2>',
-            'template' => 'default/_wine_sheet.html.twig',
+            'template' => 'default/_wine-sheet.html.twig',
             'link' => 'www.google.com',
             'link_label' => 'discover more'
           ],
