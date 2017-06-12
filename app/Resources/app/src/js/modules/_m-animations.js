@@ -3,34 +3,63 @@ import TweenLite from 'gsap'
 import inView from 'in-view'
 import splitText from '../modules/_m-splittext'
 import VanillaTilt from 'vanilla-tilt'
+import parallaxMonitor from 'scrollmonitor-parallax'
 
 const Animations = function() {
 
     var _doc = document;
 
-    inView.offset(10);
+    inView.threshold(0.05);
+
+    function _parallax() {
+
+        var _elements = _doc.querySelectorAll('.a-parallax');
+        if (_elements) {
+            Array.prototype.forEach.call(_elements, function(el, i){
+                var child = el.querySelector('.a-parallax__child');
+                var parallaxRoot = parallaxMonitor.create(el);
+                var parallaxChild = parallaxRoot.add(child, {
+                    start: {
+                        y: -200,
+                        scale: 1.3
+                    },
+                    end: {
+                        y: 200,
+                        scale: 1
+                    }
+                });
+            });
+        }
+
+    }
 
     function _fadeLetters() {
 
         var _phrases = _doc.querySelectorAll('.a-fade-letter');
+        var delay;
 
         if (_phrases) {
 
             inView('.a-fade-letter')
             .on('enter', phrase => {
 
+                delay = phrase.getAttribute('data-delay') || 0;
+
                 if (!phrase.classList.contains('is-animated')) {
 
-                    var tl = new TimelineLite,
+                    var tl = new TimelineLite({
+                            delay: delay*.5
+                        }),
                         mySplitText = new SplitText(phrase, {type:"words, chars"}),
                         chars = mySplitText.chars;
+
 
                     phrase.style.opacity = 1;
 
                     tl.staggerFromTo(chars, 2,
                         {
                             opacity: 0,
-                            y: 10,
+                            y: 10
                         },
                         {
                             opacity: 1,
@@ -38,6 +67,7 @@ const Animations = function() {
                         }, .1);
 
                     phrase.classList.add('is-animated');
+
 
                 }
 
@@ -135,6 +165,14 @@ const Animations = function() {
         });
     }
 
+    function _showCta() {
+        inView('.m-cta')
+        .on('enter', el => {
+            console.log('d8iboin')
+            el.classList.add('is-animated');
+        });
+    }
+
     function _handlerVideo() {
         inView('.m-video-tag')
         .on('enter', el => {
@@ -146,10 +184,7 @@ const Animations = function() {
     }
 
     function _tilt() {
-        VanillaTilt.init(document.querySelector(".a-tilt"), {
-            max: 5,
-            speed: 100
-        });
+        VanillaTilt.init(document.querySelectorAll(".a-tilt"));
     }
 
     function _removeLoader(cb) {
@@ -170,10 +205,11 @@ const Animations = function() {
                     }
                 })
             }
-        })
+        });
     }
 
     function _init() {
+        _parallax();
         _tilt();
         _fadeIn();
         _fadeLetters();
@@ -181,6 +217,7 @@ const Animations = function() {
         _staggerY();
         _scaleOpacity();
         _handlerVideo();
+        _showCta();
     }
 
     return {

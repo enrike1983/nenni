@@ -52,6 +52,13 @@ class HomeBlock
     /**
      * @var string
      *
+     * @ORM\Column(name="link_label", type="string", length=255)
+     */
+    private $link_label;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="template", type="text")
      */
     private $template;
@@ -144,6 +151,30 @@ class HomeBlock
     public function getLink()
     {
         return $this->link;
+    }
+
+    /**
+     * Set link_label
+     *
+     * @param string $link_label
+     *
+     * @return HomeBlock
+     */
+    public function setLinkLabel($link_label)
+    {
+        $this->link_label = $link_label;
+
+        return $this;
+    }
+
+    /**
+     * Get link_label
+     *
+     * @return string
+     */
+    public function getLinkLabel()
+    {
+        return $this->link_label;
     }
 
     /**

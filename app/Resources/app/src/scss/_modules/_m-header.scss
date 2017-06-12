@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: rem(50);
+    height: rem(70);
     z-index: 999999;
     background: map-get($colors, white);
     z-index: map-get($layers, max)+1;
@@ -12,18 +12,39 @@
     &.is-active {
         transform: translateY(0);
     }
-    .hamburger {
+    .m-hamburger {
+        cursor: pointer;
         position: absolute;
-        right: rem(10);
-        top: 50%;
-        transform: translateY(-50%);
+        right: 0;
+        top: 0;
+        width: rem(70);
+        height: rem(70);
         display: flex;
         z-index: 9999999;
-        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-            background: map-get($colors, black);
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        background: map-get($colors, white);
+        .no-touch &{
+            &:hover {
+                svg {
+                    opacity: .6;
+                }
+            }
+        }
+        svg {
+            display: block;
+            width: rem(30);
+            height: rem(30);
+            transition: opacity .3s;
+            path {
+                fill: map-get($colors, black);
+            }
         }
     }
     &__logo {
+        overflow: hidden;
         position: absolute;
         top: 50%;
         transform: translate(20px,-50%);
@@ -32,77 +53,20 @@
             margin-left: 20px;
             transform: translate(-50%,-50%);
         }
-        svg {
+        span {
+            position: absolute;
+            z-index: -1;
+            text-indent: -1000px;
+            opacity: 0;
+        }
+        a, svg {
             display: block;
+        }
+        svg {
             height: rem(15);
             @media screen and (min-width: $tablet) {
                 height: rem(20);
             }
-        }
-    }
-}
-
-
-.m-trigger-menu {
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    position: relative;
-    transform: scale(0.7);
-    @media screen and (min-width: $tablet) {
-        transform: scale(1);
-        right: 40px;
-        top: 40px;
-        position: absolute;
-    }
-    &.is-active {
-        > div {
-            background: #fff;
-            &:nth-of-type(1) {
-                transform: translate(-30%, -16px) scaleX(0.1);
-                border-radius: 50%;
-            }
-            &:nth-of-type(2) {
-                transform: translate(0, -50%) rotate(-225deg);
-            }
-            &:nth-of-type(3) {
-                transform: translate(30%, 12px) scaleX(0.1);
-                border-radius: 50%;
-            }
-        }
-    }
-    .no-touch &{
-        &:hover {
-            &:not(.is-active) {
-                > div {
-                    &:nth-of-type(1) {
-                        transform: translate(5%, -16px);
-                    }
-                    &:nth-of-type(2) {
-                        transform: translate(-5%, -50%);
-                    }
-                    &:nth-of-type(3) {
-                        transform: translate(5%, 12px);
-                    }
-                }
-            }
-        }
-    }
-    > div {
-        height: 4px;
-        width: 100%;
-        background: #000;
-        position: absolute;
-        top: 50%;
-        transition: transform .4s $ease, background .2s $ease;
-        &:nth-of-type(1) {
-            transform: translate(0, -16px);
-        }
-        &:nth-of-type(2) {
-            transform: translate(0, -50%);
-        }
-        &:nth-of-type(3) {
-            transform: translate(0, 12px);
         }
     }
 }

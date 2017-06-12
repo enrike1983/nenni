@@ -9,7 +9,7 @@ const Menu = function() {
     function _handleEvents() {
 
         var _doc = document;
-        var _triggerOpen = _doc.querySelector('.m-header .hamburger');
+        var _triggerOpen = _doc.querySelector('.m-header .m-hamburger');
         var _triggerClose = _doc.querySelector('.m-menu__close');
         var _menu = _doc.querySelector('.m-menu');
 

@@ -7,6 +7,7 @@
     z-index: map-get($layers, max);
     &__bg {
         background: map-get($colors, white);
+        background: linear-gradient(to top, map-get($colors, white) 0%, #ededed 100%);
         position: absolute;
         top: 0;
         left: 0;
@@ -34,13 +35,23 @@
         }
     }
     &__loading {
-        // background: red;
         height: 100%;
         width: 100%;
         position: absolute;
         border-radius: 100%;
         backface-visibility: hidden;
         will-change: transform;
-        // border: 1px solid map-get($colors, black);
+        border: 2px solid map-get($colors, black);
     }
+}
+
+
+.m-preloader__counter {
+    color: map-get($colors, black);
+    position: absolute;
+    font-size: rem(60);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'perpetua';
 }

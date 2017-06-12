@@ -79,7 +79,7 @@ html {
 body {
     font-family: 'crimson_textitalic';
     color: map-get($colors, black);
-    font-size: 16px;
+    font-size: 18px;
     &.lock {
         height: 100%;
         overflow: hidden;

@@ -9,11 +9,11 @@
                 <div class="m-logo  m-logo--white  m-logo--center">
                     {% include "_partials/logo.html" %}
                 </div>
-                <span class="m-intro-site__title   m-title  m-title--white  a-fade-letter">mastering excellence since 1272</span>
+                <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">mastering excellence since 1272</h2>
             </div>
 
-            <video class="m-video-tag" width="640" height="360" preload loop>
-                <source src="/img/hp.mp4" />
+            <video class="m-video-tag" width="640" height="360" preload loop muted playsinline>
+                <source src="/img/hp.mp4"/>
             </video>
 
             <a href="#" class="m-intro-site__explore">
@@ -28,15 +28,13 @@
             {{ include(block.getTemplate(), { 'block': block }) }}
         {% endfor %}
 
-
-
         <div class="m-people">
             <div class="m-people__img">
                 <div>
-                    <img src="img/people.png" alt="" class="a-scale-opacity">
+                    <img src="img/people.png" alt="" class="a-scale-opacity" data-preload>
                 </div>
             </div>
-            <div class="m-text-media__text">
+            <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="5" data-tilt-speed="70">
                 <article>
                     <span class="m-title  m-title--white  a-fade-letter">
                         Le persone
@@ -44,11 +42,11 @@
                     <p class="a-fade-word">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, ipsa dolorem labore provident fugiat veniam nihil neque nostrum nemo optio quos magni autem tempora dolores, repellendus dolor ratione repudiandae, possimus!
                     </p>
-                    <span class="a-fade-in">
-                        <a href="#" class="m-link  m-link--white">
+                    <a href="#" class="m-cta  m-cta--white">
+                        <span>
                             discover more
-                        </a>
-                    </span>
+                        </span>
+                    </a>
                 </article>
             </div>
         </div>
@@ -57,7 +55,7 @@
         <div class="a-stagger-y">
             <div class="m-news-list">
                 <article class="m-news-list__el  a-stagger-y__el">
-                    <img src="https://source.unsplash.com/random/800x600" alt="" class="m-news-list__img">
+                    <img src="https://source.unsplash.com/random/800x600" alt="" class="m-news-list__img" data-preload>
                     <a href="#" class="m-news-list__wrapper-info">
                         <div class="a-fade-in">
                             <time datetime="2008-02-14 20:00" class="m-news__time">14.01.1989</time>
@@ -68,7 +66,7 @@
                     </a>
                 </article>
                 <article class="m-news-list__el  a-stagger-y__el">
-                    <img src="https://source.unsplash.com/random/800x608" alt="" class="m-news-list__img">
+                    <img src="https://source.unsplash.com/random/800x608" alt="" class="m-news-list__img" data-preload>
                     <a href="#" class="m-news-list__wrapper-info">
                         <div class="a-fade-in">
                             <time datetime="2008-02-14 20:00" class="m-news__time">14.01.1989</time>
@@ -79,7 +77,7 @@
                     </a>
                 </article>
                 <article class="m-news-list__el  a-stagger-y__el">
-                    <img src="https://source.unsplash.com/random/800x609" alt="" class="m-news-list__img">
+                    <img src="https://source.unsplash.com/random/800x609" alt="" class="m-news-list__img" data-preload>
                     <a href="#" class="m-news-list__wrapper-info">
                         <div class="a-fade-in">
                             <time datetime="2008-02-14 20:00" class="m-news__time">14.01.1989</time>
@@ -90,7 +88,7 @@
                     </a>
                 </article>
                 <article class="m-news-list__el  a-stagger-y__el">
-                    <img src="https://source.unsplash.com/random/800x610" alt="" class="m-news-list__img">
+                    <img src="https://source.unsplash.com/random/800x610" alt="" class="m-news-list__img" data-preload>
                     <a href="#" class="m-news-list__wrapper-info">
                         <div class="a-fade-in">
                             <time datetime="2008-02-14 20:00" class="m-news__time">14.01.1989</time>

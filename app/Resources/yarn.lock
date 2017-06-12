@@ -3794,6 +3794,10 @@ postcss@^5.0.4, postcss@^5.2.16:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
+preloader.js@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/preloader.js/-/preloader.js-1.1.2.tgz#ee91ac0346bf033d6bce85804acbdc471e189ea9"
+
 preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
@@ -4185,6 +4189,16 @@ sass-graph@^2.1.1:
 sax@~1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
+
+scrollmonitor-parallax@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/scrollmonitor-parallax/-/scrollmonitor-parallax-1.0.1.tgz#745a071a3a96cc4d09f818ead3e5a7bd10157bf2"
+  dependencies:
+    scrollmonitor "^1.0.13"
+
+scrollmonitor@^1.0.13:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/scrollmonitor/-/scrollmonitor-1.2.3.tgz#87bf912ca28da64796f529e8129fa4a9b106fb74"
 
 scss-tokenizer@^0.2.1:
   version "0.2.1"

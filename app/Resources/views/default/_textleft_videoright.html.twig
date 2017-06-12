@@ -1,19 +1,19 @@
 <div class="m-text-media">
-    <div class="m-text-media__text">
+    <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="5" data-tilt-speed="70">
         <article>
             <span class="m-title  a-fade-letter">{{ block.getTitle() }}</span>
             <p class="a-fade-word">
                 {{ block.getSubtitle() }}
             </p>
-            <span class="a-fade-in">
-                <a href="#" class="m-link">
-                    {{ block.getLink() }}
-                </a>
-            </span>
+            <a href="{{ block.getLink() }}" class="m-cta">
+                <span>
+                    {{ block.getLinkLabel() }}
+                </span>
+            </a>
         </article>
     </div>
     <div class="m-text-media__media  m-text-media__media--video">
-        <video class="m-video-tag" width="724" height="900" preload loop>
+        <video class="m-video-tag" width="724" height="900" preload loop muted playsinline>
             <source src="/img/hp-vertical.mp4" />
         </video>
     </div>
