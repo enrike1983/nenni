@@ -2,6 +2,7 @@
 namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\Entity\Block;
+use AppBundle\Manager\BlocksManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -61,8 +62,51 @@ class LoadBlocksData implements FixtureInterface
           $home_block->setPosition($i);
           $home_block->setLink($block['link']);
           $home_block->setLinkLabel($block['link_label']);
+          $home_block->setBlockGroup(BlocksManager::BLOCK_GROUP_HOME);
 
           $manager->persist($home_block);
+        }
+
+
+        $wine_blocks = [
+          [
+            'title' => 'Vino 1',
+            'subtitle' => 'lorem ipsum sic dolorem',
+            'content' => '<h2>Lorem Ipsum 1</h2>',
+            'template' => 'default/_wine_sheet.html.twig',
+            'link' => 'www.google.com',
+            'link_label' => 'discover more'
+          ],
+          [
+            'title' => 'Vino 2',
+            'subtitle' => 'lorem ipsum sic dolorem',
+            'content' => '<h2>Lorem Ipsum 2</h2>',
+            'template' => 'default/_wine_sheet.html.twig',
+            'link' => 'www.google.com',
+            'link_label' => 'discover more'
+          ],
+          [
+            'title' => 'Vino 3',
+            'subtitle' => 'lorem ipsum sic dolorem',
+            'content' => '<h2>Lorem Ipsum 3</h2>',
+            'template' => 'default/_wine_sheet.html.twig',
+            'link' => 'www.google.com',
+            'link_label' => 'discover more'
+          ],
+        ];
+
+        foreach ($wine_blocks as $i => $block) {
+          $wine_block = new Block();
+          $wine_block->setTitle($block['title']);
+          $wine_block->setSubtitle($block['subtitle']);
+          $wine_block->setContent($block['content']);
+          $wine_block->setTemplate($block['template']);
+          $wine_block->setPosition($i);
+          $wine_block->setLink($block['link']);
+          $wine_block->setLinkLabel($block['link_label']);
+          $wine_block->setBlockGroup(BlocksManager::BLOCK_GROUP_VINI);
+
+          $manager->persist($wine_block);
         }
 
         $manager->flush();

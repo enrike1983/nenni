@@ -70,6 +70,13 @@ class Block
      */
     private $position = 0;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="block_group", type="string", length=255)
+     */
+    private $block_group;
+
 
     /**
      * Get id
@@ -247,6 +254,30 @@ class Block
     public function getPosition()
     {
         return $this->position;
+    }
+
+    /**
+     * Set block_group
+     *
+     * @param string $block_group
+     *
+     * @return Block
+     */
+    public function setBlockGroup($block_group)
+    {
+        $this->block_group = $block_group;
+
+        return $this;
+    }
+
+    /**
+     * Get block_group
+     *
+     * @return string
+     */
+    public function getBlockGroup()
+    {
+        return $this->block_group;
     }
 }
 

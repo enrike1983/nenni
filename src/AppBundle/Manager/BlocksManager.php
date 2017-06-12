@@ -6,6 +6,9 @@ use Psr\Log\InvalidArgumentException;
 
 class BlocksManager {
 
+  const BLOCK_GROUP_HOME = 'home';
+  const BLOCK_GROUP_VINI = 'vini';
+
   /**
    * @var \Doctrine\ORM\EntityManager
    */
@@ -22,12 +25,14 @@ class BlocksManager {
   }
 
   /**
+   * @param $block_group
+   *
    * @return mixed
    */
-  public function getBlocks()
+  public function getBlocks($block_group)
   {
     return $this->entityManager->getRepository('AppBundle:Block')
-      ->findAllBlocks();
+      ->findBlocks($block_group);
   }
 
   /**

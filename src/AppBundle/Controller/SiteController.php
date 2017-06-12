@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Manager\BlocksManager;
 use Psr\Log\InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -17,7 +18,7 @@ class SiteController extends Controller
    */
   public function homepageAction()
   {
-    $blocks = $this->container->get('app.home_blocks_manager')->getBlocks();
+    $blocks = $this->container->get('app.home_blocks_manager')->getBlocks(BlocksManager::BLOCK_GROUP_HOME);
 
     return $this->render(
         'default/home.html.twig',
