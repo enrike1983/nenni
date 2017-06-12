@@ -1,0 +1,13 @@
+#!/bin/bash
+
+branch_name=$1
+
+# Update master branch
+git pull origin "$branch_name"
+
+# Update repository libraries dependencies
+cd app/Resources
+yarn install
+
+# Compile static assets
+gulp build

@@ -15,28 +15,40 @@ class LoadHomeBlocksData implements FixtureInterface
             'subtitle' => 'lorem ipsum sic dolorem',
             'content' => '<h2>Lorem Ipsum 1</h2>',
             'template' => 'default/_imageleft_textright.html.twig',
-            'link' => 'www.google.com'
+            'link' => 'www.google.com',
+            'link_label' => 'discover more'
           ],
           [
             'title' => 'Lorem Ipsum Blocco 2',
             'subtitle' => 'lorem ipsum sic dolorem',
             'content' => '<h2>Lorem Ipsum 2</h2>',
             'template' => 'default/_textleft_imageright.html.twig',
-            'link' => 'www.google.com'
+            'link' => 'www.google.com',
+            'link_label' => 'discover more'
           ],
           [
             'title' => 'Lorem Ipsum Blocco 3',
             'subtitle' => 'lorem ipsum sic dolorem',
             'content' => '<h2>Lorem Ipsum 3</h2>',
             'template' => 'default/_videofullwidth.html.twig',
-            'link' => 'www.google.com'
+            'link' => 'www.google.com',
+            'link_label' => 'discover more'
           ],
           [
             'title' => 'Lorem Ipsum Blocco 4',
             'subtitle' => 'lorem ipsum sic dolorem',
             'content' => '<h2>Lorem Ipsum 4</h2>',
             'template' => 'default/_textleft_videoright.html.twig',
-            'link' => 'www.google.com'
+            'link' => 'www.google.com',
+            'link_label' => 'discover more'
+          ],
+          [
+            'title' => 'Lorem Ipsum Blocco 5',
+            'subtitle' => 'lorem ipsum sic dolorem',
+            'content' => '<h2>Lorem Ipsum 4</h2>',
+            'template' => 'default/_full_text.html.twig',
+            'link' => 'www.google.com',
+            'link_label' => 'discover more'
           ]
         ];
 
@@ -48,6 +60,7 @@ class LoadHomeBlocksData implements FixtureInterface
           $home_block->setTemplate($block['template']);
           $home_block->setPosition($i);
           $home_block->setLink($block['link']);
+          $home_block->setLinkLabel($block['link_label']);
 
           $manager->persist($home_block);
         }
