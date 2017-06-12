@@ -7,7 +7,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class HomeBlocksAdmin extends AbstractAdmin
+class BlocksAdmin extends AbstractAdmin
 {
     protected $datagridValues = array(
         '_page' => 1,

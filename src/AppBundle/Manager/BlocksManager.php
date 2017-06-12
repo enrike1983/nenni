@@ -4,7 +4,7 @@ namespace AppBundle\Manager;
 use Doctrine\ORM\EntityManager;
 use Psr\Log\InvalidArgumentException;
 
-class HomeBlocksManager {
+class BlocksManager {
 
   /**
    * @var \Doctrine\ORM\EntityManager
@@ -12,7 +12,7 @@ class HomeBlocksManager {
   private $entityManager;
 
   /**
-   * HomeBlocksManager constructor.
+   * BlocksManager constructor.
    *
    * @param \Doctrine\ORM\EntityManager $entityManager
    */
@@ -24,9 +24,9 @@ class HomeBlocksManager {
   /**
    * @return mixed
    */
-  public function getHomeBlocks()
+  public function getBlocks()
   {
-    return $this->entityManager->getRepository('AppBundle:HomeBlock')
+    return $this->entityManager->getRepository('AppBundle:Block')
       ->findAllBlocks();
   }
 
@@ -38,7 +38,7 @@ class HomeBlocksManager {
    * @throws \Doctrine\ORM\OptimisticLockException
    * @throws \Psr\Log\InvalidArgumentException
    */
-  public function updateHomeBlockPosition(array $ids = [])
+  public function updateBlockPosition(array $ids = [])
   {
     if($ids === null) {
       throw new InvalidArgumentException('Some parameter was not set up');

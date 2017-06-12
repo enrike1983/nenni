@@ -1,7 +1,7 @@
 nenni_2
 =======
 
-### struttura pagine
+### struttura pagine + SEO
 
 ### backend
  * file upload

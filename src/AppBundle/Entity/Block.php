@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * HomeBlock
+ * Block
  *
- * @ORM\Table(name="home_block")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\HomeBlockRepository")
+ * @ORM\Table(name="block")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BlockRepository")
  */
-class HomeBlock
+class Block
 {
     /**
      * @var int
@@ -86,7 +86,7 @@ class HomeBlock
      *
      * @param string $title
      *
-     * @return HomeBlock
+     * @return Block
      */
     public function setTitle($title)
     {
@@ -110,7 +110,7 @@ class HomeBlock
      *
      * @param string $subtitle
      *
-     * @return HomeBlock
+     * @return Block
      */
     public function setSubtitle($subtitle)
     {
@@ -134,7 +134,7 @@ class HomeBlock
      *
      * @param string $link
      *
-     * @return HomeBlock
+     * @return Block
      */
     public function setLink($link)
     {
@@ -158,7 +158,7 @@ class HomeBlock
      *
      * @param string $link_label
      *
-     * @return HomeBlock
+     * @return Block
      */
     public function setLinkLabel($link_label)
     {
@@ -182,7 +182,7 @@ class HomeBlock
      *
      * @param string $content
      *
-     * @return HomeBlock
+     * @return Block
      */
     public function setContent($content)
     {
@@ -206,7 +206,7 @@ class HomeBlock
      *
      * @param string $template
      *
-     * @return HomeBlock
+     * @return Block
      */
     public function setTemplate($template)
     {
@@ -230,7 +230,7 @@ class HomeBlock
      *
      * @param integer $position
      *
-     * @return HomeBlock
+     * @return Block
      */
     public function setPosition($position)
     {

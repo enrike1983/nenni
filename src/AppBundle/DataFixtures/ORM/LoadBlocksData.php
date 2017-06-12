@@ -1,11 +1,11 @@
 <?php
 namespace AppBundle\DataFixtures\ORM;
 
-use AppBundle\Entity\HomeBlock;
+use AppBundle\Entity\Block;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadHomeBlocksData implements FixtureInterface
+class LoadBlocksData implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -53,7 +53,7 @@ class LoadHomeBlocksData implements FixtureInterface
         ];
 
         foreach ($home_blocks as $i => $block) {
-          $home_block = new HomeBlock();
+          $home_block = new Block();
           $home_block->setTitle($block['title']);
           $home_block->setSubtitle($block['subtitle']);
           $home_block->setContent($block['content']);
