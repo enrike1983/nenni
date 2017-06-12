@@ -5,5 +5,5 @@ parameters:
 
 services:
     app.home_blocks_manager:
-        class: AppBundle\Manager\HomeBlocksManager
+        class: AppBundle\Manager\BlocksManager
         arguments: ['@doctrine.orm.entity_manager']

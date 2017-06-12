@@ -17,7 +17,7 @@ class SiteController extends Controller
    */
   public function homepageAction()
   {
-    $blocks = $this->container->get('app.home_blocks_manager')->getHomeBlocks();
+    $blocks = $this->container->get('app.home_blocks_manager')->getBlocks();
 
     return $this->render(
         'default/home.html.twig',
@@ -66,19 +66,19 @@ class SiteController extends Controller
   }
 
   /**
-   * @Route("/update-home-block-sort", name="update_home_block_sort")
+   * @Route("/update-block-sort", name="update_block_sort")
    * @param \Symfony\Component\HttpFoundation\Request $request
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    * @throws \LogicException
    */
-  public function updateHomeBlockSortAction(Request $request)
+  public function updateBlockSortAction(Request $request)
   {
     $block_id = $request->request->get('home_block_id');
     $block_index = $request->request->get('index');
 
     try {
-      $this->container->get('app.home_blocks_manager')->updateHomeBlockPosition(
+      $this->container->get('app.home_blocks_manager')->updateBlockPosition(
         $block_id,
         $block_index
       );

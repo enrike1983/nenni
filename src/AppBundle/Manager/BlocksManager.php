@@ -4,7 +4,7 @@ namespace AppBundle\Manager;
 use Doctrine\ORM\EntityManager;
 use Psr\Log\InvalidArgumentException;
 
-class HomeBlocksManager {
+class BlocksManager {
 
   /**
    * @var \Doctrine\ORM\EntityManager
@@ -12,7 +12,7 @@ class HomeBlocksManager {
   private $entityManager;
 
   /**
-   * HomeBlocksManager constructor.
+   * BlocksManager constructor.
    *
    * @param \Doctrine\ORM\EntityManager $entityManager
    */
@@ -24,9 +24,9 @@ class HomeBlocksManager {
   /**
    * @return mixed
    */
-  public function getHomeBlocks()
+  public function getBlocks()
   {
-    return $this->entityManager->getRepository('AppBundle:HomeBlock')
+    return $this->entityManager->getRepository('AppBundle:Block')
       ->findAllBlocks();
   }
 
@@ -39,13 +39,13 @@ class HomeBlocksManager {
    * @throws \Doctrine\ORM\OptimisticLockException
    * @throws \Psr\Log\InvalidArgumentException
    */
-  public function updateHomeBlockPosition($block_id, $index)
+  public function updateBlockPosition($block_id, $index)
   {
     if($block_id === null || $index === null) {
       throw new InvalidArgumentException('Some parameter was not set up');
     }
 
-    $block = $this->entityManager->getRepository('AppBundle:HomeBlock')
+    $block = $this->entityManager->getRepository('AppBundle:Block')
       ->findOneBy(['id' => $block_id]);
 
     if(!$block) {
@@ -60,7 +60,7 @@ class HomeBlocksManager {
     $this->entityManager->flush();
 
     // tutti gli elementi fino al vecchio index aumentano di 1 il proprio index
-    $blocks = $this->getHomeBlocks();
+    $blocks = $this->getBlocks();
     foreach ($blocks as $i => $bl) {
       if($i > $index && $i < $old_index) {
         $bl->setPosition($bl->getPosition() + 1);
