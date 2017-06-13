@@ -12,14 +12,25 @@ class BlockRepository extends \Doctrine\ORM\EntityRepository
 {
   protected function getBaseQuery()
   {
-      return $this->createQueryBuilder('hb')
-          ->select('hb')
-          ->orderBy('hb.position', 'ASC');
+      return $this->createQueryBuilder('b')
+          ->select('b')
+          ->orderBy('b.position', 'ASC');
   }
 
-  public function findAllBlocks()
+  /**
+   * @param $block_group
+   *
+   * @return array
+   */
+  public function findBlocks($block_group = null)
   {
       $qb = $this->getBaseQuery();
+
+      if($block_group) {
+        $qb->where('b.block_group = :block_group')
+          ->setParameter('block_group', $block_group);
+      }
+
       return $qb->getQuery()->getResult();
   }
 }

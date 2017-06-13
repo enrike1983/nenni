@@ -3,9 +3,14 @@
 {% block content %}
     <div class="barba-container" data-namespace="products">
         <div class="m-wine-carousel">
-            {% for i in 0..3 %}
+            {#{% for i in 0..3 %}#}
+                {#<div class="m-wine-carousel__slide {% if loop.first %}current{% endif %}">#}
+                    {#{% include 'default/_wine-sheet.html.twig' with {index : loop.index0} %}#}
+                {#</div>#}
+            {#{% endfor %}#}
+            {% for block in blocks %}
                 <div class="m-wine-carousel__slide {% if loop.first %}current{% endif %}">
-                    {% include 'default/_wine-sheet.html.twig' with {index : loop.index0} %}
+                    {{ include(block.getTemplate(), { 'block': block, index: loop.index0 }) }}
                 </div>
             {% endfor %}
             <div class="m-wine-carousel__transition">
@@ -20,7 +25,7 @@
         var slides = document.querySelectorAll('.m-wine-carousel__slide'),
             transitionBlock = document.querySelector('.m-wine-carousel__transition'),
             index = 0;
-        var transitionDuration = 2000;
+        var transitionDuration = 1000;
         var transitionOn = false;
         document.querySelector('#button').addEventListener('click', function() {
             if(index > slides.length - 1 || transitionOn) return;
@@ -36,7 +41,7 @@
                         el.classList.remove('current');
                     }
                 });
-            },transitionDuration/2)
+            },400)
             setTimeout(function(){
                 transitionBlock.classList.remove('visible');
                 transitionBlock.classList.remove('play');

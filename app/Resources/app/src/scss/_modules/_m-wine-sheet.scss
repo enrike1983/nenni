@@ -23,6 +23,12 @@
         @media screen and (min-height: 700px) {
             max-width: 1280px;
         }
+        @media screen and (min-height: 800px) {
+            max-width: 1440px;
+        }
+        @media screen and (min-width: 1900px) {
+            max-width: 1600px;   
+        }
     }
 
     &__id,
@@ -70,7 +76,7 @@
         left: rem(50);
         top: rem(50);
         right: rem(50);
-        height: calc(80vmin - 50px);
+        height: calc(80% - 50px);
         min-height: 400px;
         border: 2px solid map-get($colors,yellow);
     }
