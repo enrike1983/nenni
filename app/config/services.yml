@@ -9,7 +9,13 @@ services:
         arguments: ['@doctrine.orm.entity_manager']
 
     admin.home_blocks:
-        class: AppBundle\Admin\BlocksAdmin
+        class: AppBundle\Admin\HomeBlocksAdmin
         arguments: [~, AppBundle\Entity\Block, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Home Block }
+            - { name: sonata.admin, manager_type: orm, label: Home }
+
+    admin.vini_blocks:
+        class: AppBundle\Admin\ViniBlocksAdmin
+        arguments: [~, AppBundle\Entity\Block, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Vini }
