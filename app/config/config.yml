@@ -58,8 +58,16 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
+#        naming_strategy: doctrine.orm.naming_strategy.underscore
+#        auto_mapping: true
+
+        entity_managers:
+            default:
+                auto_mapping: true
+                filters:
+                    oneLocale:
+                        class: A2lix\I18nDoctrineBundle\Doctrine\ORM\Filter\OneLocaleFilter
+                        enabled: true
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -77,15 +85,29 @@ sonata_block:
        sonata.admin.block.admin_list:
            contexts: [admin]
 
-#Vich Uploader
+# Vich Uploader
 vich_uploader:
     db_driver: orm
 
     mappings:
-        product_image:
-            uri_prefix:         /uploads/blocks
-            upload_destination: '%kernel.root_dir%/../web/uploads/blocks'
+        block_image:
+            uri_prefix:         /uploads/blocks/images
+            upload_destination: '%kernel.root_dir%/../web/uploads/blocks/images'
+            namer:              vich_uploader.namer_uniqid
 
             inject_on_load:     false
             delete_on_update:   true
             delete_on_remove:   true
+
+        block_video:
+            uri_prefix:         /uploads/blocks/videos
+            upload_destination: '%kernel.root_dir%/../web/uploads/blocks/videos'
+            namer:              vich_uploader.namer_uniqid
+
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+
+# A2lix i18n Doctrine
+a2lix_i18n_doctrine:
+    manager_registry: doctrine

@@ -15,6 +15,10 @@ gulp build
 cd ..
 cd ..
 
+# Composer
+
+composer install
+
 # Symfony stuffs
 
 php bin/console doc:dat:drop --force

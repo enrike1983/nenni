@@ -6,6 +6,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class BaseBlocksAdmin extends AbstractAdmin
 {
@@ -23,7 +24,14 @@ class BaseBlocksAdmin extends AbstractAdmin
       $formMapper->add('link');
       $formMapper->add('link_label');
       $formMapper->add('template');
-      $formMapper->add('imageFile', 'file');
+      $formMapper->add('imageFile', VichFileType::class, [
+          'required' => false,
+          'allow_delete' => true,
+      ]);
+      $formMapper->add('videoFile', VichFileType::class, [
+          'required' => false,
+          'allow_delete' => true,
+      ]);
   }
 
   protected function configureDatagridFilters(DatagridMapper $datagridMapper)
