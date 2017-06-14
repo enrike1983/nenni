@@ -58,16 +58,8 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
-#        naming_strategy: doctrine.orm.naming_strategy.underscore
-#        auto_mapping: true
-
-        entity_managers:
-            default:
-                auto_mapping: true
-                filters:
-                    oneLocale:
-                        class: A2lix\I18nDoctrineBundle\Doctrine\ORM\Filter\OneLocaleFilter
-                        enabled: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -108,6 +100,13 @@ vich_uploader:
             delete_on_update:   true
             delete_on_remove:   true
 
-# A2lix i18n Doctrine
-a2lix_i18n_doctrine:
-    manager_registry: doctrine
+# Knp doctrine behaviours
+knp_doctrine_behaviors:
+    translatable: true
+
+a2lix_translation_form:
+    locale_provider: default       # [1]
+    locales: [en, it]      # [1-a]
+    default_locale: '%locale%'            # [1-b]
+    required_locales: [it, en]         # [1-c]
+    templating: "A2lixTranslationFormBundle::default.html.twig"      # [2]

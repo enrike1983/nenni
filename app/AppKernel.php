@@ -17,7 +17,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
-            new A2lix\I18nDoctrineBundle\A2lixI18nDoctrineBundle(),
+            new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
+//            new A2lix\AutoFormBundle\A2lixAutoFormBundle(),
+            new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
 
             // These are the other bundles the SonataAdminBundle relies on
             new Sonata\CoreBundle\SonataCoreBundle(),
