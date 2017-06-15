@@ -86,6 +86,17 @@ class Block
     }
 
     /**
+     * @param $method
+     * @param $arguments
+     *
+     * @return mixed
+     */
+    public function __call($method, $arguments)
+    {
+        return $this->proxyCurrentLocaleTranslation($method, $arguments);
+    }
+
+    /**
      * Get id
      *
      * @return int
