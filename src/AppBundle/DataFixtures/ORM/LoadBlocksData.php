@@ -206,6 +206,78 @@ class LoadBlocksData extends AbstractFixture
                 'template' => 'default/_wine-sheet.html.twig',
                 'block_group' => BlocksManager::BLOCK_GROUP_VINI
             ],
+            [
+                'title' => [
+                  'it' => 'Block Group Vigne 1',
+                  'en' => 'EN Block Group Vigne 1'
+                ],
+                'subtitle' => [
+                  'it' => 'Block Group Vigne 1',
+                  'en' => 'EN Block Group Vigne 1'
+                ],
+                'content' => [
+                  'it' => '<h2>Block Group Vigne 4</h2>',
+                  'en' => 'EN <h2>Block Group Vigne 4</h2>',
+                ],
+                'link' => [
+                  'it' => 'www.google.com',
+                  'en' => 'www.google.com'
+                ],
+                'link_label' => [
+                  'it' => 'scopri di piu',
+                  'en' => 'discover more'
+                ],
+                'template' => 'default/_videofullwidth.html.twig',
+                'block_group' => BlocksManager::BLOCK_GROUP_VIGNE
+            ],
+            [
+                'title' => [
+                  'it' => 'Block Group Vigne 2',
+                  'en' => 'EN Block Group Vigne 2'
+                ],
+                'subtitle' => [
+                  'it' => 'Block Group Vigne 2',
+                  'en' => 'EN Block Group Vigne 2'
+                ],
+                'content' => [
+                  'it' => '<h2>Block Group Vigne 2</h2>',
+                  'en' => 'EN <h2>Block Group Vigne 2</h2>',
+                ],
+                'link' => [
+                  'it' => 'www.google.com',
+                  'en' => 'www.google.com'
+                ],
+                'link_label' => [
+                  'it' => 'scopri di piu',
+                  'en' => 'discover more'
+                ],
+                'template' => 'default/_videofullwidth.html.twig',
+                'block_group' => BlocksManager::BLOCK_GROUP_VIGNE
+            ],
+            [
+                'title' => [
+                  'it' => 'Block Group Vigne 3',
+                  'en' => 'EN Block Group Vigne 3'
+                ],
+                'subtitle' => [
+                  'it' => 'Block Group Vigne 3',
+                  'en' => 'EN Block Group Vigne 3'
+                ],
+                'content' => [
+                  'it' => '<h2>Block Group Vigne 3</h2>',
+                  'en' => 'EN <h2>Block Group Vigne 3</h2>',
+                ],
+                'link' => [
+                  'it' => 'www.google.com',
+                  'en' => 'www.google.com'
+                ],
+                'link_label' => [
+                  'it' => 'scopri di piu',
+                  'en' => 'discover more'
+                ],
+                'template' => 'default/_videofullwidth.html.twig',
+                'block_group' => BlocksManager::BLOCK_GROUP_VIGNE
+            ],
         ];
     }
 

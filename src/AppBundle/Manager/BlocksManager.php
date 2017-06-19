@@ -8,6 +8,7 @@ class BlocksManager {
 
   const BLOCK_GROUP_HOME = 'home';
   const BLOCK_GROUP_VINI = 'vini';
+  const BLOCK_GROUP_VIGNE = 'vigne';
 
   /**
    * @var \Doctrine\ORM\EntityManager

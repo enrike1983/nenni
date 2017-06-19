@@ -60,6 +60,16 @@ class SiteController extends Controller
   }
 
   /**
+   * @Route("/le-vigne")
+   */
+  public function leVigneAction()
+  {
+    return $this->render(
+        'default/le-vigne.html.twig'
+    );
+  }
+
+  /**
    * @Route("/la-tenuta")
    */
   public function laTenutaAction()
