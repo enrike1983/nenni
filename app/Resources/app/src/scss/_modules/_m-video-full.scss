@@ -1,4 +1,4 @@
-.m-video-full {
+.m-img-full, .m-video-full {
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -13,6 +13,19 @@
         left: 0;
         background: rgba(0,0,0,0.4);
     }
+}
+
+.m-img-full__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.m-video-full {
+
     video {
         position: absolute;
     }
@@ -47,7 +60,7 @@
     width: 100%;
     height: 0;
     position: relative;
-    padding-bottom: 36.6%;
+    padding-bottom: 36.4%;
     background: #fff;
     &:after {
         content: "";
