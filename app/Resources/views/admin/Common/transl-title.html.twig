@@ -1,5 +1,5 @@
 {% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
 
 {% block field %}
-    {{ object.translate('it').getTitle }}
+    {{ object.translate(default_locale).getTitle() }}
 {% endblock %}

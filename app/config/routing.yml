@@ -1,11 +1,14 @@
 app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+    resource: '@AppBundle/Controller/SiteController.php'
+    type:     annotation
+    prefix:   /{_locale}
     options:
-      expose: true
+        expose: true
+    requirements:
+        _locale: '%active_locales%'
 
 admin_area:
-    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
 
 _sonata_admin:
@@ -14,4 +17,4 @@ _sonata_admin:
     prefix: /admin
 
 fos_js_routing:
-    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+    resource: '@FOSJsRoutingBundle/Resources/config/routing/routing.xml'

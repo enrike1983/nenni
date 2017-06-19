@@ -19,3 +19,9 @@ services:
         arguments: [~, AppBundle\Entity\Block, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Vini }
+
+    admin.news:
+        class: AppBundle\Admin\NewsAdmin
+        arguments: [~, AppBundle\Entity\News, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: News }

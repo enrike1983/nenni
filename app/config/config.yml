@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: '%default_locale%'
 
 framework:
     #esi: ~
-    translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%default_locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -21,7 +21,7 @@ framework:
     #serializer: { enable_annotations: true }
     templating:
         engines: ['twig']
-    default_locale: '%locale%'
+    default_locale: '%default_locale%'
     trusted_hosts: ~
     trusted_proxies: ~
     session:
@@ -38,6 +38,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        default_locale: '%default_locale%'
 
 # Doctrine Configuration
 doctrine:
@@ -105,8 +107,8 @@ knp_doctrine_behaviors:
     translatable: true
 
 a2lix_translation_form:
-    locale_provider: default       # [1]
-    locales: [en, it]      # [1-a]
-    default_locale: '%locale%'            # [1-b]
-    required_locales: [it, en]         # [1-c]
-    templating: "A2lixTranslationFormBundle::default.html.twig"      # [2]
+    locale_provider: default
+    locales: '%active_locales_array%'
+    default_locale: '%default_locale%'
+    required_locales: ['%default_locale%']
+    templating: "A2lixTranslationFormBundle::default.html.twig"

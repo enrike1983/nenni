@@ -93,7 +93,7 @@ class Block
      */
     public function __call($method, $arguments)
     {
-        return $this->proxyCurrentLocaleTranslation($method, $arguments);
+        return \Symfony\Component\PropertyAccess\PropertyAccess::createPropertyAccessor()->getValue($this->translate(), $method);
     }
 
     /**
