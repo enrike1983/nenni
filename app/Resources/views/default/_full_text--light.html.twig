@@ -1,20 +1,9 @@
-<div class="m-full-text">
-    <div class="m-text-media__text  m-full-text__wrapper">
-        <article class="h-align-center">
-            <span class="m-title  a-fade-letter">
-                {{ block.getTitle() }}
-            </span>
-            <p class="a-fade-word">
-                {{ block.getSubtitle() }}
-            </p>
-            <a href="{{ block.getLink() }}" class="m-cta">
-                <span>
-                    {{ block.getLinkLabel() }}
-                </span>
-            </a>
-            <div class="m-full-text__img">
-                <img src="/img/wings.png" alt="" class="a-scale-opacity">
-            </div>
-        </article>
-    </div>
-</div>
+{% import "_macro/_m-full-text.html" as mFullText %}
+
+{{ mFullText.build({
+    'theme': 'light',
+    'title': block.getTitle(),
+    'text': block.getSubtitle(),
+    'link': block.getLink(),
+    'label': block.getLinkLabel()
+}) }}

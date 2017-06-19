@@ -1,0 +1,38 @@
+{% macro build(arg) %}
+
+    <div class="m-full-text {% if arg.theme == 'dark' %} m-full-text--dark {% endif %}">
+        <div class="m-text-media__text  m-full-text__wrapper">
+            <article class="h-align-center">
+                {% if arg.theme == 'dark' %}
+                    <span class="m-title  m-title--white  a-fade-letter">
+                        {{ arg.title }}
+                    </span>
+                    <p class="a-fade-word  h-color-white">
+                        {{ arg.text }}
+                    </p>
+                    <a href="{{ arg.link }}" class="m-cta  m-cta--white">
+                        <span>
+                            {{ arg.label }}
+                        </span>
+                    </a>
+                {% else %}
+                    <span class="m-title  a-fade-letter">
+                        {{ arg.title }}
+                    </span>
+                    <p class="a-fade-word">
+                        {{ arg.text }}
+                    </p>
+                    <a href="{{ arg.link }}" class="m-cta">
+                        <span>
+                            {{ arg.label }}
+                        </span>
+                    </a>
+                {% endif %}
+                <div class="m-full-text__img">
+                    <img src="/img/wings.png" alt="" class="a-scale-opacity">
+                </div>
+            </article>
+        </div>
+    </div>
+
+{% endmacro build %}
