@@ -1,16 +1,16 @@
-{% macro build(title,text,video) %}
+{% macro build(arg) %}
 
     <div class="m-video-ratio">
 
         <div class="m-media-info">
-            <span class="m-title  m-title--white  a-fade-letter">{{title}}</span>
+            <span class="m-title  m-title--white  a-fade-letter">{{arg.title}}</span>
             <p class="a-fade-word">
-                {{text}}
+                {{arg.text}}
             </p>
         </div>
 
         <video class="m-video-tag" width="640" height="360" preload loop muted playsinline>
-            <source src="{{video}}"/>
+            <source src="{{arg.video}}"/>
         </video>
 
     </div>
@@ -18,9 +18,9 @@
     <div class="m-video-ratio__mobile-box">
         <div class="m-text-media__text">
             <article>
-                <span class="m-title  m-title--white  a-fade-letter">{{title}}</span>
+                <span class="m-title  m-title--white  a-fade-letter">{{arg.title}}</span>
                 <p class="a-fade-word">
-                    {{text}}
+                    {{arg.text}}
                 </p>
             </article>
         </div>

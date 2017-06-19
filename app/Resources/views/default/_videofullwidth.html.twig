@@ -1,2 +1,8 @@
 {% import "_macro/_m-video-ratio.html" as mVideoRatio %}
-{{ mVideoRatio.build(block.getTitle(), block.getSubtitle(), '/img/vigna_bg.mp4') }}
+{# {{ mVideoRatio.build(block.getTitle(), block.getSubtitle(), '/img/vigna_bg.mp4') }} #}
+
+{{ mVideoRatio.build({
+    'title': block.getTitle(),
+    'subtitle': block.getSubtitle(),
+    'video': '/img/vigna_bg.mp4'
+}}
