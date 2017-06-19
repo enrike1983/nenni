@@ -25,10 +25,11 @@ nenni_2
 - [ ] le mostra tutte ordinate in senso dalla piu recente
  
 ### singola news
-- [ ] data
-- [ ] titolo
-- [ ] testo
+- [x] data
+- [x] titolo
+- [x] testo
 - [ ] url
+- [ ] immagine
 
 ### selezione pagine interne ( per lingua ) in creazione link. 
 - [ ] Se link esterno stringa.

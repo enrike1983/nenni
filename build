@@ -17,7 +17,9 @@ cd ..
 
 # Composer
 
-composer install
+php -r "readfile('https://getcomposer.org/installer');" | php
+php composer.phar install
+rm composer.phar
 
 # Symfony stuffs
 
