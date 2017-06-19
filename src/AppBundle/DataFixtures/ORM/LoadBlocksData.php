@@ -131,7 +131,31 @@ class LoadBlocksData extends AbstractFixture
                   'it' => 'scopri di piu',
                   'en' => 'discover more'
                 ],
-                'template' => 'default/_full_text.html.twig',
+                'template' => 'default/_full_text--light.html.twig',
+                'block_group' => BlocksManager::BLOCK_GROUP_HOME
+            ],
+            [
+                'title' => [
+                  'it' => 'Lorem Ipsum Blocco 5',
+                  'en' => 'EN Lorem Ipsum Blocco 5'
+                ],
+                'subtitle' => [
+                  'it' => 'Lorem Ipsum Blocco 5',
+                  'en' => 'EN Lorem Ipsum Blocco 5'
+                ],
+                'content' => [
+                  'it' => '<h2>Lorem Ipsum 5</h2>',
+                  'en' => 'EN <h2>Lorem Ipsum 5</h2>',
+                ],
+                'link' => [
+                  'it' => 'www.google.com',
+                  'en' => 'www.google.com'
+                ],
+                'link_label' => [
+                  'it' => 'scopri di piu',
+                  'en' => 'discover more'
+                ],
+                'template' => 'default/_full_text--dark.html.twig',
                 'block_group' => BlocksManager::BLOCK_GROUP_HOME
             ],
             [
