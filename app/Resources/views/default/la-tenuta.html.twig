@@ -24,9 +24,22 @@
 
         </div>
 
-        {{ mVideoRatio.build('Vigna Allegra', 'Lorem ipsum dolor sit amet', '/img/le-vigne/allegra.mp4') }}
-        {{ mVideoRatio.build('Vigna Barucci', 'Lorem ipsum dolor sit amet', '/img/le-vigne/barucci.mp4') }}
-        {{ mVideoRatio.build('Vigna Sara', 'Lorem ipsum dolor sit amet', '/img/le-vigne/sara.mp4') }}
+        {{ mVideoRatio.build({
+            'title': 'Vigna Allegra',
+            'text': 'Sottotitolo per la Vigna Allegra',
+            'video': '/img/le-vigne/allegra.mp4'
+        }) }}
+
+        {{ mVideoRatio.build({
+            'title': 'Vigna Barucci',
+            'video': '/img/le-vigne/barucci.mp4'
+        }) }}
+
+        {{ mVideoRatio.build({
+            'title': 'Vigna Sara',
+            'text': 'Sottotitolo per la Vigna Sara',
+            'video': '/img/le-vigne/sara.mp4'
+        }) }}
 
     </div>
 {% endblock %}

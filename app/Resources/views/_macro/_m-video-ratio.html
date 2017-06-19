@@ -4,9 +4,11 @@
 
         <div class="m-media-info">
             <span class="m-title  m-title--white  a-fade-letter">{{arg.title}}</span>
-            <p class="a-fade-word">
-                {{arg.text}}
-            </p>
+            {% if arg.text is defined %}
+                <p class="a-fade-word">
+                    {{arg.text}}
+                </p>
+            {% endif %}
         </div>
 
         <video class="m-video-tag" width="640" height="360" preload loop muted playsinline>
@@ -19,9 +21,11 @@
         <div class="m-text-media__text">
             <article>
                 <span class="m-title  m-title--white  a-fade-letter">{{arg.title}}</span>
-                <p class="a-fade-word">
-                    {{arg.text}}
-                </p>
+                {% if arg.text is defined %}
+                    <p class="a-fade-word">
+                        {{arg.text}}
+                    </p>
+                {% endif %}
             </article>
         </div>
     </div>
