@@ -15,15 +15,13 @@
                 <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">le vigne</h2>
             </div>
 
-            <img src='/img/le-vigne/hero.jpg' alt="" class="m-img-full__img" data-preload>
+            <img src='/img/le-vigne/hero.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
 
-            <a href="#" class="m-intro-site__explore">
-                <svg class="svg-icon" viewBox="0 0 20 20">
-                    <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
-                </svg>
-            </a>
+            <span class="m-intro-site__explore"><span></span></span>
 
         </div>
+
+
 
         {{ mVideoRatio.build({
             'title': 'Vigna Allegra',
@@ -34,10 +32,9 @@
         {{ mFullText.build({
             'theme': 'light',
             'title': 'Vigna Allegra',
-            'text': 'Sottotitolo per la Vigna Allegra',
-            'link': 'www.google.it',
-            'label': 'label allegra'
+            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
         }) }}
+
 
 
         {{ mVideoRatio.build({
@@ -48,9 +45,9 @@
         {{ mFullText.build({
             'theme': 'dark',
             'title': 'Vigna Barucci',
-            'text': 'Sottotitolo per la Vigna Barucci',
-            'link': 'www.google.it',
-            'label': 'label allegra'
+            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'link': 'http://www.google.it',
+            'label': 'discover'
         }) }}
 
 
@@ -61,11 +58,9 @@
         }) }}
 
         {{ mFullText.build({
-            'theme': 'light',
+            'theme': 'dark',
             'title': 'Vigna Sara',
-            'text': 'Sottotitolo per la Vigna Sara',
-            'link': 'www.google.it',
-            'label': 'label allegra'
+            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         }) }}
 
     </div>

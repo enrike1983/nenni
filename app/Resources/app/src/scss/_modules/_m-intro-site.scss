@@ -1,3 +1,15 @@
+@keyframes pulse {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
 .m-intro-site {
     position: absolute;
     height: 1px;
@@ -23,23 +35,18 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
-        padding: 10px;
-        border-radius: 100%;
+        width: 1px;
+        height: rem(100);
         background: rgba(255,255,255,0);
-        transition: background .5s;
-        .no-touch &{
-            &:hover {
-                background: rgba(255,255,255,0.1);
-            }
-        }
-        svg {
-            transform: rotate(90deg);
-            display: block;
-            height: rem(30);
-            width: rem(30);
-        }
-        path {
-            fill: map-get($colors, white);
+        overflow: hidden;
+        > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: #fff;
+            animation: pulse 2s infinite $ease;
         }
     }
     .m-logo {

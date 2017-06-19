@@ -72,6 +72,10 @@ window.onload = function() {
                     y: "-200%",
                     ease: Expo.easeInOut
                 })
+                TweenLite.to('[data-intro-scale]', 1, {
+                    scale: 1,
+                    ease: Expo.easeInOut
+                })
             });
         }, 1)
     });

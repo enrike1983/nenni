@@ -10,11 +10,13 @@
                     <p class="a-fade-word  h-color-white">
                         {{ arg.text }}
                     </p>
-                    <a href="{{ arg.link }}" class="m-cta  m-cta--white">
-                        <span>
-                            {{ arg.label }}
-                        </span>
-                    </a>
+                    {% if arg.link is defined %}
+                        <a href="{{ arg.link }}" class="m-cta  m-cta--white">
+                            <span>
+                                {{ arg.label }}
+                            </span>
+                        </a>
+                    {% endif %}
                 {% else %}
                     <span class="m-title  a-fade-letter">
                         {{ arg.title }}
@@ -22,11 +24,13 @@
                     <p class="a-fade-word">
                         {{ arg.text }}
                     </p>
-                    <a href="{{ arg.link }}" class="m-cta">
-                        <span>
-                            {{ arg.label }}
-                        </span>
-                    </a>
+                    {% if arg.link is defined %}
+                        <a href="{{ arg.link }}" class="m-cta">
+                            <span>
+                                {{ arg.label }}
+                            </span>
+                        </a>
+                    {% endif %}
                 {% endif %}
                 <div class="m-full-text__img">
                     <img src="/img/wings.png" alt="" class="a-scale-opacity">
