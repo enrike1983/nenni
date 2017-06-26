@@ -1,5 +1,95 @@
 {% extends 'base.html.twig' %}
 
+{% import "_macro/_m-video-ratio.html" as mVideoRatio %}
+{% import "_macro/_m-full-text.html" as mFullText %}
+{% import "_macro/_m-text-media.html" as mTextMedia %}
+
 {% block content %}
-    qui la lista!
+    <div class="barba-container" data-namespace="homepage">
+
+        <div class="m-img-full">
+            <div class="m-intro-site">
+                <div class="m-logo  m-logo--white  m-logo--center">
+                    {% include "_partials/logo.html" %}
+                </div>
+                <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">
+                    INTRO BLOCK
+                </h2>
+            </div>
+            <img src='/img/le-vigne/hero.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
+            <span class="m-intro-site__explore"><span></span></span>
+        </div>
+
+
+        {# VIDEO BLOCK #}
+        {{ mVideoRatio.build({
+            'title': 'VIDEO BLOCK',
+            'text': 'Sottotitolo video block',
+            'video': '/img/le-vigne/allegra.mp4'
+        }) }}
+
+        {# FULL TEXT LIGHT BLOCK #}
+        {{ mFullText.build({
+            'theme': 'light',
+            'title': 'FULL TEXT LIGHT BLOCK',
+            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'link': 'http://www.google.it',
+            'label': 'cta'
+        }) }}
+
+        {# FULL TEXT DARK BLOCK #}
+        {{ mFullText.build({
+            'theme': 'dark',
+            'title': 'FULL TEXT DARK BLOCK',
+            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'link': 'http://www.google.it',
+            'label': 'cta'
+        }) }}
+
+
+
+        {# TEXT MEDIA BLOCK X 4 #}
+        {{ mTextMedia.build({
+            'title': 'TEXT IMG BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': 'http://www.google.it',
+            'label': 'cta',
+            'type': 'img',
+            'align': 'left'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'IMG TEXT BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': 'http://www.google.it',
+            'label': 'cta',
+            'type': 'img',
+            'align': 'right'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'TEXT VIDEO BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': '/img/hp-vertical.mp4',
+            'label': 'cta',
+            'type': 'video',
+            'align': 'left'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'TEXT VIDEO BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': '/img/hp-vertical.mp4',
+            'label': 'cta',
+            'type': 'video',
+            'align': 'right'
+        }) }}
+
+
+
+    </div>
 {% endblock %}
