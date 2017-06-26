@@ -52,12 +52,6 @@ class BlockTranslation
      */
     private $link_label;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="position", type="integer")
-     */
-    private $position = 0;
 
     public function getId()
     {
@@ -182,29 +176,5 @@ class BlockTranslation
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * Set position
-     *
-     * @param integer $position
-     *
-     * @return Block
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return int
-     */
-    public function getPosition()
-    {
-        return $this->position;
     }
 }

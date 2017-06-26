@@ -4,8 +4,12 @@ parameters:
     #parameter_name: value
 
 services:
-    app.home_blocks_manager:
+    app.blocks_manager:
         class: AppBundle\Manager\BlocksManager
+        arguments: ['@doctrine.orm.entity_manager']
+
+    app.news_manager:
+        class: AppBundle\Manager\NewsManager
         arguments: ['@doctrine.orm.entity_manager']
 
     admin.home_blocks:

@@ -10,4 +10,25 @@ namespace AppBundle\Repository;
  */
 class NewsRepository extends \Doctrine\ORM\EntityRepository
 {
+    protected function getBaseQuery($locale)
+    {
+        return $this->createQueryBuilder('n')
+            ->select('n')
+            ->join('n.translations', 't')
+            ->where('t.locale = :locale')
+            ->setParameter('locale', $locale);
+            //->orderBy('n.position', 'ASC');
+    }
+
+    /**
+     * @param $locale
+     *
+     * @return array
+     */
+    public function findNewsByLocale($locale)
+    {
+        $qb = $this->getBaseQuery($locale);
+
+        return $qb->getQuery()->getResult();
+    }
 }

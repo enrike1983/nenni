@@ -79,6 +79,13 @@ class Block
      */
     private $updatedAt;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer")
+     */
+    private $position = 0;
+
     public function __construct()
     {
         $this->image = new EmbeddedFile();
@@ -240,6 +247,30 @@ class Block
     public function getVideo()
     {
         return $this->video;
+    }
+
+    /**
+     * Set position
+     *
+     * @param integer $position
+     *
+     * @return Block
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 }
 

@@ -7,6 +7,12 @@ app:
     requirements:
         _locale: '%active_locales%'
 
+common:
+    resource: '@AppBundle/Controller/CommonController.php'
+    type:     annotation
+    options:
+        expose: true
+
 admin_area:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin

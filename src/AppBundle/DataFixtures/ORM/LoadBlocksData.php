@@ -313,7 +313,6 @@ class LoadBlocksData extends AbstractFixture
             $translation->setTitle($block['title'][$locale]);
             $translation->setSubtitle($block['subtitle'][$locale]);
             $translation->setContent($block['content'][$locale]);
-            $translation->setPosition($key);
             $translation->setLink($block['link'][$locale]);
             $translation->setLinkLabel($block['link_label'][$locale]);
             $translation->setLocale($locale);
@@ -329,6 +328,7 @@ class LoadBlocksData extends AbstractFixture
         foreach ($home_blocks as $i => $block) {
             $home_block = new Block();
             $home_block->setTemplate($block['template']);
+            $home_block->setPosition($i);
             $home_block->setBlockGroup($block['block_group']);
 
             $this->addReference($i, $home_block);

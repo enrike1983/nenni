@@ -10,26 +10,24 @@ namespace AppBundle\Repository;
  */
 class BlockRepository extends \Doctrine\ORM\EntityRepository
 {
-  protected function getBaseQuery($locale)
+  protected function getBaseQuery()
   {
       return $this->createQueryBuilder('b')
           ->select('b')
-          ->join('b.translations', 't')
-          ->where('t.locale = :locale')
-          ->setParameter('locale', $locale)
-          ->orderBy('t.position', 'ASC');
+          //->join('b.translations', 't')
+          //->where('t.locale = :locale')
+          //->setParameter('locale', $locale)
+          ->orderBy('b.position', 'ASC');
   }
 
   /**
    * @param $block_group
    *
-   * @param $locale
-   *
    * @return array
    */
-  public function findBlocks($block_group = null, $locale = 'it')
+  public function findBlocks($block_group = null)
   {
-      $qb = $this->getBaseQuery($locale);
+      $qb = $this->getBaseQuery();
 
       if($block_group) {
         $qb->andWhere('b.block_group = :block_group')
