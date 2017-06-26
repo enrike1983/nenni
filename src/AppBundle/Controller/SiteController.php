@@ -34,8 +34,8 @@ class SiteController extends Controller
   public function newsAction(Request $request)
   {
       $news = $this->container->get('app.news_manager')->getNewsByLocale($request->getLocale());
-\Doctrine\Common\Util\Debug::dump($news);
-die();
+//\Doctrine\Common\Util\Debug::dump($news);
+//die();
       if(!count($news)) {
         $this->createNotFoundException();
       }
