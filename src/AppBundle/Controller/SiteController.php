@@ -34,8 +34,7 @@ class SiteController extends Controller
   public function newsAction(Request $request)
   {
       $news = $this->container->get('app.news_manager')->getNewsByLocale($request->getLocale());
-//\Doctrine\Common\Util\Debug::dump($news);
-//die();
+
       if(!count($news)) {
         $this->createNotFoundException();
       }
@@ -96,6 +95,18 @@ class SiteController extends Controller
   {
     return $this->render(
         'default/la-tenuta.html.twig'
+    );
+  }
+
+  /**
+   * DEBUG ROUTE
+   *
+   * @Route("/list-modules")
+   */
+  public function listModulesAction()
+  {
+    return $this->render(
+        'default/list-modules.html.twig'
     );
   }
 }
