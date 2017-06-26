@@ -1,20 +1,11 @@
-<div class="m-text-media">
-    <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="5" data-tilt-speed="70">
-        <article>
-            <span class="m-title  a-fade-letter">{{ block.getTitle() }}</span>
-            <p class="a-fade-word">
-                {{ block.getSubtitle() }}
-            </p>
-            <a href="{{ block.getLink() }}" class="m-cta">
-                <span>
-                    {{ block.getLinkLabel() }}
-                </span>
-            </a>
-        </article>
-    </div>
-    <div class="m-text-media__media  m-text-media__media--video">
-        <video class="m-video-tag" width="724" height="900" preload loop muted playsinline>
-            <source src="/img/hp-vertical.mp4" />
-        </video>
-    </div>
-</div>
+{% import "_macro/_m-text-media.html" as mTextMedia %}
+
+{{ mTextMedia.build({
+    'title': block.getTitle(),
+    'text': block.getSubtitle(),
+    'media': '/img/test-1.jpg',
+    'link': block.getLink(),
+    'label': block.getLinkLabel(),
+    'type': 'video',
+    'align': 'left'
+}) }}
