@@ -1,0 +1,69 @@
+{% macro build(arg) %}
+
+    <div class="m-text-media">
+
+
+        {% if arg.align == 'left' %}
+            <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="15" data-tilt-speed="70">
+                <article>
+                    <span class="m-title  a-fade-letter">
+                        {{ arg.title }}
+                    </span>
+                    <p class="a-fade-word">
+                        {{ arg.text }}
+                    </p>
+                    <a href="{{ arg.link }}" class="m-cta">
+                        <span>
+                            {{ arg.label }}
+                        </span>
+                    </a>
+                </article>
+            </div>
+
+            {% if arg.type == 'img' %}
+                <div class="m-text-media__media  m-text-media__media--img  a-parallax">
+                    <div class="m-text-media__media--img-wrap  a-parallax__child">
+                        <img src="{{ arg.media }}" alt="" class="a-scale-opacity" data-preload>
+                    </div>
+                </div>
+            {% else %}
+                <div class="m-text-media__media  m-text-media__media--video">
+                    <video class="m-video-tag" width="724" height="900" preload loop muted playsinline>
+                        <source src="/img/hp-vertical.mp4" />
+                    </video>
+                </div>
+            {% endif%}
+        {% else %}
+            {% if arg.type == 'img' %}
+                <div class="m-text-media__media  m-text-media__media--img  a-parallax">
+                    <div class="m-text-media__media--img-wrap  a-parallax__child">
+                        <img src="{{ arg.media }}" alt="" class="a-scale-opacity" data-preload>
+                    </div>
+                </div>
+            {% else %}
+                <div class="m-text-media__media  m-text-media__media--video">
+                    <video class="m-video-tag" width="724" height="900" preload loop muted playsinline>
+                        <source src="/img/hp-vertical.mp4" />
+                    </video>
+                </div>
+            {% endif%}
+            <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="15" data-tilt-speed="70">
+                <article>
+                    <span class="m-title  a-fade-letter">
+                        {{ arg.title }}
+                    </span>
+                    <p class="a-fade-word">
+                        {{ arg.text }}
+                    </p>
+                    <a href="{{ arg.link }}" class="m-cta">
+                        <span>
+                            {{ arg.label }}
+                        </span>
+                    </a>
+                </article>
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endmacro build %}

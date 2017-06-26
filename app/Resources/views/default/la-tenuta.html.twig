@@ -1,45 +1,95 @@
 {% extends 'base.html.twig' %}
 
 {% import "_macro/_m-video-ratio.html" as mVideoRatio %}
+{% import "_macro/_m-full-text.html" as mFullText %}
+{% import "_macro/_m-text-media.html" as mTextMedia %}
 
 {% block content %}
     <div class="barba-container" data-namespace="homepage">
 
         <div class="m-img-full">
-
             <div class="m-intro-site">
                 <div class="m-logo  m-logo--white  m-logo--center">
                     {% include "_partials/logo.html" %}
                 </div>
-                <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">le vigne</h2>
+                <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">
+                    INTRO BLOCK
+                </h2>
             </div>
-
-            <img src='/img/le-vigne/hero.jpg' alt="" class="m-img-full__img">
-
-            <a href="#" class="m-intro-site__explore">
-                <svg class="svg-icon" viewBox="0 0 20 20">
-                    <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
-                </svg>
-            </a>
-
+            <img src='/img/le-vigne/hero.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
+            <span class="m-intro-site__explore"><span></span></span>
         </div>
 
+
+        {# VIDEO BLOCK #}
         {{ mVideoRatio.build({
-            'title': 'Vigna Allegra',
-            'text': 'Sottotitolo per la Vigna Allegra',
+            'title': 'VIDEO BLOCK',
+            'text': 'Sottotitolo video block',
             'video': '/img/le-vigne/allegra.mp4'
         }) }}
 
-        {{ mVideoRatio.build({
-            'title': 'Vigna Barucci',
-            'video': '/img/le-vigne/barucci.mp4'
+        {# FULL TEXT LIGHT BLOCK #}
+        {{ mFullText.build({
+            'theme': 'light',
+            'title': 'FULL TEXT LIGHT BLOCK',
+            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'link': 'http://www.google.it',
+            'label': 'cta'
         }) }}
 
-        {{ mVideoRatio.build({
-            'title': 'Vigna Sara',
-            'text': 'Sottotitolo per la Vigna Sara',
-            'video': '/img/le-vigne/sara.mp4'
+        {# FULL TEXT DARK BLOCK #}
+        {{ mFullText.build({
+            'theme': 'dark',
+            'title': 'FULL TEXT DARK BLOCK',
+            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'link': 'http://www.google.it',
+            'label': 'cta'
         }) }}
+
+
+
+        {# TEXT MEDIA BLOCK X 4 #}
+        {{ mTextMedia.build({
+            'title': 'TEXT IMG BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': 'http://www.google.it',
+            'label': 'cta',
+            'type': 'img',
+            'align': 'left'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'IMG TEXT BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': 'http://www.google.it',
+            'label': 'cta',
+            'type': 'img',
+            'align': 'right'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'TEXT VIDEO BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': '/img/hp-vertical.mp4',
+            'label': 'cta',
+            'type': 'video',
+            'align': 'left'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'TEXT VIDEO BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': '/img/hp-vertical.mp4',
+            'label': 'cta',
+            'type': 'video',
+            'align': 'right'
+        }) }}
+
+
 
     </div>
 {% endblock %}
