@@ -3,6 +3,7 @@
 {% import "_macro/_m-video-ratio.html" as mVideoRatio %}
 {% import "_macro/_m-full-text.html" as mFullText %}
 {% import "_macro/_m-text-media.html" as mTextMedia %}
+{% import "_macro/_m-embed-video.html" as mEmbedVideo %}
 
 {% block content %}
     <div class="barba-container" data-namespace="homepage">
@@ -19,7 +20,6 @@
             <img src='/img/le-vigne/hero.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
             <span class="m-intro-site__explore"><span></span></span>
         </div>
-
 
         {# VIDEO BLOCK #}
         {{ mVideoRatio.build({
@@ -46,8 +46,6 @@
             'label': 'cta'
         }) }}
 
-
-
         {# TEXT MEDIA BLOCK X 4 #}
         {{ mTextMedia.build({
             'title': 'TEXT IMG BLOCK',
@@ -58,7 +56,6 @@
             'type': 'img',
             'align': 'left'
         }) }}
-
         {{ mTextMedia.build({
             'title': 'IMG TEXT BLOCK',
             'text': 'Testo block',
@@ -68,7 +65,6 @@
             'type': 'img',
             'align': 'right'
         }) }}
-
         {{ mTextMedia.build({
             'title': 'TEXT VIDEO BLOCK',
             'text': 'Testo block',
@@ -78,7 +74,6 @@
             'type': 'video',
             'align': 'left'
         }) }}
-
         {{ mTextMedia.build({
             'title': 'TEXT VIDEO BLOCK',
             'text': 'Testo block',
@@ -87,6 +82,18 @@
             'label': 'cta',
             'type': 'video',
             'align': 'right'
+        }) }}
+
+
+        {# EMBED BLOCK X 2 #}
+        {{ mEmbedVideo.build({
+            'link': 'https://www.youtube.com/embed/CosI-82z41Y',
+            'full': false
+        }) }}
+
+        {{ mEmbedVideo.build({
+            'link': 'https://www.youtube.com/embed/CosI-82z41Y',
+            'full': true
         }) }}
 
 

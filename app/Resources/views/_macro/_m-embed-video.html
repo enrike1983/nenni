@@ -1,0 +1,9 @@
+{% macro build(arg) %}
+
+    <div class="m-embed-video  a-fade-in  {% if arg.full == true %}is-full{% endif %}">
+        <div class="m-embed-video__wrapper">
+            <iframe width="1280" height="720" src="{{ arg.link }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+{% endmacro build %}
