@@ -1,6 +1,9 @@
 .m-text-media {
     background: map-get($colors, white);
     overflow: hidden;
+    @media screen and (min-width: $phablet) {
+        height: 50vh;
+    }
     @media screen and (min-width: $tablet) {
         display: flex;
     }
@@ -19,9 +22,9 @@
         padding: 12% 8%;
         @media screen and (min-width: $phablet) {
             padding: 8% 5%;
+            text-align: left;
         }
         @media screen and (min-width: $tabletUp) {
-            text-align: left;
             padding: rem(80);
         }
         article {
@@ -40,6 +43,10 @@
         background: #f3f3f3;
         overflow: hidden;
         position: relative;
+        padding-bottom: 100%;
+        @media screen and (min-width: $tabletUp) {
+            padding-bottom: 0;
+        }
         img {
             height: 100%;
             width: 100%;

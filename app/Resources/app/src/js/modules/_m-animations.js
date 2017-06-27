@@ -1,5 +1,6 @@
 import TweenLite from 'gsap'
 // import inView from 'inview'
+import isTouch from '../helpers/_h-isTouch.js'
 import inView from 'in-view'
 import splitText from '../modules/_m-splittext'
 import VanillaTilt from 'vanilla-tilt'
@@ -209,8 +210,11 @@ const Animations = function() {
     }
 
     function _init() {
-        _parallax();
-        _tilt();
+        console.log(isTouch)
+        if (!isTouch) {
+            _parallax();
+            _tilt();
+        }
         _fadeIn();
         _fadeLetters();
         _fadeWord();
