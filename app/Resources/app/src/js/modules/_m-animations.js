@@ -149,7 +149,8 @@ const Animations = function() {
         .on('enter', el => {
             TweenLite.to(el, 1, {
                 opacity: 1,
-                scale: 1
+                scale: 1,
+                ease: Expo.easeInOut
             });
         });
     }

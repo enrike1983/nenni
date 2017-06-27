@@ -1,7 +1,9 @@
 .m-embed-video {
     position: relative;
     padding: 10%;
+    overflow: hidden;
     &__wrapper {
+        overflow: hidden;
         position: relative;
         width: 100%;
         height: 0;
