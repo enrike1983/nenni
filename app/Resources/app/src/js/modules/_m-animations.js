@@ -169,7 +169,6 @@ const Animations = function() {
     function _showCta() {
         inView('.m-cta')
         .on('enter', el => {
-            console.log('d8iboin')
             el.classList.add('is-animated');
         });
     }
