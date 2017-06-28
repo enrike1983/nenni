@@ -16,19 +16,39 @@ class NewsRepository extends \Doctrine\ORM\EntityRepository
             ->select('n')
             ->join('n.translations', 't')
             ->where('t.locale = :locale')
-            ->setParameter('locale', $locale);
-            //->orderBy('n.position', 'ASC');
+            ->setParameter('locale', $locale)
+            ->addOrderBy('n.date', 'ASC');
+    }
+
+  /**
+   * @param $locale
+   *
+   * @param null $limit
+   *
+   * @return array
+   */
+    public function findNewsByLocale($locale, $limit = null)
+    {
+        $qb = $this->getBaseQuery($locale);
+
+        if($limit) {
+          $qb->setMaxResults($limit);
+        }
+
+        return $qb->getQuery()->getResult();
     }
 
     /**
+     * @param $url
      * @param $locale
      *
      * @return array
      */
-    public function findNewsByLocale($locale)
+    public function findSingleNewsByUrlAndLocale($url, $locale)
     {
         $qb = $this->getBaseQuery($locale);
-
-        return $qb->getQuery()->getResult();
+        $qb->andWhere('t.url = :url');
+        $qb->setParameter('url', $url);
+        return $qb->getQuery()->getOneOrNullResult();
     }
 }

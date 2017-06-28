@@ -1,12 +1,21 @@
 nenni_2
 =======
 
+### menu
+- [x] costruire menu dinamico multilingua
+- [x] linkare menu
+
 ### struttura pagine + SEO
 - [x] struttura pagine
 - [ ] seo
 
 ### backend
 - [x] file upload
+- [ ] creazione dei blocchi deve settare automaticamente il "block_group"
+- [ ] selezione pagine interne ( per lingua ) in creazione link. 
+    - [ ] Se link esterno stringa.
+    - [ ] Possibilità di selezionare target blank
+    - [ ] campo label
 
 ### utenti
 - [ ] creare utenti e integrarli con sonata
@@ -16,45 +25,53 @@ nenni_2
 - [ ] logica per creare blocco di tipo "vino" ( avrà una relazione col l'oggetto vino )
 
 ### home
-- [ ] partial statico news:
-  - [ ] non è spostabile
-  - [ ] mostra le ultime max 4 news
-   
-### pagina news
-- [ ] lista automatica di news
-- [ ] le mostra tutte ordinate in senso dalla piu recente
- 
-### singola news
-- [x] data
-- [x] titolo
-- [x] testo
-- [ ] url
-- [ ] immagine
+- [x] partial statico news:
+    - [x] non è spostabile
+    - [x] mostra le ultime max 4 news
 
-### selezione pagine interne ( per lingua ) in creazione link. 
-- [ ] Se link esterno stringa.
-- [ ] Possibilità di selezionare target blank
-- [ ] campo label
  
 ### multilingua
 - [x] attivazione 
 - [ ] sticky locale
  
-### pagina vini
-- [ ] intro con testo dinamico
-- [ ] n blocchi basici 
-
 ### oggetto vino
 - [ ] creare oggetto vino con 
-  - [ ] immagine bottiglia
-  - [ ] logo vino
-  - [ ] descrizione logo
-  - [ ] descrizione
-  - [ ] pdf scaricabile
-
-### sezione "vigne" è costituita da fascioni come la home
+    - [ ] immagine bottiglia
+    - [ ] logo vino
+    - [ ] descrizione logo
+    - [ ] descrizione
+    - [ ] pdf scaricabile
+  
+### "la tenuta"
+- [ ] intro con testo dinamico
 - [ ] controller
 - [ ] creazione blocchi
+
+### "le vigne"
+- [ ] intro con testo dinamico
+- [ ] controller
+- [ ] creazione blocchi 
+
+### "il metodo nenni"
+- [ ] intro con testo dinamico
+- [ ] controller
+- [ ] creazione blocchi 
+
+### i vini
+- [ ] intro con testo dinamico
+- [ ] controller
+- [ ] creazione blocchi 
+
+### pagina news
+- [x] lista automatica di news
+- [x] le mostra tutte ordinate in senso dalla piu recente
+ 
+### singola news
+- [x] data
+- [x] titolo
+- [x] testo
+- [x] url
+- [ ] immagine
 
 ### contatti
 - [ ] TODO

@@ -20,76 +20,8 @@
             <span class="m-intro-site__explore"><span></span></span>
         </div>
 
-
-        {# VIDEO BLOCK #}
-        {{ mVideoRatio.build({
-            'title': 'VIDEO BLOCK',
-            'text': 'Sottotitolo video block',
-            'video': '/img/le-vigne/allegra.mp4'
-        }) }}
-
-        {# FULL TEXT LIGHT BLOCK #}
-        {{ mFullText.build({
-            'theme': 'light',
-            'title': 'FULL TEXT LIGHT BLOCK',
-            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            'link': 'http://www.google.it',
-            'label': 'cta'
-        }) }}
-
-        {# FULL TEXT DARK BLOCK #}
-        {{ mFullText.build({
-            'theme': 'dark',
-            'title': 'FULL TEXT DARK BLOCK',
-            'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            'link': 'http://www.google.it',
-            'label': 'cta'
-        }) }}
-
-
-
-        {# TEXT MEDIA BLOCK X 4 #}
-        {{ mTextMedia.build({
-            'title': 'TEXT IMG BLOCK',
-            'text': 'Testo block',
-            'media': '/img/test-1.jpg',
-            'link': 'http://www.google.it',
-            'label': 'cta',
-            'type': 'img',
-            'align': 'left'
-        }) }}
-
-        {{ mTextMedia.build({
-            'title': 'IMG TEXT BLOCK',
-            'text': 'Testo block',
-            'media': '/img/test-1.jpg',
-            'link': 'http://www.google.it',
-            'label': 'cta',
-            'type': 'img',
-            'align': 'right'
-        }) }}
-
-        {{ mTextMedia.build({
-            'title': 'TEXT VIDEO BLOCK',
-            'text': 'Testo block',
-            'media': '/img/test-1.jpg',
-            'link': '/img/hp-vertical.mp4',
-            'label': 'cta',
-            'type': 'video',
-            'align': 'left'
-        }) }}
-
-        {{ mTextMedia.build({
-            'title': 'TEXT VIDEO BLOCK',
-            'text': 'Testo block',
-            'media': '/img/test-1.jpg',
-            'link': '/img/hp-vertical.mp4',
-            'label': 'cta',
-            'type': 'video',
-            'align': 'right'
-        }) }}
-
-
-
+        {% for block in blocks %}
+            {{ include(block.getTemplate(), { 'block': block }) }}
+        {% endfor %}
     </div>
 {% endblock %}

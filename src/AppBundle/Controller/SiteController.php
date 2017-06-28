@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Manager\BlocksManager;
+use AppBundle\Manager\NewsManager;
 use Doctrine\DBAL\Exception\DatabaseObjectNotFoundException;
 use Psr\Log\InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -11,102 +12,132 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use HttpInvalidParamException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SiteController extends Controller
 {
-  /**
-   * @Route("/")
-   */
-  public function homepageAction()
-  {
-    $blocks = $this->container->get('app.blocks_manager')->getBlocks(BlocksManager::BLOCK_GROUP_HOME);
+    /**
+     * @Route("/", name="home")
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function homepageAction(Request $request)
+    {
+        $blocks = $this->container->get('app.blocks_manager')->getBlocks(
+            BlocksManager::BLOCK_GROUP_HOME
+        );
 
-    return $this->render(
-        'default/home.html.twig',
-        array('blocks' => $blocks)
-    );
-  }
+        $news = $this->container->get('app.news_manager')->getNewsByLocale(
+            $request->getLocale(),
+            NewsManager::HOME_NEWS_LIMIT
+        );
 
-  /**
-   * @Route("/news")
-   */
-  public function newsAction(Request $request)
-  {
-      $news = $this->container->get('app.news_manager')->getNewsByLocale($request->getLocale());
+        return $this->render(
+            'default/home.html.twig', [
+                'blocks' => $blocks,
+                'news' => $news
+            ]
+        );
+    }
 
-      if(!count($news)) {
-        $this->createNotFoundException();
-      }
+    /**
+     * @Route("/la-tenuta", name="la-tenuta")
+     */
+    public function laTenutaAction()
+    {
+        $blocks = $this->container->get('app.blocks_manager')->getBlocks(
+            BlocksManager::BLOCK_GROUP_HOME
+        );
 
-      return $this->render(
-          'default/news.html.twig',
-          [
-              'news' => $news
-          ]
-      );
-  }
+        return $this->render(
+            'default/la-tenuta.html.twig', [
+                'blocks' => $blocks
+            ]
+        );
+    }
 
-  /**
-   * @Route("/news/{news_slug}", requirements={
-   *     "news_slug": "^[a-z0-9-\/]*$"
-   * })
-   *
-   * @param $news_slug
-   *
-   * @return \Symfony\Component\HttpFoundation\Response
-   */
-  public function singleNewsAction($news_slug)
-  {
-    //cerca la news dato lo slug. Se esiste ok altrimenti manda a 404
+    /**
+     * @Route("/news", name="news_list")
+     */
+    public function newsAction(Request $request)
+    {
+        $news = $this->container->get('app.news_manager')->getNewsByLocale($request->getLocale());
 
-    return $this->render(
-        'default/single-news.html.twig'
-    );
-  }
+        if(!count($news)) {
+            $this->createNotFoundException();
+        }
 
-  /**
-   * @Route("/vini")
-   */
-  public function viniAction()
-  {
-    $blocks = $this->container->get('app.blocks_manager')->getBlocks(BlocksManager::BLOCK_GROUP_VINI);
+        return $this->render(
+            'default/news.html.twig', [
+                'news' => $news
+            ]
+        );
+    }
 
-    return $this->render(
-        'default/vini.html.twig',
-        array('blocks' => $blocks)
-    );
-  }
+    /**
+     * @Route("/news/{news_url}", requirements={
+     *     "news_url": "^[a-z0-9-\/]*$"
+     * }, name="single_news")
+     *
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @param $news_url
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function singleNewsAction(Request $request, $news_url)
+    {
+        //cerca la news dato lo slug. Se esiste ok altrimenti manda a 404
+        $news = $this->container->get('app.news_manager')->getSingleNewsByUrlAndLocale(
+            $news_url,
+            $request->getLocale()
+        );
 
-  /**
-   * @Route("/le-vigne")
-   */
-  public function leVigneAction()
-  {
-    return $this->render(
-        'default/le-vigne.html.twig'
-    );
-  }
+        if(!$news) {
+            $this->createNotFoundException();
+        }
 
-  /**
-   * @Route("/la-tenuta")
-   */
-  public function laTenutaAction()
-  {
-    return $this->render(
-        'default/la-tenuta.html.twig'
-    );
-  }
+        return $this->render(
+            'default/single-news.html.twig', [
+                'news' => $news
+            ]
+        );
+    }
 
-  /**
-   * DEBUG ROUTE
-   *
-   * @Route("/list-modules")
-   */
-  public function listModulesAction()
-  {
-    return $this->render(
-        'default/list-modules.html.twig'
-    );
-  }
+    /**
+     * @Route("/vini", name="vini")
+     */
+    public function viniAction()
+    {
+        $blocks = $this->container->get('app.blocks_manager')->getBlocks(
+            BlocksManager::BLOCK_GROUP_VINI
+        );
+
+        return $this->render(
+            'default/vini.html.twig', [
+                'blocks' => $blocks
+            ]
+        );
+    }
+
+    /**
+     * @Route("/le-vigne", name="le-vigne")
+     */
+    public function leVigneAction()
+    {
+        return $this->render(
+            'default/le-vigne.html.twig'
+        );
+    }
+
+    /**
+     * DEBUG ROUTE
+     *
+     * @Route("/list-modules")
+     */
+    public function listModulesAction()
+    {
+        return $this->render(
+            'default/list-modules.html.twig'
+        );
+    }
 }

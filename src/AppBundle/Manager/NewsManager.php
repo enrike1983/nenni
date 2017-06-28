@@ -6,30 +6,46 @@ use Psr\Log\InvalidArgumentException;
 
 class NewsManager {
 
-  /**
-   * @var \Doctrine\ORM\EntityManager
-   */
-  private $entityManager;
+    const HOME_NEWS_LIMIT = 4;
 
-  /**
-   * BlocksManager constructor.
-   *
-   * @param \Doctrine\ORM\EntityManager $entityManager
-   */
-  public function __construct(EntityManager $entityManager)
-  {
-    $this->entityManager = $entityManager;
-  }
+    /**
+    * @var \Doctrine\ORM\EntityManager
+    */
+    private $entityManager;
 
-  /**
-   * @param $locale
-   *
-   * @return mixed
-   *
-   */
-  public function getNewsByLocale($locale)
-  {
-    return $this->entityManager->getRepository('AppBundle:News')
-      ->findNewsByLocale($locale);
-  }
+    /**
+    * BlocksManager constructor.
+    *
+    * @param \Doctrine\ORM\EntityManager $entityManager
+    */
+    public function __construct(EntityManager $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
+    /**
+    * @param $locale
+    *
+    * @param int $limit
+    *
+    * @return mixed
+    */
+    public function getNewsByLocale($locale, $limit = null)
+    {
+        return $this->entityManager->getRepository('AppBundle:News')
+          ->findNewsByLocale($locale, $limit);
+    }
+
+    /**
+    * @param $slug
+    *
+    * @param $locale
+    *
+    * @return mixed
+    */
+    public function getSingleNewsByUrlAndLocale($slug, $locale)
+    {
+        return $this->entityManager->getRepository('AppBundle:News')
+          ->findSingleNewsByUrlAndLocale($slug, $locale);
+    }
 }

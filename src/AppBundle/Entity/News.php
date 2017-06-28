@@ -31,6 +31,16 @@ class News
      */
     private $date;
 
+    /**
+     * @param $method
+     * @param $arguments
+     *
+     * @return mixed
+     */
+    public function __call($method, $arguments)
+    {
+        return \Symfony\Component\PropertyAccess\PropertyAccess::createPropertyAccessor()->getValue($this->translate(), $method);
+    }
 
     /**
      * Get id

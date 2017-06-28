@@ -31,3 +31,6 @@ git branch -D releasing
 mysqldump -uroot -proot nenni > export.sql
 mysql -hus-cdbr-iron-east-03.cleardb.net -ub8d5117ca0eb18 -p447d02e5 heroku_a7e469010817ed9 < export.sql
 
+heroku run bash && php bin/console ca:cl --env=prod && exit
+
+
