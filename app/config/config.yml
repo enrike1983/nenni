@@ -72,6 +72,10 @@ swiftmailer:
     spool: { type: memory }
 
 # Sonata
+sonata_admin:
+    title: Nenni Admin
+    title_logo: img/logo.png
+
 sonata_block:
     default_contexts: [cms]
     blocks:
