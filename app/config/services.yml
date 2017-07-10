@@ -32,22 +32,40 @@ services:
         class: AppBundle\Admin\HomeBlocksAdmin
         arguments: [~, AppBundle\Entity\Block, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Home }
+            - { name: sonata.admin, manager_type: orm, label: Home, group: "Pagine" }
 
-    admin.vini_blocks:
-        class: AppBundle\Admin\ViniBlocksAdmin
+    admin.la_tenuta_blocks:
+        class: AppBundle\Admin\LaTenutaBlocksAdmin
         arguments: [~, AppBundle\Entity\Block, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Vini }
+            - { name: sonata.admin, manager_type: orm, label: La Tenuta, group: "Pagine" }
 
     admin.vigne_blocks:
         class: AppBundle\Admin\VigneBlocksAdmin
         arguments: [~, AppBundle\Entity\Block, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Le Vigne }
+            - { name: sonata.admin, manager_type: orm, label: Le Vigne, group: "Pagine" }
+
+    admin.il_metodo_nenni_blocks:
+        class: AppBundle\Admin\IlMetodoNenniBlocksAdmin
+        arguments: [~, AppBundle\Entity\Block, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Il Metodo Nenni, group: "Pagine" }
+
+    admin.vini_blocks:
+        class: AppBundle\Admin\ViniBlocksAdmin
+        arguments: [~, AppBundle\Entity\Block, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Vini, group: "Pagine" }
 
     admin.news:
         class: AppBundle\Admin\NewsAdmin
         arguments: [~, AppBundle\Entity\News, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: News }
+            - { name: sonata.admin, manager_type: orm, label: News, group: "Pagine" }
+
+    admin.seo:
+        class: AppBundle\Admin\SeoBlocksAdmin
+        arguments: [~, AppBundle\Entity\SeoBlocksAdmin, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Seo, group: "Seo" }

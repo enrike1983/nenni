@@ -9,23 +9,23 @@ nenni_2
 - [x] struttura pagine
 - [ ] seo
 
+### tradurre stringhe
+- [ ] tradurre stringhe in giro per il sito
+
 ### backend
 - [x] file upload
 - [x] creazione dei blocchi deve settare automaticamente il "block_group"
-- [NO] selezione pagine interne ( per lingua ) in creazione link. 
-    - [ ] Se link esterno stringa.
+- [NO] selezione pagine interne ( per lingua ) in creazione link. => Nel blocco ITA mette il link ITA, nel blocco EN quello EN 
+    - [NO] Se link esterno stringa. 
     - [x] Possibilità di selezionare target blank
     - [x] campo label
 
 ### utenti
 - [ ] creare utenti e integrarli con sonata
 
-### dinamicizzare l'intro block
-- [ ] al momento è staticone
-
 ### blocchi
 - [ ] aggiungere campo poster del video
-- [ ] logica per creare blocco di tipo "vino" ( avrà una relazione col l'oggetto vino )
+- [NO] logica per creare blocco di tipo "vino" ( avrà una relazione col l'oggetto vino )
 
 ### home
 - [x] partial statico news:
@@ -42,18 +42,18 @@ nenni_2
 - [x] creazione blocchi
 
 ### "le vigne"
-- [ ] intro con testo dinamico
-- [ ] controller
-- [ ] creazione blocchi 
+- [x] intro con testo dinamico
+- [x] controller
+- [x] creazione blocchi 
 
 ### "il metodo nenni"
-- [ ] intro con testo dinamico
-- [ ] controller
-- [ ] creazione blocchi 
+- [x] intro con testo dinamico
+- [x] controller
+- [x] creazione blocchi 
 
 ### i vini
-- [ ] intro con testo dinamico
-- [ ] controller
+- [x] intro con testo dinamico
+- [x] controller
 - [ ] creazione blocchi 
 
 ### pagina news

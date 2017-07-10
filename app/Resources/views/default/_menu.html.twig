@@ -9,7 +9,7 @@
                 <a href="{{ url('le-vigne') }}" class="a-fade-letter" data-delay="1">{{ 'le vigne'|trans }}</a>
             </li>
             <li>
-                <a href="#" class="a-fade-letter" data-delay="2">{{ 'il metodo nenni'|trans }}</a>
+                <a href="{{ url('il-metodo-nenni') }}" class="a-fade-letter" data-delay="2">{{ 'il metodo nenni'|trans }}</a>
             </li>
             <li>
                 <a href="{{ url('vini') }}" class="a-fade-letter" data-delay="3">{{ 'i vini'|trans }}</a>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="m-menu__languages">
-        <a href="#">italian</a>  <a href="#">english</a>
+        <a href="{{ url('home', {'_locale': 'it'}) }}">italian</a>  <a href="{{ url('home', {'_locale': 'en'}) }}">english</a>
     </div>
 
     <div class="m-menu__square a-tilt"  data-tilt-reset="false" data-tilt-max="5" data-tilt-speed="100">

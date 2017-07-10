@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% import "_macro/_m-video-ratio.html" as mVideoRatio %}
+{% import "_macro/_m-full-text.html" as mFullText %}
+{% import "_macro/_m-text-media.html" as mTextMedia %}
+
+{% block content %}
+    <div class="barba-container" data-namespace="homepage">
+
+        {% for block in blocks %}
+            {{ include(block.getTemplate(), { 'block': block }) }}
+        {% endfor %}
+    </div>
+{% endblock %}

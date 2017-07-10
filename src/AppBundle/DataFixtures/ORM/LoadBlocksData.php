@@ -18,6 +18,30 @@ class LoadBlocksData extends AbstractFixture
         return [
           [
             'title' => [
+              'it' => 'Eccellente di natura dal 1272',
+              'en' => 'excellent by nature since 1272',
+            ],
+            'subtitle' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'content' => [
+              'it' => '<h2></h2>',
+              'en' => '<h2></h2>',
+            ],
+            'link' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => 'default/blocks/_intro-home.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_HOME,
+          ],
+          [
+            'title' => [
               'it' => 'Lorem Ipsum Blocco 1',
               'en' => 'EN Lorem Ipsum Blocco 1',
             ],
@@ -160,9 +184,8 @@ class LoadBlocksData extends AbstractFixture
             'template' => 'default/blocks/_full_text--dark.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
           ],
-
             #####################
-            ###### I VINI #######
+            ##### LA TENUTA #####
             #####################
           [
             'title' => [
@@ -175,7 +198,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'content' => [
               'it' => '<h2>Intro</h2>',
-              'en' => 'EN <h2>Intro</h2>',
+              'en' => '<h2>EN Intro</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -186,20 +209,20 @@ class LoadBlocksData extends AbstractFixture
               'en' => 'discover more',
             ],
             'template' => 'default/blocks/_intro.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
           ],
           [
             'title' => [
-              'it' => 'VIno 1',
-              'en' => 'EN VIno 1',
+              'it' => 'Block Group La Tenuta 1',
+              'en' => 'EN Block Group La Tenuta 1',
             ],
             'subtitle' => [
-              'it' => 'VIno 1',
-              'en' => 'EN VIno 1',
+              'it' => 'Block Group La Tenuta 1',
+              'en' => 'EN Block Group La Tenuta 1',
             ],
             'content' => [
-              'it' => '<h2>Lorem Ipsum 1</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 1</h2>',
+              'it' => '<h2>Block Group La Tenuta 4</h2>',
+              'en' => 'EN <h2>Block Group La Tenuta 4</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -209,21 +232,21 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_wine-sheet.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'template' => 'default/blocks/_videofullwidth.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
           ],
           [
             'title' => [
-              'it' => 'VIno 2',
-              'en' => 'EN VIno 2',
+              'it' => 'Block Group La Tenuta 2',
+              'en' => 'EN Block Group La Tenuta 2',
             ],
             'subtitle' => [
-              'it' => 'VIno 2',
-              'en' => 'EN VIno 2',
+              'it' => 'Block Group La Tenuta 2',
+              'en' => 'EN Block Group La Tenuta 2',
             ],
             'content' => [
-              'it' => '<h2>Lorem Ipsum 2</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 2</h2>',
+              'it' => '<h2>Block Group La Tenuta 2</h2>',
+              'en' => 'EN <h2>Block Group La Tenuta 2</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -233,21 +256,21 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_wine-sheet.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'template' => 'default/blocks/_full_text--light.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
           ],
           [
             'title' => [
-              'it' => 'VIno 3',
-              'en' => 'EN VIno 3',
+              'it' => 'Block Group La Tenuta 3',
+              'en' => 'EN Block Group La Tenuta 3',
             ],
             'subtitle' => [
-              'it' => 'VIno 3',
-              'en' => 'EN VIno 3',
+              'it' => 'Block Group La Tenuta 3',
+              'en' => 'EN Block Group La Tenuta 3',
             ],
             'content' => [
-              'it' => '<h3>Lorem Ipsum 3</h3>',
-              'en' => 'EN <h2>Lorem Ipsum 2</h2>',
+              'it' => '<h2>Block Group La Tenuta 3</h2>',
+              'en' => 'EN <h2>Block Group La Tenuta 3</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -257,8 +280,56 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_wine-sheet.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'template' => 'default/blocks/_full_text--dark.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+          ],
+          [
+            'title' => [
+              'it' => 'Lorem Ipsum La Tenuta 4',
+              'en' => 'EN Lorem Ipsum La Tenuta 4',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem Ipsum La Tenuta 4',
+              'en' => 'EN Lorem Ipsum La Tenuta 4',
+            ],
+            'content' => [
+              'it' => '<h2>Lorem Ipsum 4</h2>',
+              'en' => 'EN <h2>Lorem Ipsum 4</h2>',
+            ],
+            'link' => [
+              'it' => 'www.google.com',
+              'en' => 'www.google.com',
+            ],
+            'link_label' => [
+              'it' => 'scopri di piu',
+              'en' => 'discover more',
+            ],
+            'template' => 'default/blocks/_imageleft_textright.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+          ],
+          [
+            'title' => [
+              'it' => 'Lorem Ipsum La Tenuta 5',
+              'en' => 'EN Lorem Ipsum La Tenuta 5',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem Ipsum La Tenuta 5',
+              'en' => 'EN Lorem Ipsum La Tenuta 5',
+            ],
+            'content' => [
+              'it' => '<h2>Lorem Ipsum 5</h2>',
+              'en' => 'EN <h2>Lorem Ipsum 5</h2>',
+            ],
+            'link' => [
+              'it' => 'www.google.com',
+              'en' => 'www.google.com',
+            ],
+            'link_label' => [
+              'it' => 'scopri di piu',
+              'en' => 'discover more',
+            ],
+            'template' => 'default/blocks/_textleft_imageright.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
           ],
 
             #####################
@@ -360,22 +431,45 @@ class LoadBlocksData extends AbstractFixture
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
           ],
-
+          [
+            'title' => [
+              'it' => 'Il Metodo Nenni',
+              'en' => 'EN Il Metodo Nenni',
+            ],
+            'subtitle' => [
+              'it' => 'Il Metodo Nenni',
+              'en' => 'EN Il Metodo Nenni',
+            ],
+            'content' => [
+              'it' => '<h2>Il Metodo Nenni</h2>',
+              'en' => 'EN <h2>Il Metodo Nenni</h2>',
+            ],
+            'link' => [
+              'it' => 'www.google.com',
+              'en' => 'www.google.com',
+            ],
+            'link_label' => [
+              'it' => 'scopri di piu',
+              'en' => 'discover more',
+            ],
+            'template' => 'default/blocks/_full_text--light.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_IL_METODO_NENNI,
+          ],
             #####################
-            ##### LA TENUTA #####
+            ###### I VINI #######
             #####################
           [
             'title' => [
-              'it' => 'Intro',
-              'en' => 'EN Intro',
+              'it' => 'VIno 1',
+              'en' => 'EN VIno 1',
             ],
             'subtitle' => [
-              'it' => 'Intro',
-              'en' => 'EN Intro',
+              'it' => 'VIno 1',
+              'en' => 'EN VIno 1',
             ],
             'content' => [
-              'it' => '<h2>Intro</h2>',
-              'en' => 'EN <h2>Intro</h2>',
+              'it' => '<h2>Lorem Ipsum 1</h2>',
+              'en' => 'EN <h2>Lorem Ipsum 1</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -385,21 +479,21 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_intro.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'template' => 'default/blocks/_wine-sheet.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
           ],
           [
             'title' => [
-              'it' => 'Block Group La Tenuta 1',
-              'en' => 'EN Block Group La Tenuta 1',
+              'it' => 'VIno 2',
+              'en' => 'EN VIno 2',
             ],
             'subtitle' => [
-              'it' => 'Block Group La Tenuta 1',
-              'en' => 'EN Block Group La Tenuta 1',
+              'it' => 'VIno 2',
+              'en' => 'EN VIno 2',
             ],
             'content' => [
-              'it' => '<h2>Block Group La Tenuta 4</h2>',
-              'en' => 'EN <h2>Block Group La Tenuta 4</h2>',
+              'it' => '<h2>Lorem Ipsum 2</h2>',
+              'en' => 'EN <h2>Lorem Ipsum 2</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -409,21 +503,21 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_videofullwidth.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'template' => 'default/blocks/_wine-sheet.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
           ],
           [
             'title' => [
-              'it' => 'Block Group La Tenuta 2',
-              'en' => 'EN Block Group La Tenuta 2',
+              'it' => 'VIno 3',
+              'en' => 'EN VIno 3',
             ],
             'subtitle' => [
-              'it' => 'Block Group La Tenuta 2',
-              'en' => 'EN Block Group La Tenuta 2',
+              'it' => 'VIno 3',
+              'en' => 'EN VIno 3',
             ],
             'content' => [
-              'it' => '<h2>Block Group La Tenuta 2</h2>',
-              'en' => 'EN <h2>Block Group La Tenuta 2</h2>',
+              'it' => '<h3>Lorem Ipsum 3</h3>',
+              'en' => 'EN <h2>Lorem Ipsum 2</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -433,80 +527,8 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_full_text--light.html',
-            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-          ],
-          [
-            'title' => [
-              'it' => 'Block Group La Tenuta 3',
-              'en' => 'EN Block Group La Tenuta 3',
-            ],
-            'subtitle' => [
-              'it' => 'Block Group La Tenuta 3',
-              'en' => 'EN Block Group La Tenuta 3',
-            ],
-            'content' => [
-              'it' => '<h2>Block Group La Tenuta 3</h2>',
-              'en' => 'EN <h2>Block Group La Tenuta 3</h2>',
-            ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
-            'template' => 'default/blocks/_full_text--dark.html',
-            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-          ],
-          [
-            'title' => [
-              'it' => 'Lorem Ipsum La Tenuta 4',
-              'en' => 'EN Lorem Ipsum La Tenuta 4',
-            ],
-            'subtitle' => [
-              'it' => 'Lorem Ipsum La Tenuta 4',
-              'en' => 'EN Lorem Ipsum La Tenuta 4',
-            ],
-            'content' => [
-              'it' => '<h2>Lorem Ipsum 4</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 4</h2>',
-            ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
-            'template' => 'default/blocks/_imageleft_textright.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-          ],
-          [
-            'title' => [
-              'it' => 'Lorem Ipsum La Tenuta 5',
-              'en' => 'EN Lorem Ipsum La Tenuta 5',
-            ],
-            'subtitle' => [
-              'it' => 'Lorem Ipsum La Tenuta 5',
-              'en' => 'EN Lorem Ipsum La Tenuta 5',
-            ],
-            'content' => [
-              'it' => '<h2>Lorem Ipsum 5</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 5</h2>',
-            ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
-            'template' => 'default/blocks/_textleft_imageright.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'template' => 'default/blocks/_wine-sheet.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
           ],
         ];
     }

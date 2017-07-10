@@ -46,13 +46,45 @@ class SiteController extends Controller
     public function laTenutaAction()
     {
         $blocks = $this->container->get('app.blocks_manager')->getBlocks(
-            BlocksManager::BLOCK_GROUP_HOME
+            BlocksManager::BLOCK_GROUP_LA_TENUTA
         );
 
         return $this->render(
             'default/la-tenuta.html.twig', [
                 'blocks' => $blocks
             ]
+        );
+    }
+
+    /**
+     * @Route("/le-vigne", name="le-vigne")
+     */
+    public function leVigneAction()
+    {
+        $blocks = $this->container->get('app.blocks_manager')->getBlocks(
+            BlocksManager::BLOCK_GROUP_VIGNE
+        );
+
+        return $this->render(
+            'default/le-vigne.html.twig', [
+              'blocks' => $blocks
+          ]
+        );
+    }
+
+    /**
+     * @Route("/il-metodo-nenni", name="il-metodo-nenni")
+     */
+    public function ilMetodoNenniAction()
+    {
+        $blocks = $this->container->get('app.blocks_manager')->getBlocks(
+            BlocksManager::BLOCK_GROUP_IL_METODO_NENNI
+        );
+
+        return $this->render(
+            'default/il-metodo-nenni.html.twig', [
+              'blocks' => $blocks
+          ]
         );
     }
 
@@ -116,22 +148,6 @@ class SiteController extends Controller
             'default/vini.html.twig', [
                 'blocks' => $blocks
             ]
-        );
-    }
-
-    /**
-     * @Route("/le-vigne", name="le-vigne")
-     */
-    public function leVigneAction()
-    {
-        $blocks = $this->container->get('app.blocks_manager')->getBlocks(
-            BlocksManager::BLOCK_GROUP_VIGNE
-        );
-
-        return $this->render(
-            'default/le-vigne.html.twig', [
-              'blocks' => $blocks
-          ]
         );
     }
 

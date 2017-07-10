@@ -10,6 +10,7 @@ class BlocksManager {
     const BLOCK_GROUP_VINI = 'vini';
     const BLOCK_GROUP_VIGNE = 'vigne';
     const BLOCK_GROUP_LA_TENUTA = 'la-tenuta';
+    const BLOCK_GROUP_IL_METODO_NENNI = 'il-metodo-nenni';
 
     /**
     * @var \Doctrine\ORM\EntityManager
