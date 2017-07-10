@@ -18,4 +18,12 @@ class ViniBlocksAdmin extends BaseBlocksAdmin
         $query->setParameter('block_group', BlocksManager::BLOCK_GROUP_VINI);
         return $query;
     }
+
+    public function getNewInstance()
+    {
+        $instance = parent::getNewInstance();
+        $instance->setBlockGroup(BlocksManager::BLOCK_GROUP_VINI);
+
+        return $instance;
+    }
 }

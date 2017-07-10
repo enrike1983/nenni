@@ -124,8 +124,14 @@ class SiteController extends Controller
      */
     public function leVigneAction()
     {
+        $blocks = $this->container->get('app.blocks_manager')->getBlocks(
+            BlocksManager::BLOCK_GROUP_VIGNE
+        );
+
         return $this->render(
-            'default/le-vigne.html.twig'
+            'default/le-vigne.html.twig', [
+              'blocks' => $blocks
+          ]
         );
     }
 

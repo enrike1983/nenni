@@ -11,14 +11,17 @@ nenni_2
 
 ### backend
 - [x] file upload
-- [ ] creazione dei blocchi deve settare automaticamente il "block_group"
-- [ ] selezione pagine interne ( per lingua ) in creazione link. 
+- [x] creazione dei blocchi deve settare automaticamente il "block_group"
+- [NO] selezione pagine interne ( per lingua ) in creazione link. 
     - [ ] Se link esterno stringa.
-    - [ ] Possibilità di selezionare target blank
-    - [ ] campo label
+    - [x] Possibilità di selezionare target blank
+    - [x] campo label
 
 ### utenti
 - [ ] creare utenti e integrarli con sonata
+
+### dinamicizzare l'intro block
+- [ ] al momento è staticone
 
 ### blocchi
 - [ ] aggiungere campo poster del video
@@ -29,23 +32,14 @@ nenni_2
     - [x] non è spostabile
     - [x] mostra le ultime max 4 news
 
- 
 ### multilingua
 - [x] attivazione 
-- [ ] sticky locale
+- [x] sticky locale
  
-### oggetto vino
-- [ ] creare oggetto vino con 
-    - [ ] immagine bottiglia
-    - [ ] logo vino
-    - [ ] descrizione logo
-    - [ ] descrizione
-    - [ ] pdf scaricabile
-  
 ### "la tenuta"
-- [ ] intro con testo dinamico
-- [ ] controller
-- [ ] creazione blocchi
+- [x] intro con testo dinamico
+- [x] controller
+- [x] creazione blocchi
 
 ### "le vigne"
 - [ ] intro con testo dinamico
@@ -65,6 +59,14 @@ nenni_2
 ### pagina news
 - [x] lista automatica di news
 - [x] le mostra tutte ordinate in senso dalla piu recente
+
+### oggetto vino
+- [ ] creare oggetto vino con 
+    - [ ] immagine bottiglia
+    - [ ] logo vino
+    - [ ] descrizione logo
+    - [ ] descrizione
+    - [ ] pdf scaricabile
  
 ### singola news
 - [x] data
@@ -72,6 +74,9 @@ nenni_2
 - [x] testo
 - [x] url
 - [ ] immagine
+
+### pagina 404
+- [ ] TODO
 
 ### contatti
 - [ ] TODO

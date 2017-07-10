@@ -110,5 +110,5 @@ a2lix_translation_form:
     locale_provider: default
     locales: '%active_locales_array%'
     default_locale: '%default_locale%'
-    required_locales: ['%default_locale%']
+    #required_locales: ['%default_locale%']
     templating: "A2lixTranslationFormBundle::default.html.twig"

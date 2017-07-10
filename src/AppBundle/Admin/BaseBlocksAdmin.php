@@ -8,6 +8,8 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use A2lix\TranslationFormBundle\Form\Type\TranslationsType;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class BaseBlocksAdmin extends AbstractAdmin
 {
@@ -24,7 +26,10 @@ class BaseBlocksAdmin extends AbstractAdmin
               ->add('translations', TranslationsType::class)
           ->end()
           ->with('Common')
-            ->add('template')
+            ->add('template', ChoiceType::class, [
+                'choices' => $this->getTemplatesList(),
+                'attr' => ['class' => 'nenni-block-template']
+            ])
             ->add('imageFile', VichFileType::class, [
                 'required' => false,
                 'allow_delete' => true,
@@ -33,7 +38,7 @@ class BaseBlocksAdmin extends AbstractAdmin
                 'required' => false,
                 'allow_delete' => true,
             ])
-          ->end();
+            ->end();
   }
 
   protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -60,11 +65,19 @@ class BaseBlocksAdmin extends AbstractAdmin
                   'delete' => array(),
               ),
           ));
+  }
 
-//      $listMapper->addIdentifier('title');
-//      $listMapper->addIdentifier('position');
-//      $listMapper->addIdentifier('template');
-//      $listMapper->addIdentifier('link_label');
-//      $listMapper->addIdentifier('link');
+  protected function getTemplatesList()
+  {
+      $finder = new Finder();
+      $finder->in(__DIR__.'/../../../app/Resources/views/default/blocks');
+
+      $formatted = [];
+
+      foreach($finder as $file) {
+          $pathname = $file->getRelativePathname();
+          $formatted[$pathname] = 'default/blocks/'.$pathname;
+      }
+      return $formatted;
   }
 }

@@ -52,6 +52,11 @@ class BlockTranslation
      */
     private $link_label;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $target_blank = false;
+
 
     public function getId()
     {
@@ -176,5 +181,29 @@ class BlockTranslation
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set target_blank
+     *
+     * @param string $target_blank
+     *
+     * @return Block
+     */
+    public function setTargetBlank($target_blank)
+    {
+        $this->target_blank = $target_blank;
+
+        return $this;
+    }
+
+    /**
+     * Get target_blank
+     *
+     * @return string
+     */
+    public function getTargetBlank()
+    {
+        return $this->target_blank;
     }
 }

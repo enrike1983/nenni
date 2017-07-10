@@ -4,6 +4,8 @@ parameters:
     #parameter_name: value
 
 services:
+
+    # Managers
     app.blocks_manager:
         class: AppBundle\Manager\BlocksManager
         arguments: ['@doctrine.orm.entity_manager']
@@ -12,6 +14,20 @@ services:
         class: AppBundle\Manager\NewsManager
         arguments: ['@doctrine.orm.entity_manager']
 
+    # Subscribers
+    app.locale_listener:
+        class: AppBundle\EventListener\LocaleListener
+        arguments: ['%kernel.default_locale%']
+        tags:
+            - { name: kernel.event_subscriber }
+
+#    app.redirect_listener:
+#        class: AppBundle\EventListener\RedirectListener
+#        arguments: ['@router', 'home']
+#        tags:
+#            - { name: kernel.event_subscriber }
+
+    # Sonata
     admin.home_blocks:
         class: AppBundle\Admin\HomeBlocksAdmin
         arguments: [~, AppBundle\Entity\Block, ~]
@@ -23,6 +39,12 @@ services:
         arguments: [~, AppBundle\Entity\Block, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Vini }
+
+    admin.vigne_blocks:
+        class: AppBundle\Admin\VigneBlocksAdmin
+        arguments: [~, AppBundle\Entity\Block, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Le Vigne }
 
     admin.news:
         class: AppBundle\Admin\NewsAdmin

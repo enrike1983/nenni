@@ -4,10 +4,10 @@ namespace AppBundle\Admin;
 
 use AppBundle\Manager\BlocksManager;
 
-class HomeBlocksAdmin extends BaseBlocksAdmin
+class VigneBlocksAdmin extends BaseBlocksAdmin
 {
-    protected $baseRouteName = 'blocks_'.BlocksManager::BLOCK_GROUP_HOME;
-    protected $baseRoutePattern = BlocksManager::BLOCK_GROUP_HOME;
+    protected $baseRouteName = 'blocks_'.BlocksManager::BLOCK_GROUP_VIGNE;
+    protected $baseRoutePattern = BlocksManager::BLOCK_GROUP_VIGNE;
 
     public function createQuery($context = 'list')
     {
@@ -15,14 +15,14 @@ class HomeBlocksAdmin extends BaseBlocksAdmin
         $query->andWhere(
             $query->expr()->eq($query->getRootAliases()[0] . '.block_group', ':block_group')
         );
-        $query->setParameter('block_group', BlocksManager::BLOCK_GROUP_HOME);
+        $query->setParameter('block_group', BlocksManager::BLOCK_GROUP_VIGNE);
         return $query;
     }
 
     public function getNewInstance()
     {
         $instance = parent::getNewInstance();
-        $instance->setBlockGroup(BlocksManager::BLOCK_GROUP_HOME);
+        $instance->setBlockGroup(BlocksManager::BLOCK_GROUP_VIGNE);
 
         return $instance;
     }
