@@ -3,7 +3,7 @@
     <div class="m-footer__top">
         <div class="m-footer__left">
             <div class="m-logo  m-logo--white  m-logo--center">
-                <a href="#">
+                <a href="{{ url('home', {'_locale': app.request.getLocale() }) }}">
                     {% include "_partials/logo.html" %}
                 </a>
             </div>
