@@ -4,16 +4,18 @@
 
         <div class="m-media-info">
             <span class="m-title  m-title--white  a-fade-letter">{{arg.title}}</span>
-            {% if arg.text is defined %}
+            {% if arg.text is not empty %}
                 <p class="a-fade-word">
                     {{arg.text}}
                 </p>
             {% endif %}
-            <a href="{{ arg.link }}" class="m-cta  m-cta--white">
-                <span>
-                    {{ arg.label }}
-                </span>
-            </a>
+            {% if arg.link is not empty %}
+                <a href="{{ arg.link }}" class="m-cta  m-cta--white">
+                    <span>
+                        {{ arg.label }}
+                    </span>
+                </a>
+            {% endif %}
         </div>
 
         <video class="m-video-tag" width="640" height="360" preload loop muted playsinline>

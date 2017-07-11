@@ -10,7 +10,7 @@
                     <p class="a-fade-word  h-color-white">
                         {{ arg.text }}
                     </p>
-                    {% if arg.link is defined %}
+                    {% if arg.link is not empty %}
                         <a href="{{ arg.link }}" class="m-cta  m-cta--white">
                             <span>
                                 {{ arg.label }}
@@ -24,7 +24,7 @@
                     <p class="a-fade-word">
                         {{ arg.text }}
                     </p>
-                    {% if arg.link is defined %}
+                    {% if arg.link is not empty %}
                         <a href="{{ arg.link }}" class="m-cta">
                             <span>
                                 {{ arg.label }}

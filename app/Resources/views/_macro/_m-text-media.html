@@ -12,11 +12,13 @@
                     <p class="a-fade-word">
                         {{ arg.text }}
                     </p>
-                    <a href="{{ arg.link }}" class="m-cta">
-                        <span>
-                            {{ arg.label }}
-                        </span>
-                    </a>
+                    {% if arg.link is not empty %}
+                        <a href="{{ arg.link }}" class="m-cta">
+                            <span>
+                                {{ arg.label }}
+                            </span>
+                        </a>
+                    {% endif %}
                 </article>
             </div>
 
@@ -55,11 +57,13 @@
                     <p class="a-fade-word">
                         {{ arg.text }}
                     </p>
-                    <a href="{{ arg.link }}" class="m-cta">
-                        <span>
-                            {{ arg.label }}
-                        </span>
-                    </a>
+                    {% if arg.link is not empty %}
+                        <a href="{{ arg.link }}" class="m-cta">
+                            <span>
+                                {{ arg.label }}
+                            </span>
+                        </a>
+                    {% endif %}
                 </article>
             </div>
         {% endif %}
