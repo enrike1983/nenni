@@ -3,5 +3,7 @@
 {{ mVideoRatio.build({
     'title': block.getTitle(),
     'text': block.getSubtitle(),
-    'video': vich_uploader_asset(block, 'videoFile')
+    'video': vich_uploader_asset(block, 'videoFile'),
+    'link': block.getLink(),
+    'label': block.getLinkLabel(),
 }) }}

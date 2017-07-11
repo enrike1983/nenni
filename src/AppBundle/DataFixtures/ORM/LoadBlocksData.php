@@ -63,13 +63,14 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_imageleft_textright.html.twig',
+            'template' => 'default/blocks/_textleft_imageright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
+              'primary_image' => 'demo_latenuta.jpg'
           ],
           [
             'title' => [
-              'it' => 'Il Metodo Nenni',
-              'en' => 'Il Metodo Nenni',
+              'it' => 'Il Territorio',
+              'en' => 'Il Territorio',
             ],
             'subtitle' => [
               'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -80,16 +81,16 @@ class LoadBlocksData extends AbstractFixture
               'en' => '',
             ],
             'link' => [
-              'it' => '/it/il-metodo-nenni',
-              'en' => '/en/il-metodo-nenni',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
-            'template' => 'default/blocks/_textleft_videoright.html.twig',
+            'template' => 'default/blocks/_imageleft_textright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-            'primary_video' => 'demo_il_metodo.mp4'
+            'primary_image' => 'demo_ilterritorio.jpg'
           ],
           [
             'title' => [
@@ -115,6 +116,31 @@ class LoadBlocksData extends AbstractFixture
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
             'primary_video' => 'demo_vigna_bg.mp4'
+          ],
+          [
+            'title' => [
+              'it' => 'Il Metodo Nenni',
+              'en' => 'Il Metodo Nenni',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            ],
+            'content' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link' => [
+              'it' => '/it/il-metodo-nenni',
+              'en' => '/en/il-metodo-nenni',
+            ],
+            'link_label' => [
+              'it' => 'scopri di piu',
+              'en' => 'discover more',
+            ],
+            'template' => 'default/blocks/_textleft_videoright.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_HOME,
+            'primary_video' => 'demo_il_metodo.mp4'
           ],
           [
             'title' => [

@@ -3,7 +3,7 @@
 {{ mTextMedia.build({
     'title': block.getTitle(),
     'text': block.getSubtitle(),
-    'media': '/img/test-1.jpg',
+    'media': vich_uploader_asset(block, 'imageFile'),
     'link': block.getLink(),
     'label': block.getLinkLabel(),
     'type': 'img',
