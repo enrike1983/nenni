@@ -28,6 +28,7 @@ var FadeTransition = Barba.BaseTransition.extend({
                 opacity: 1,
                 display: 'block',
                 zIndex: 999999,
+                ease: Expo.easeInOut,
                 onComplete: () => {
                     window.scrollTo(0, 0);
                     Menu.fastHide();
@@ -47,6 +48,7 @@ var FadeTransition = Barba.BaseTransition.extend({
             TweenLite.to('.m-preloader', 1, {
                 opacity: 0,
                 display: 'none',
+                ease: Expo.easeInOut,
                 onComplete: () => {
                     _this.done();
                 }

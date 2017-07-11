@@ -44,7 +44,7 @@
         overflow: hidden;
         position: relative;
         padding-bottom: 100%;
-        @media screen and (min-width: $tabletUp) {
+        @media screen and (min-width: $tablet) {
             padding-bottom: 0;
         }
         img {
