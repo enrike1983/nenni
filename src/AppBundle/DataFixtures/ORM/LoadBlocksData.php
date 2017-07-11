@@ -40,7 +40,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_intro-video.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-            'primary_video' => 'demo_hp.mp4'
+            'primary_video' => 'demo_hp.mp4',
           ],
           [
             'title' => [
@@ -65,7 +65,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_textleft_imageright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-              'primary_image' => 'demo_latenuta.jpg'
+            'primary_image' => 'demo_latenuta.jpg',
           ],
           [
             'title' => [
@@ -90,7 +90,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_imageleft_textright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-            'primary_image' => 'demo_ilterritorio.jpg'
+            'primary_image' => 'demo_ilterritorio.jpg',
           ],
           [
             'title' => [
@@ -115,7 +115,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-            'primary_video' => 'demo_vigna_bg.mp4'
+            'primary_video' => 'demo_vigna_bg.mp4',
           ],
           [
             'title' => [
@@ -140,7 +140,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_textleft_videoright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-            'primary_video' => 'demo_il_metodo.mp4'
+            'primary_video' => 'demo_il_metodo.mp4',
           ],
           [
             'title' => [
@@ -171,44 +171,95 @@ class LoadBlocksData extends AbstractFixture
             #####################
           [
             'title' => [
-              'it' => 'Intro',
-              'en' => 'EN Intro',
+              'it' => 'Eccellente di natura dal 1272',
+              'en' => 'Excellent by nature since 1272',
             ],
             'subtitle' => [
-              'it' => 'Intro',
-              'en' => 'EN Intro',
+              'it' => '',
+              'en' => '',
             ],
             'content' => [
-              'it' => '<h2>Intro</h2>',
-              'en' => '<h2>EN Intro</h2>',
+              'it' => '<h2></h2>',
+              'en' => '<h2></h2>',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => 'default/blocks/_intro-video.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'primary_video' => 'demo_hp.mp4',
+          ],
+          [
+            'title' => [
+              'it' => 'La Tenuta',
+              'en' => 'La Tenuta',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            ],
+            'content' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link' => [
+              'it' => '/it/la-tenuta',
+              'en' => '/en/la-tenuta',
             ],
             'link_label' => [
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_intro-image.html.twig',
+            'template' => 'default/blocks/_textleft_imageright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'primary_image' => 'demo_latenuta.jpg',
           ],
           [
             'title' => [
-              'it' => 'Block Group La Tenuta 1',
-              'en' => 'EN Block Group La Tenuta 1',
+              'it' => 'Il Territorio',
+              'en' => 'Il Territorio',
             ],
             'subtitle' => [
-              'it' => 'Block Group La Tenuta 1',
-              'en' => 'EN Block Group La Tenuta 1',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             ],
             'content' => [
-              'it' => '<h2>Block Group La Tenuta 4</h2>',
-              'en' => 'EN <h2>Block Group La Tenuta 4</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => 'default/blocks/_imageleft_textright.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'primary_image' => 'demo_ilterritorio.jpg',
+          ],
+          [
+            'title' => [
+              'it' => 'Le Vigne',
+              'en' => 'Le Vigne',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            ],
+            'content' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link' => [
+              'it' => '/it/le-vigne',
+              'en' => '/en/le-vigne',
             ],
             'link_label' => [
               'it' => 'scopri di piu',
@@ -216,101 +267,55 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'primary_video' => 'demo_vigna_bg.mp4',
           ],
           [
             'title' => [
-              'it' => 'Block Group La Tenuta 2',
-              'en' => 'EN Block Group La Tenuta 2',
+              'it' => 'Il Metodo Nenni',
+              'en' => 'Il Metodo Nenni',
             ],
             'subtitle' => [
-              'it' => 'Block Group La Tenuta 2',
-              'en' => 'EN Block Group La Tenuta 2',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             ],
             'content' => [
-              'it' => '<h2>Block Group La Tenuta 2</h2>',
-              'en' => 'EN <h2>Block Group La Tenuta 2</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '/it/il-metodo-nenni',
+              'en' => '/en/il-metodo-nenni',
             ],
             'link_label' => [
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_full_text--light.html.twig',
+            'template' => 'default/blocks/_textleft_videoright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'primary_video' => 'demo_il_metodo.mp4',
           ],
           [
             'title' => [
-              'it' => 'Block Group La Tenuta 3',
-              'en' => 'EN Block Group La Tenuta 3',
+              'it' => 'Le Persone',
+              'en' => 'Le Persone',
             ],
             'subtitle' => [
-              'it' => 'Block Group La Tenuta 3',
-              'en' => 'EN Block Group La Tenuta 3',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             ],
             'content' => [
-              'it' => '<h2>Block Group La Tenuta 3</h2>',
-              'en' => 'EN <h2>Block Group La Tenuta 3</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '/it/la-tenuta#people',
+              'en' => '/en/la-tenuta#people',
             ],
             'link_label' => [
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_full_text--dark.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-          ],
-          [
-            'title' => [
-              'it' => 'Lorem Ipsum La Tenuta 4',
-              'en' => 'EN Lorem Ipsum La Tenuta 4',
-            ],
-            'subtitle' => [
-              'it' => 'Lorem Ipsum La Tenuta 4',
-              'en' => 'EN Lorem Ipsum La Tenuta 4',
-            ],
-            'content' => [
-              'it' => '<h2>Lorem Ipsum 4</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 4</h2>',
-            ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
-            'template' => 'default/blocks/_imageleft_textright.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-          ],
-          [
-            'title' => [
-              'it' => 'Lorem Ipsum La Tenuta 5',
-              'en' => 'EN Lorem Ipsum La Tenuta 5',
-            ],
-            'subtitle' => [
-              'it' => 'Lorem Ipsum La Tenuta 5',
-              'en' => 'EN Lorem Ipsum La Tenuta 5',
-            ],
-            'content' => [
-              'it' => '<h2>Lorem Ipsum 5</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 5</h2>',
-            ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
-            'template' => 'default/blocks/_textleft_imageright.html.twig',
+            'template' => 'default/blocks/_people.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
           ],
 
@@ -340,7 +345,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_intro-image.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
-            'primary_image' => 'demo_latenuta_hero.jpg'
+            'primary_image' => 'demo_latenuta_hero.jpg',
           ],
           [
             'title' => [
@@ -365,7 +370,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
-            'primary_video' => 'demo_allegra.mp4'
+            'primary_video' => 'demo_allegra.mp4',
           ],
           [
             'title' => [
@@ -414,7 +419,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
-            'primary_video' => 'demo_barucci.mp4'
+            'primary_video' => 'demo_barucci.mp4',
           ],
           [
             'title' => [
@@ -463,7 +468,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
-            'primary_video' => 'demo_sara.mp4'
+            'primary_video' => 'demo_sara.mp4',
           ],
           [
             'title' => [
@@ -622,7 +627,7 @@ class LoadBlocksData extends AbstractFixture
 
             $image = new File();
 
-            if(isset($block['primary_image'])) {
+            if (isset($block['primary_image'])) {
                 $image->setName($block['primary_image']);
                 $image->setOriginalName($block['primary_image']);
                 $home_block->setImage($image);
@@ -630,7 +635,7 @@ class LoadBlocksData extends AbstractFixture
 
             $video = new File();
 
-            if(isset($block['primary_video'])) {
+            if (isset($block['primary_video'])) {
                 $video->setName($block['primary_video']);
                 $video->setOriginalName($block['primary_video']);
                 $home_block->setVideo($video);
