@@ -7,30 +7,6 @@
             {{ include(block.getTemplate(), { 'block': block }) }}
         {% endfor %}
 
-        <div class="m-people">
-            <div class="m-people__img">
-                <div>
-                    <img src="/img/people.png" alt="" class="a-scale-opacity" data-preload>
-                </div>
-            </div>
-            <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="5" data-tilt-speed="70">
-                <article>
-                    <span class="m-title  m-title--white  a-fade-letter">
-                        Le persone
-                    </span>
-                    <p class="a-fade-word">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, ipsa dolorem labore provident fugiat veniam nihil neque nostrum nemo optio quos magni autem tempora dolores, repellendus dolor ratione repudiandae, possimus!
-                    </p>
-                    <a href="#" class="m-cta  m-cta--white">
-                        <span>
-                            discover more
-                        </span>
-                    </a>
-                </article>
-            </div>
-        </div>
-
-
         <div class="a-stagger-y">
             <div class="m-news-list">
                 {% for single_news in news %}

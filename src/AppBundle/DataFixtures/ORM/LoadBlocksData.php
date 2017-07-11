@@ -9,6 +9,7 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Vich\UploaderBundle\Entity\File;
 
 class LoadBlocksData extends AbstractFixture
 {
@@ -19,7 +20,7 @@ class LoadBlocksData extends AbstractFixture
           [
             'title' => [
               'it' => 'Eccellente di natura dal 1272',
-              'en' => 'excellent by nature since 1272',
+              'en' => 'Excellent by nature since 1272',
             ],
             'subtitle' => [
               'it' => '',
@@ -37,49 +38,25 @@ class LoadBlocksData extends AbstractFixture
               'it' => '',
               'en' => '',
             ],
-            'template' => 'default/blocks/_intro-home.html.twig',
+            'template' => 'default/blocks/_intro-video.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
           ],
           [
             'title' => [
-              'it' => 'Lorem Ipsum Blocco 1',
-              'en' => 'EN Lorem Ipsum Blocco 1',
+              'it' => 'La Tenuta',
+              'en' => 'La Tenuta',
             ],
             'subtitle' => [
-              'it' => 'Lorem Ipsum Blocco 1',
-              'en' => 'EN Lorem Ipsum Blocco 1',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             ],
             'content' => [
-              'it' => '<h2>Lorem Ipsum 1</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 1</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
-            'template' => 'default/blocks/_imageleft_textright.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-          ],
-          [
-            'title' => [
-              'it' => 'Lorem Ipsum Blocco 2',
-              'en' => 'EN Lorem Ipsum Blocco 2',
-            ],
-            'subtitle' => [
-              'it' => 'Lorem Ipsum Blocco 2',
-              'en' => 'EN Lorem Ipsum Blocco 2',
-            ],
-            'content' => [
-              'it' => '<h2>Lorem Ipsum 2</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 2</h2>',
-            ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '/it/la-tenuta',
+              'en' => '/en/la-tenuta',
             ],
             'link_label' => [
               'it' => 'scopri di piu',
@@ -90,20 +67,44 @@ class LoadBlocksData extends AbstractFixture
           ],
           [
             'title' => [
-              'it' => 'Lorem Ipsum Blocco 3',
-              'en' => 'EN Lorem Ipsum Blocco 3',
+              'it' => 'Il Metodo Nenni',
+              'en' => 'Il Metodo Nenni',
             ],
             'subtitle' => [
-              'it' => 'Lorem Ipsum Blocco 3',
-              'en' => 'EN Lorem Ipsum Blocco 3',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             ],
             'content' => [
-              'it' => '<h2>Lorem Ipsum 3</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 3</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '/it/il-metodo-nenni',
+              'en' => '/en/il-metodo-nenni',
+            ],
+            'link_label' => [
+              'it' => 'scopri di piu',
+              'en' => 'discover more',
+            ],
+            'template' => 'default/blocks/_imageleft_textright.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_HOME,
+          ],
+          [
+            'title' => [
+              'it' => 'Le Vigne',
+              'en' => 'Le Vigne',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            ],
+            'content' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link' => [
+              'it' => '/it/le-vigne',
+              'en' => '/en/le-vigne',
             ],
             'link_label' => [
               'it' => 'scopri di piu',
@@ -114,74 +115,26 @@ class LoadBlocksData extends AbstractFixture
           ],
           [
             'title' => [
-              'it' => 'Lorem Ipsum Blocco 4',
-              'en' => 'EN Lorem Ipsum Blocco 4',
+              'it' => 'Le Persone',
+              'en' => 'Le Persone',
             ],
             'subtitle' => [
-              'it' => 'Lorem Ipsum Blocco 4',
-              'en' => 'EN Lorem Ipsum Blocco 4',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             ],
             'content' => [
-              'it' => '<h2>Lorem Ipsum 4</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 4</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '/it/la-tenuta#people',
+              'en' => '/en/la-tenuta#people',
             ],
             'link_label' => [
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_textleft_videoright.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-          ],
-          [
-            'title' => [
-              'it' => 'Lorem Ipsum Blocco 4',
-              'en' => 'EN Lorem Ipsum Blocco 4',
-            ],
-            'subtitle' => [
-              'it' => 'Lorem Ipsum Blocco 4',
-              'en' => 'EN Lorem Ipsum Blocco 4',
-            ],
-            'content' => [
-              'it' => '<h2>Lorem Ipsum 4</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 4</h2>',
-            ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
-            'template' => 'default/blocks/_full_text--light.html.twig',
-            'block_group' => BlocksManager::BLOCK_GROUP_HOME,
-          ],
-          [
-            'title' => [
-              'it' => 'Lorem Ipsum Blocco 5',
-              'en' => 'EN Lorem Ipsum Blocco 5',
-            ],
-            'subtitle' => [
-              'it' => 'Lorem Ipsum Blocco 5',
-              'en' => 'EN Lorem Ipsum Blocco 5',
-            ],
-            'content' => [
-              'it' => '<h2>Lorem Ipsum 5</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 5</h2>',
-            ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
-            'template' => 'default/blocks/_full_text--dark.html.twig',
+            'template' => 'default/blocks/_people.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
           ],
             #####################
@@ -208,7 +161,7 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_intro.html.twig',
+            'template' => 'default/blocks/_intro-image.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
           ],
           [
@@ -337,100 +290,179 @@ class LoadBlocksData extends AbstractFixture
             #####################
           [
             'title' => [
-              'it' => 'Intro',
-              'en' => 'EN Intro',
+              'it' => 'Le Vigne',
+              'en' => 'Le Vigne',
             ],
             'subtitle' => [
-              'it' => 'Intro',
-              'en' => 'EN Intro',
+              'it' => '',
+              'en' => '',
             ],
             'content' => [
-              'it' => '<h2>Intro</h2>',
-              'en' => 'EN <h2>Intro</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
-            'template' => 'default/blocks/_intro.html.twig',
+            'template' => 'default/blocks/_intro-image.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
+            'primary_image' => 'demo_latenuta_hero.jpg'
+          ],
+          [
+            'title' => [
+              'it' => 'Vigna Allegra',
+              'en' => 'Vigna Allegra',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            ],
+            'content' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => 'default/blocks/_videofullwidth.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
+            'primary_video' => 'demo_allegra.mp4'
+          ],
+          [
+            'title' => [
+              'it' => 'Vigna Allegra',
+              'en' => 'Vigna Allegra',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            ],
+            'content' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => 'default/blocks/_full_text--light.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
           ],
           [
             'title' => [
-              'it' => 'Block Group Vigne 1',
-              'en' => 'EN Block Group Vigne 1',
+              'it' => 'Vigna Barucci',
+              'en' => 'Vigna Barucci',
             ],
             'subtitle' => [
-              'it' => 'Block Group Vigne 1',
-              'en' => 'EN Block Group Vigne 1',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             ],
             'content' => [
-              'it' => '<h2>Block Group Vigne 4</h2>',
-              'en' => 'EN <h2>Block Group Vigne 4</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
             'template' => 'default/blocks/_videofullwidth.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
+            'primary_video' => 'demo_barucci.mp4'
+          ],
+          [
+            'title' => [
+              'it' => 'Vigna Barucci',
+              'en' => 'Vigna Barucci',
+            ],
+            'subtitle' => [
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            ],
+            'content' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => 'default/blocks/_full_text--dark.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
           ],
           [
             'title' => [
-              'it' => 'Block Group Vigne 2',
-              'en' => 'EN Block Group Vigne 2',
+              'it' => 'Vigna Sara',
+              'en' => 'Vigna Sara',
             ],
             'subtitle' => [
-              'it' => 'Block Group Vigne 2',
-              'en' => 'EN Block Group Vigne 2',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             ],
             'content' => [
-              'it' => '<h2>Block Group Vigne 2</h2>',
-              'en' => 'EN <h2>Block Group Vigne 2</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
+            'primary_video' => 'demo_sara.mp4'
           ],
           [
             'title' => [
-              'it' => 'Block Group Vigne 3',
-              'en' => 'EN Block Group Vigne 3',
+              'it' => 'Vigna Sara',
+              'en' => 'Vigna Sara',
             ],
             'subtitle' => [
-              'it' => 'Block Group Vigne 3',
-              'en' => 'EN Block Group Vigne 3',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             ],
             'content' => [
-              'it' => '<h2>Block Group Vigne 3</h2>',
-              'en' => 'EN <h2>Block Group Vigne 3</h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
-            'template' => 'default/blocks/_videofullwidth.html.twig',
+            'template' => 'default/blocks/_full_text--light.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VIGNE,
           ],
+            ##############################
+            ###### IL METODO NENNI #######
+            ##############################
           [
             'title' => [
               'it' => 'Il Metodo Nenni',
@@ -558,6 +590,22 @@ class LoadBlocksData extends AbstractFixture
             $home_block->setTemplate($block['template']);
             $home_block->setPosition($i);
             $home_block->setBlockGroup($block['block_group']);
+
+            $image = new File();
+
+            if(isset($block['primary_image'])) {
+                $image->setName($block['primary_image']);
+                $image->setOriginalName($block['primary_image']);
+                $home_block->setImage($image);
+            }
+
+            $video = new File();
+
+            if(isset($block['primary_video'])) {
+                $video->setName($block['primary_video']);
+                $video->setOriginalName($block['primary_video']);
+                $home_block->setVideo($video);
+            }
 
             $this->addReference($i, $home_block);
 

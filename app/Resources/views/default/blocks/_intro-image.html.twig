@@ -7,6 +7,6 @@
             {{ block.getTitle() }}
         </h2>
     </div>
-    <img src='/img/le-vigne/hero.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
+    <img src='{{ vich_uploader_asset(block, 'imageFile') }}' alt="" class="m-img-full__img" data-preload data-intro-scale>
     <span class="m-intro-site__explore"><span></span></span>
 </div>

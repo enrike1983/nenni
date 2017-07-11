@@ -1,0 +1,22 @@
+<div class="m-people">
+    <div class="m-people__img">
+        <div>
+            <img src="/img/people.png" alt="" class="a-scale-opacity" data-preload>
+        </div>
+    </div>
+    <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="5" data-tilt-speed="70">
+        <article>
+            <span class="m-title  m-title--white  a-fade-letter">
+                {{ block.getTitle() }}
+            </span>
+            <p class="a-fade-word">
+                {{ block.getSubtitle() }}
+            </p>
+            <a href="{{ block.getLink() }}" class="m-cta  m-cta--white">
+                <span>
+                    {{ block.getLinkLabel() }}
+                </span>
+            </a>
+        </article>
+    </div>
+</div>
