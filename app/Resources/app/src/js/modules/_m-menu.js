@@ -2,16 +2,17 @@ import TweenLite from 'gsap'
 
 const Menu = function() {
 
+    var _doc = document;
+    var _menu = _doc.querySelector('.m-menu');
+
     function _setup() {
         _handleEvents();
     }
 
     function _handleEvents() {
 
-        var _doc = document;
         var _triggerOpen = _doc.querySelector('.m-header .m-hamburger');
         var _triggerClose = _doc.querySelector('.m-menu__close');
-        var _menu = _doc.querySelector('.m-menu');
 
         _triggerOpen.addEventListener('click', function() {
             TweenLite.to(_menu, .3, {
@@ -21,11 +22,7 @@ const Menu = function() {
             })
         });
         _triggerClose.addEventListener('click', function() {
-            TweenLite.to(_menu, .3, {
-                opacity: 0,
-                scale: .99,
-                display: 'none'
-            })
+            _hide()
         });
     }
 
@@ -65,11 +62,17 @@ const Menu = function() {
     }
 
     function _hide() {
+        TweenLite.to(_menu, .3, {
+            opacity: 0,
+            scale: .99,
+            display: 'none'
+        })
     }
 
 
     return {
-        init: _init
+        init: _init,
+        hide: _hide
     }
 
 }()
