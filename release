@@ -17,7 +17,7 @@ cd ..
 
 # Tag new release
 git checkout -b releasing
-git add -f web/css web/img web/js
+git add -f web/css web/img web/js web/webfonts
 git commit -m "New release"
 git push heroku releasing:master --force
 
