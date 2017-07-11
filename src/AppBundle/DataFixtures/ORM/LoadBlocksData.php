@@ -40,6 +40,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_intro-video.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
+            'primary_video' => 'demo_hp.mp4'
           ],
           [
             'title' => [
@@ -62,7 +63,7 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_textleft_imageright.html.twig',
+            'template' => 'default/blocks/_imageleft_textright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
           ],
           [
@@ -86,8 +87,9 @@ class LoadBlocksData extends AbstractFixture
               'it' => 'scopri di piu',
               'en' => 'discover more',
             ],
-            'template' => 'default/blocks/_imageleft_textright.html.twig',
+            'template' => 'default/blocks/_textleft_videoright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
+            'primary_video' => 'demo_il_metodo.mp4'
           ],
           [
             'title' => [
@@ -112,6 +114,7 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_videofullwidth.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_HOME,
+            'primary_video' => 'demo_vigna_bg.mp4'
           ],
           [
             'title' => [
