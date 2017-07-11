@@ -52,8 +52,9 @@
 
         <div id="barba-wrapper">
             {% block content %} {% endblock %}
-            {% include "_partials/footer.html" %}
         </div>
+
+        {% include "_partials/footer.html" %}
 
         <script src="{{ asset('js/app.js') }}"></script>
 

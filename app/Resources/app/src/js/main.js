@@ -24,12 +24,13 @@ var FadeTransition = Barba.BaseTransition.extend({
     showPreloader: function() {
         return new Promise(function(resolve){
             console.log('show')
-            Menu.hide();
             TweenLite.to('.m-preloader', 1, {
                 opacity: 1,
                 display: 'block',
+                zIndex: 999999,
                 onComplete: () => {
                     window.scrollTo(0, 0);
+                    Menu.fastHide();
                     resolve()
                 }
             })
@@ -42,13 +43,15 @@ var FadeTransition = Barba.BaseTransition.extend({
             _old  = this.oldContainer;
         _old.style.display = 'none';
         _new.style.visibility = "visible";
-        TweenLite.to('.m-preloader', 1, {
-            opacity: 0,
-            display: 'none',
-            onComplete: () => {
-                _this.done();
-            }
-        })
+        setTimeout(()=> {
+            TweenLite.to('.m-preloader', 1, {
+                opacity: 0,
+                display: 'none',
+                onComplete: () => {
+                    _this.done();
+                }
+            });
+        }, 100)
     }
 
 });
@@ -67,8 +70,12 @@ const HomePage = Barba.BaseView.extend({
     onLeave: function() {
     },
     onEnter: function() {
+        VideoFull.init();
     },
     onEnterCompleted: function() {
+        console.log('onEnterCompleted');
+        Animations().init();
+        Animations().intro();
     }
 });
 
@@ -104,22 +111,14 @@ window.onload = function() {
 
     })
 
-    preloader.addCompletionListener(function () {
+    preloader.addCompletionListener(() => {
         HomePage.init();
         Barba.Pjax.start();
         Barba.Prefetch.init();
         VideoFull.init();
         setTimeout(()=> {
-            Animations().removeLoader(function(){
-                Animations().init();
-                TweenLite.to('.m-intro-site .m-logo', 1, {
-                    y: "-200%",
-                    ease: Expo.easeInOut
-                })
-                TweenLite.to('[data-intro-scale]', 1, {
-                    scale: 1,
-                    ease: Expo.easeInOut
-                })
+            Animations().removeLoader(() => {
+                Animations().intro();
             });
         }, 1)
     });

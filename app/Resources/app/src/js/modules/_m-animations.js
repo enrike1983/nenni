@@ -209,7 +209,19 @@ const Animations = function() {
         });
     }
 
+    function _intro() {
+        TweenLite.to('.m-intro-site .m-logo', 1, {
+            y: "-200%",
+            ease: Expo.easeInOut
+        })
+        TweenLite.to('[data-intro-scale]', 1, {
+            scale: 1,
+            ease: Expo.easeInOut
+        })
+    }
+
     function _init() {
+        console.log('Animations init')
         console.log(isTouch)
         if (!isTouch) {
             _parallax();
@@ -226,6 +238,7 @@ const Animations = function() {
 
     return {
         init: _init,
+        intro: _intro,
         removeLoader: _removeLoader
     }
 

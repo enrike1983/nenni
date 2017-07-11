@@ -15,15 +15,12 @@ const Menu = function() {
         var _triggerClose = _doc.querySelector('.m-menu__close');
 
         _triggerOpen.addEventListener('click', function() {
-            TweenLite.to(_menu, .3, {
-                opacity: 1,
-                display: 'block',
-                scale: 1
-            })
+            _show();
         });
         _triggerClose.addEventListener('click', function() {
-            _hide()
+            _hide();
         });
+
     }
 
     function getElementIndex(node) {
@@ -59,6 +56,11 @@ const Menu = function() {
     }
 
     function _show() {
+        TweenLite.to(_menu, .3, {
+            opacity: 1,
+            display: 'block',
+            scale: 1
+        })
     }
 
     function _hide() {
@@ -69,10 +71,19 @@ const Menu = function() {
         })
     }
 
+    function _fastHide() {
+        TweenLite.set(_menu, {
+            opacity: 0,
+            scale: .99,
+            display: 'none'
+        })
+    }
+
 
     return {
         init: _init,
-        hide: _hide
+        hide: _hide,
+        fastHide: _fastHide
     }
 
 }()
