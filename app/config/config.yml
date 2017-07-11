@@ -74,7 +74,7 @@ swiftmailer:
 # Sonata
 sonata_admin:
     title: Nenni Admin
-    title_logo: img/logo.png
+    title_logo: img/logo_backend.png
 
 sonata_block:
     default_contexts: [cms]
