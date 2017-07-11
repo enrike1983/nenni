@@ -48,8 +48,8 @@ class LoadBlocksData extends AbstractFixture
               'en' => 'La Tenuta',
             ],
             'subtitle' => [
-              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             ],
             'content' => [
               'it' => '',
@@ -73,8 +73,8 @@ class LoadBlocksData extends AbstractFixture
               'en' => 'Il Territorio',
             ],
             'subtitle' => [
-              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             ],
             'content' => [
               'it' => '',
@@ -98,8 +98,8 @@ class LoadBlocksData extends AbstractFixture
               'en' => 'Le Vigne',
             ],
             'subtitle' => [
-              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             ],
             'content' => [
               'it' => '',
@@ -123,8 +123,8 @@ class LoadBlocksData extends AbstractFixture
               'en' => 'Il Metodo Nenni',
             ],
             'subtitle' => [
-              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             ],
             'content' => [
               'it' => '',
@@ -148,8 +148,8 @@ class LoadBlocksData extends AbstractFixture
               'en' => 'Le Persone',
             ],
             'subtitle' => [
-              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              'en' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             ],
             'content' => [
               'it' => '',
