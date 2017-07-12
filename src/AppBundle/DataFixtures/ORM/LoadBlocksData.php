@@ -171,16 +171,16 @@ class LoadBlocksData extends AbstractFixture
             #####################
           [
             'title' => [
-              'it' => 'Eccellente di natura dal 1272',
-              'en' => 'Excellent by nature since 1272',
+              'it' => 'La Tenuta Nenni',
+              'en' => 'La Tenuta Nenni',
             ],
             'subtitle' => [
               'it' => '',
               'en' => '',
             ],
             'content' => [
-              'it' => '<h2></h2>',
-              'en' => '<h2></h2>',
+              'it' => '',
+              'en' => '',
             ],
             'link' => [
               'it' => '',
@@ -190,14 +190,14 @@ class LoadBlocksData extends AbstractFixture
               'it' => '',
               'en' => '',
             ],
-            'template' => 'default/blocks/_intro-video.html.twig',
+            'template' => 'default/blocks/_intro-image.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-            'primary_video' => 'demo_hp.mp4',
+            'primary_image' => 'demo_hero_la_tenuta.jpg',
           ],
           [
             'title' => [
-              'it' => 'La Tenuta',
-              'en' => 'La Tenuta',
+              'it' => 'I Territori di San Galgano',
+              'en' => 'I Territori di San Galgano',
             ],
             'subtitle' => [
               'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -208,21 +208,20 @@ class LoadBlocksData extends AbstractFixture
               'en' => '',
             ],
             'link' => [
-              'it' => '/it/la-tenuta',
-              'en' => '/en/la-tenuta',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
-            'template' => 'default/blocks/_textleft_imageright.html.twig',
+            'template' => 'default/blocks/_full_text--light.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-            'primary_image' => 'demo_latenuta.jpg',
           ],
           [
             'title' => [
-              'it' => 'Il Territorio',
-              'en' => 'Il Territorio',
+              'it' => '',
+              'en' => '',
             ],
             'subtitle' => [
               'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -242,12 +241,12 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_imageleft_textright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-            'primary_image' => 'demo_ilterritorio.jpg',
+              'primary_image' => 'demo_ilterritorio.jpg'
           ],
           [
             'title' => [
-              'it' => 'Le Vigne',
-              'en' => 'Le Vigne',
+              'it' => '',
+              'en' => '',
             ],
             'subtitle' => [
               'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -258,21 +257,21 @@ class LoadBlocksData extends AbstractFixture
               'en' => '',
             ],
             'link' => [
-              'it' => '/it/le-vigne',
-              'en' => '/en/le-vigne',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
-            'template' => 'default/blocks/_videofullwidth.html.twig',
+            'template' => 'default/blocks/_textleft_imageright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-            'primary_video' => 'demo_vigna_bg.mp4',
+              'primary_image' => 'demo_2.jpg'
           ],
           [
             'title' => [
-              'it' => 'Il Metodo Nenni',
-              'en' => 'Il Metodo Nenni',
+              'it' => 'L\'Azienda',
+              'en' => 'L\'Azienda',
             ],
             'subtitle' => [
               'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -283,21 +282,21 @@ class LoadBlocksData extends AbstractFixture
               'en' => '',
             ],
             'link' => [
-              'it' => '/it/il-metodo-nenni',
-              'en' => '/en/il-metodo-nenni',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
-            'template' => 'default/blocks/_textleft_videoright.html.twig',
+            'template' => 'default/blocks/_textleft_imageright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
-            'primary_video' => 'demo_il_metodo.mp4',
+              'primary_image' => 'demo_3.jpg'
           ],
           [
             'title' => [
-              'it' => 'Le Persone',
-              'en' => 'Le Persone',
+              'it' => '',
+              'en' => '',
             ],
             'subtitle' => [
               'it' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -308,17 +307,17 @@ class LoadBlocksData extends AbstractFixture
               'en' => '',
             ],
             'link' => [
-              'it' => '/it/la-tenuta#people',
-              'en' => '/en/la-tenuta#people',
+              'it' => '',
+              'en' => '',
             ],
             'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
+              'it' => '',
+              'en' => '',
             ],
-            'template' => 'default/blocks/_people.html.twig',
+            'template' => 'default/blocks/_textleft_imageright.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
+            'primary_video' => 'demo_la_tenuta.mp4'
           ],
-
             #####################
             ###### LE VIGNE #####
             #####################
@@ -645,7 +644,6 @@ class LoadBlocksData extends AbstractFixture
 
             $manager->persist($home_block);
         }
-
         $manager->flush();
     }
 

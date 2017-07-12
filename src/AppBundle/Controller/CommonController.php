@@ -26,7 +26,7 @@ class CommonController extends Controller
     $ids = explode(',', $ids_string);
 
     try {
-      $this->container->get('app.home_blocks_manager')->updateBlockPosition(
+      $this->container->get('app.blocks_manager')->updateBlockPosition(
         $ids
       );
 
