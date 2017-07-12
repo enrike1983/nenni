@@ -314,7 +314,7 @@ class LoadBlocksData extends AbstractFixture
               'it' => '',
               'en' => '',
             ],
-            'template' => 'default/blocks/_textleft_imageright.html.twig',
+            'template' => 'default/blocks/_textright_videoleft.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_LA_TENUTA,
             'primary_video' => 'demo_la_tenuta.mp4'
           ],
