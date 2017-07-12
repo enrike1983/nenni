@@ -1,104 +1,49 @@
 .m-wine-carousel {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
     background:map-get($colors,black);
+    @media screen and (min-width: $tablet) {
+        height: 100vh;
+        min-height: 600px;
+    }
     &__slide {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        &.current {
-            z-index: 1;
+        z-index: 1;
+        @media screen and (min-width: $tablet) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
         }
+    }
+
+    .m-wine-sheet__frame {
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
     }
 
     .m-wine-sheet {
-        height: 100%;
+        background:transparent;
+        @media screen and (min-width: $tablet) {
+            height: 100%;
+        }
+        &__id,
+        &__bottle,
+        &__info {
+            opacity: 0;
+        }
+
+        .m-wine-sheet__frame {
+            display: none;
+        }
     }
 
-    &__transition {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        visibility: hidden;
-        overflow: hidden;
-        transition: all .6s;
-        &.visible {
+    &__slide:first-child {
+        .m-wine-sheet__id,
+        .m-wine-sheet__bottle,
+        .m-wine-sheet__info {
             opacity: 1;
-            visibility: visible;
         }
     }
-    &__transition-bg {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform:translate(-2.78%,-50%);
-        height: 100%;
-        // width: 2500%;
-        width: 1800%;
-        background: url(../img/ink.png) no-repeat 0 0;
-        background-blend-mode: difference;
-        background-size: 100% 100%;
-        .play & {
-            -webkit-animation: sequence .8s steps(17);
-            -moz-animation: sequence .8s steps(17);
-            animation: sequence .8s steps(17);
-            -webkit-animation-fill-mode: reverse;
-            -moz-animation-fill-mode: reverse;
-            animation-fill-mode: reverse;
-            -webkit-animation-timing-function: cubic-bezier(.01,1.1,0,.98)  steps(17);
-            animation-timing-function: cubic-bezier(.01,1.1,0,.98)  steps(17);
-        }
-    }
-}
-
-@-webkit-keyframes sequence {
-    0% {
-    -webkit-transform: translateY(-50%) translateX(-97.22%);
-  }
-  100% {
-    -webkit-transform: translateY(-50%) translateX(-2.78%);
-  }
-  
-  // 100% {
-  //   -webkit-transform: translateY(-50%) translateX(-2.78%);
-  // }
-}
-@-moz-keyframes sequence {
-  0% {
-    -moz-transform: translateY(-50%) translateX(-2.78%);
-  }
-  100% {
-    -moz-transform: translateY(-50%) translateX(-97.22%);
-  }
-}
-@keyframes sequence {
-  0% {
-    -webkit-transform: translateY(-50%) translateX(-97.22%);
-    -moz-transform: translateY(-50%) translateX(-97.22%);
-    -ms-transform: translateY(-50%) translateX(-97.22%);
-    -o-transform: translateY(-50%) translateX(-97.22%);
-    transform: translateY(-50%) translateX(-97.22%);
-  }
-    100% {
-    -webkit-transform: translateY(-50%) translateX(-2.78%);
-    -moz-transform: translateY(-50%) translateX(-2.78%);
-    -ms-transform: translateY(-50%) translateX(-2.78%);
-    -o-transform: translateY(-50%) translateX(-2.78%);
-    transform: translateY(-50%) translateX(-2.78%);
-  }
-  // 100% {
-  //   -webkit-transform: translateY(-50%) translateX(-2.78%);
-  //   -moz-transform: translateY(-50%) translateX(-2.78%);
-  //   -ms-transform: translateY(-50%) translateX(-2.78%);
-  //   -o-transform: translateY(-50%) translateX(-2.78%);
-  //   transform: translateY(-50%) translateX(-2.78%);
-  // }
 }

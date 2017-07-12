@@ -1,0 +1,281 @@
+import TweenLite from 'gsap';
+import isTouch from '../helpers/_h-isTouch.js'
+
+let slides,canScroll,normalScroll;
+let scrollings = [];
+let prevTime;
+var i = 0;
+
+const getAverage = (elements, number) => {
+    var sum = 0;
+    var lastElements = elements.slice(Math.max(elements.length - number, 1));
+
+    for(var k = 0; k < lastElements.length; k++){
+        sum = sum + lastElements[k];
+    }
+
+    return Math.ceil(sum/number);
+}
+
+const getScrollTop = () => {
+    if(typeof pageYOffset!= 'undefined') {
+        return pageYOffset;
+    }
+    else{
+        var B = document.body;
+        var D = document.documentElement;
+        D= (D.clientHeight)? D: B;
+        return D.scrollTop;
+    }
+}
+
+const init = ()=>{
+    slides = document.querySelectorAll('.m-wine-carousel__slide');
+    if(slides.length == 0) return;
+    canScroll = true;
+    normalScroll = false;
+    i = 0;    
+    attachEvents();
+}
+
+const onScroll = () => {
+    // if(getScrollTop() <= 0) {
+    //     document.body.classList.add('lock');
+    //     // kidsWrapperEl.style.position = 'fixed';
+    //     normalScroll = false;
+    // } else {
+    //     // scrollerMenu.classList.remove('active')
+    // }
+}
+
+const onWheel = (e) => {
+
+    e.preventDefault();
+
+    if(normalScroll) return;
+
+    var curTime = new Date().getTime();
+
+    e = e || window.event;
+    var value = e.wheelDelta || -e.deltaY || -e.detail;
+    var delta = Math.max(-1, Math.min(1, value));
+
+    if(scrollings.length > 149){
+        scrollings.shift();
+    }
+
+    scrollings.push(Math.abs(value));
+
+    var timeDiff = curTime-prevTime;
+    prevTime = curTime;
+
+    if(timeDiff > 200){
+        scrollings = [];
+    }
+
+    if(canScroll){
+        var averageEnd = getAverage(scrollings, 10);
+        var averageMiddle = getAverage(scrollings, 70);
+        var isAccelerating = averageEnd >= averageMiddle;
+
+        if(isAccelerating){
+            if (delta < 0) {
+                slideNext();
+            }else {
+                slidePrev();
+            }
+        }
+    }
+
+    return false;
+}
+
+
+const gotoSlide = (dir) => {
+
+    if(!canScroll) return;
+
+    canScroll = false;
+
+    if(dir == 'next') {
+
+        var currentSlide = slides[i]
+        var wineId = currentSlide.querySelector('.m-wine-sheet__id');
+        var wineBottle = currentSlide.querySelector('.m-wine-sheet__bottle');
+        var wineInfo = currentSlide.querySelector('.m-wine-sheet__info');
+
+        var nextSlide = slides[i+1]
+        var nextSlideWineId = nextSlide.querySelector('.m-wine-sheet__id');
+        var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
+        var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
+
+        var tl = new TimelineMax({
+            onComplete : () => {
+                canScroll = true;
+                i += 1;
+                console.log('completed',i);
+            }
+        });
+
+        tl
+
+        .to(wineId, .6, {
+            y:-50,
+            opacity: 0,
+            ease: Power1.easeIn
+        })
+
+        .to(wineInfo, .6, {
+            y:-50,
+            opacity: 0,
+            ease: Power2.easeIn
+        },'-=.8')
+
+        .to(wineBottle, .5, {
+            x:-10,
+            opacity: 0,
+            ease: Power2.easeIn
+        },'+=.1')
+
+        .fromTo(nextSlideWineBottle, .7, {
+            x:10,
+            opacity: 0
+        },{
+            x:0,
+            opacity: 1,
+            ease: Power2.easeOut
+        },'+=.2')
+
+        .fromTo(nextSlideWineId, .5, {
+            y:50,
+            opacity: 0,
+        },{
+            y:0,
+            opacity: 1,
+            ease: Power2.easeOut
+        })
+
+        .fromTo(nextSlideWineInfo, .5, {
+            y:50,
+            opacity: 0,
+        },{
+            y:0,
+            opacity: 1,
+            ease: Power2.easeOut
+        },"-=.8")
+
+        
+        
+    } else {
+
+        
+        var currentSlide = slides[i]
+        var wineId = currentSlide.querySelector('.m-wine-sheet__id');
+        var wineBottle = currentSlide.querySelector('.m-wine-sheet__bottle');
+        var wineInfo = currentSlide.querySelector('.m-wine-sheet__info');
+
+        var nextSlide = slides[i-1]
+        var nextSlideWineId = nextSlide.querySelector('.m-wine-sheet__id');
+        var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
+        var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
+
+
+
+        var tl2 = new TimelineMax({
+            onComplete : () => {
+                canScroll = true
+                i--;
+                console.log('completed');
+            }
+        });
+
+        tl2
+
+        .to(wineId, .6, {
+            y:50,
+            opacity: 0,
+            ease: Power1.easeIn
+        })
+
+        .to(wineInfo, .6, {
+            y:50,
+            opacity: 0,
+            ease: Power2.easeIn
+        },'-=.8')
+
+        .to(wineBottle, .5, {
+            x:10,
+            opacity: 0,
+            ease: Power2.easeIn
+        },'+=.1')
+
+        .fromTo(nextSlideWineBottle, .7, {
+            x:-10,
+            opacity: 0
+        },{
+            x:0,
+            opacity: 1,
+            ease: Power2.easeOut
+        },'+=.2')
+
+        .fromTo(nextSlideWineId, .5, {
+            y:-50,
+            opacity: 0,
+        },{
+            y:0,
+            opacity: 1,
+            ease: Power2.easeOut
+        })
+
+        .fromTo(nextSlideWineInfo, .5, {
+            y:-50,
+            opacity: 0,
+        },{
+            y:0,
+            opacity: 1,
+            ease: Power2.easeOut
+        },"-=.8")
+
+
+
+    }
+
+
+}
+
+
+const slideNext = () => {
+    if(i < slides.length-1) {
+        gotoSlide('next');
+    } else {
+        if(!isTouch) {
+            // document.body.classList.remove('lock');
+            // normalScroll = true;
+        }
+    }
+}
+
+const slidePrev = () => {
+    console.log(i);
+    if(i>0) {
+        gotoSlide('prev');
+    }
+}
+
+
+const attachEvents = () => {
+    if(!isTouch){
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('wheel', onWheel);
+    }
+}
+
+
+export default () => {
+    return {
+        init    
+    }
+    
+}
+
+

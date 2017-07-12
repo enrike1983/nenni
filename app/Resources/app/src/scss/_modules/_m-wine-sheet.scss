@@ -2,8 +2,10 @@
     background:map-get($colors,black);
     color: map-get($colors,white);
     position: relative;
-    height: 100%;
-
+    @media screen and (min-width: $tablet) {
+        height: 100%;
+    }
+    
     img {
         display: block;
         width: 100%;
@@ -16,10 +18,8 @@
     &__wrapper {
         max-width: 980px;
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        padding: rem(50) 5%;
-        height: 100%;
+        padding: rem(50) 15%;
+
         @media screen and (min-height: 700px) {
             max-width: 1280px;
         }
@@ -29,41 +29,83 @@
         @media screen and (min-width: 1900px) {
             max-width: 1600px;   
         }
+        @media screen and (min-width: $tablet) {
+            height: 100%;
+            padding: rem(50) 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     }
 
     &__id,
     &__info {
-        width: 40%;
         padding:0 5%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 14vmin;
+        // padding-bottom: 14vmin;
         z-index: 1;
+        @media screen and (min-width: $tablet) {
+            width: 38%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     &__bottle {
-        width: 18%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         z-index: 1;
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 18%;
+        }
+        img {
+            max-width: 120px;
+            margin: 0 auto;
+            @media screen and (min-width: $tablet) {
+                max-width: 100%;
+            }
+        }
     }
 
     &__id {
         text-align: center;
+        width: 100%;
+        @media screen and (min-width: $tablet) {
+            width: 38%;
+        }
         .id-caption {
             font-size: rem(16);
         }
         .id-wings {
             margin: rem(50) 0;
+            display: none;
+            @media screen and (min-width: $tablet) {
+                display: block;
+            }
+        }
+        .id-logo {
+            margin-bottom: rem(40);
+            @media screen and (min-width: $tablet) {
+                margin-bottom: 0;
+            }
+            img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
         }
     }
 
     &__info {
-        align-items: flex-start;
+        width: 100%;    
+        padding: rem(30) rem(10);
+        text-align: center;
+        @media screen and (min-width: $tablet) {
+            align-items: flex-start;
+            width: 38%;
+        }
         .info-cta {
             display: block;
             margin-top: rem(20);
@@ -72,12 +114,16 @@
 
     &__frame {
         position: absolute;
+        display: none;
         z-index: 0;
         left: rem(50);
-        top: rem(50);
+        top: rem(100);
         right: rem(50);
-        height: calc(80% - 50px);
+        height: calc(80% - 100px);
         min-height: 400px;
         border: 2px solid map-get($colors,yellow);
+        @media screen and (min-width: $tablet) {
+            display: block;
+        }
     }
 }

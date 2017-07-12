@@ -5,8 +5,12 @@ import Header from './modules/_m-header'
 import isTouch from './helpers/_h-isTouch.js'
 import VideoFull from './modules/_m-video-full'
 import Animations from './modules/_m-animations'
+import Wines from './modules/_m-wines'
 import Preloader from 'preloader.js'
 
+
+var productPage = Wines();
+productPage.init();
 
 if(isTouch) {
     document.body.classList.add('touch');
