@@ -22,7 +22,7 @@
         .m-footer__left {
             margin-bottom: rem(40);
             @media screen and (min-width: $tablet) {
-                width: rem(100);
+                width: rem(60);
                 margin-bottom: 0;
             }
         }
@@ -91,7 +91,7 @@
         display: flex;
         margin: 0;
         @media screen and (min-width: $tablet) {
-            margin-right: rem(30);
+            // margin-right: rem(30);
         }
         li {
             margin: 0;
