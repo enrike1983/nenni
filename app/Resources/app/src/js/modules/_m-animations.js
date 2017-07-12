@@ -95,7 +95,7 @@ const Animations = function() {
 
                     phrase.style.opacity = 1;
 
-                    tl.staggerFromTo(words, 2,
+                    tl.staggerFromTo(words, .3,
                         {
                             opacity: 0,
                             y: 10,
