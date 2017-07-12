@@ -36,11 +36,6 @@
     margin: 0 auto;
 }
 
-[data-intro-scale] {
-    transform: scale(.9);
-    will-change: transform;
-}
-
 .a-parallax {
     &__child {
         will-change: transform;

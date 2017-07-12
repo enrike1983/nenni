@@ -24,16 +24,19 @@ var FadeTransition = Barba.BaseTransition.extend({
     showPreloader: function() {
         return new Promise(function(resolve){
             console.log('show')
-            TweenLite.to('.m-preloader', 1, {
-                opacity: 1,
-                display: 'block',
-                zIndex: 999999,
+            TweenLite.to('.m-preloader-page', 1.5, {
+                y: 0,
                 ease: Expo.easeInOut,
                 onComplete: () => {
                     window.scrollTo(0, 0);
                     Menu.fastHide();
                     resolve()
                 }
+            })
+            TweenLite.to('.m-preloader-page__wrapper', 1.5, {
+                y: 0,
+                ease: Expo.easeInOut,
+                delay: .5
             })
         })
     },
@@ -45,15 +48,29 @@ var FadeTransition = Barba.BaseTransition.extend({
         _old.style.display = 'none';
         _new.style.visibility = "visible";
         setTimeout(()=> {
-            TweenLite.to('.m-preloader', 1, {
-                opacity: 0,
-                display: 'none',
+
+            TweenLite.to('.m-preloader-page__wrapper', 1.5, {
+                y: '105%',
                 ease: Expo.easeInOut,
+            })
+            TweenLite.to('.m-preloader-page', 1.5, {
+                y: '105%',
+                ease: Expo.easeInOut,
+                delay: .5,
                 onComplete: () => {
-                    _this.done();
+                    TweenLite.set('.m-preloader-page', {
+                        y: '-105%',
+                    });
+                    TweenLite.set('.m-preloader-page__wrapper', {
+                        y: '-105%',
+                    });
+                    setTimeout(()=>{
+                        _this.done();
+                    }, 1)
                 }
-            });
-        }, 100)
+            })
+
+        }, 1000)
     }
 
 });

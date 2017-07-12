@@ -214,10 +214,10 @@ const Animations = function() {
             y: "-200%",
             ease: Expo.easeInOut
         })
-        TweenLite.to('[data-intro-scale]', 1, {
-            scale: 1,
-            ease: Expo.easeInOut
-        })
+        // TweenLite.to('[data-intro-scale]', 1, {
+        //     scale: 1,
+        //     ease: Expo.easeInOut
+        // })
     }
 
     function _init() {
