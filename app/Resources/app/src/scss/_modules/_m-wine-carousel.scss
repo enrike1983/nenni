@@ -2,7 +2,7 @@
     position: relative;
     background:map-get($colors,black);
     @media screen and (min-width: $tablet) {
-        height: 100vh;
+        height: 200vh;
         min-height: 600px;
     }
     &__slide {
@@ -10,15 +10,19 @@
         @media screen and (min-width: $tablet) {
             position: absolute;
             left: 0;
-            top: 0;
+            top: 100vh;
             width: 100%;
-            height: 100%;
+            height: 100vh;
+        }
+        &--intro {
+            top: 0;
         }
     }
 
     .m-wine-sheet__frame {
         display: block;
-        top: 50%;
+        top: 150vh;
+        height: calc(80vh - 100px);
         transform: translateY(-50%);
         z-index: 0;
     }
@@ -46,4 +50,9 @@
             opacity: 1;
         }
     }
+}
+
+
+.m-wine-intro {
+    height: 100vh;
 }

@@ -1,7 +1,7 @@
 import TweenLite from 'gsap';
 import isTouch from '../helpers/_h-isTouch.js'
 
-let slides,canScroll,normalScroll;
+let carousel,slides,canScroll,normalScroll;
 let scrollings = [];
 let prevTime;
 var i = 0;
@@ -30,11 +30,12 @@ const getScrollTop = () => {
 }
 
 const init = ()=>{
-    slides = document.querySelectorAll('.m-wine-carousel__slide');
-    if(slides.length == 0) return;
+    carousel = document.querySelector('.m-wine-carousel');
+    slides = carousel.querySelectorAll('.m-wine-carousel__slide:not(.m-wine-carousel__slide--intro)');
+    if(!carousel) return;
     canScroll = true;
     normalScroll = false;
-    i = 0;    
+    i = -1;    
     attachEvents();
 }
 
@@ -97,130 +98,112 @@ const gotoSlide = (dir) => {
 
     canScroll = false;
 
-    if(dir == 'next') {
+    var sign = dir == 'next' ? 1 : -1;
 
-        var currentSlide = slides[i]
-        var wineId = currentSlide.querySelector('.m-wine-sheet__id');
-        var wineBottle = currentSlide.querySelector('.m-wine-sheet__bottle');
-        var wineInfo = currentSlide.querySelector('.m-wine-sheet__info');
+    var currentSlide = slides[i]
+    var wineId = currentSlide.querySelector('.m-wine-sheet__id');
+    var wineBottle = currentSlide.querySelector('.m-wine-sheet__bottle');
+    var wineInfo = currentSlide.querySelector('.m-wine-sheet__info');
 
-        var nextSlide = slides[i+1]
+    var nextSlide = slides[i+sign]
+    var nextSlideWineId = nextSlide.querySelector('.m-wine-sheet__id');
+    var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
+    var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
+
+    var tl = new TimelineMax({
+        onComplete : () => {
+            canScroll = true;
+            i += sign;
+            // console.log('completed',i);
+        }
+    });
+
+    tl
+
+    .to(wineId, .6, {
+        y:(-sign*50),
+        opacity: 0,
+        ease: Power1.easeIn
+    })
+
+    .to(wineInfo, .6, {
+        y:-sign*50,
+        opacity: 0,
+        ease: Power2.easeIn
+    },'-=.8')
+
+    .to(wineBottle, .5, {
+        x:-sign*10,
+        opacity: 0,
+        ease: Power2.easeIn
+    },'+=.1')
+
+    .fromTo(nextSlideWineBottle, .7, {
+        x:sign*10,
+        opacity: 0
+    },{
+        x:0,
+        opacity: 1,
+        ease: Power2.easeOut
+    },'+=.2')
+
+    .fromTo(nextSlideWineId, .5, {
+        y:sign*50,
+        opacity: 0,
+    },{
+        y:0,
+        opacity: 1,
+        ease: Power2.easeOut
+    })
+
+    .fromTo(nextSlideWineInfo, .5, {
+        y:sign*50,
+        opacity: 0,
+    },{
+        y:0,
+        opacity: 1,
+        ease: Power2.easeOut
+    },"-=.9")
+}
+
+const slideNext = () => {
+    if(i == -1) {
+        if(!canScroll) return;
+
+        canScroll = false;
+        var nextSlide = slides[0]
         var nextSlideWineId = nextSlide.querySelector('.m-wine-sheet__id');
         var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
         var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
-
-        var tl = new TimelineMax({
-            onComplete : () => {
-                canScroll = true;
-                i += 1;
-                console.log('completed',i);
-            }
-        });
-
-        tl
-
-        .to(wineId, .6, {
-            y:-50,
-            opacity: 0,
-            ease: Power1.easeIn
-        })
-
-        .to(wineInfo, .6, {
-            y:-50,
-            opacity: 0,
-            ease: Power2.easeIn
-        },'-=.8')
-
-        .to(wineBottle, .5, {
-            x:-10,
-            opacity: 0,
-            ease: Power2.easeIn
-        },'+=.1')
-
-        .fromTo(nextSlideWineBottle, .7, {
-            x:10,
-            opacity: 0
-        },{
-            x:0,
-            opacity: 1,
-            ease: Power2.easeOut
-        },'+=.2')
-
-        .fromTo(nextSlideWineId, .5, {
-            y:50,
-            opacity: 0,
-        },{
-            y:0,
-            opacity: 1,
-            ease: Power2.easeOut
-        })
-
-        .fromTo(nextSlideWineInfo, .5, {
-            y:50,
-            opacity: 0,
-        },{
-            y:0,
-            opacity: 1,
-            ease: Power2.easeOut
-        },"-=.8")
-
-        
-        
-    } else {
-
-        
-        var currentSlide = slides[i]
-        var wineId = currentSlide.querySelector('.m-wine-sheet__id');
-        var wineBottle = currentSlide.querySelector('.m-wine-sheet__bottle');
-        var wineInfo = currentSlide.querySelector('.m-wine-sheet__info');
-
-        var nextSlide = slides[i-1]
-        var nextSlideWineId = nextSlide.querySelector('.m-wine-sheet__id');
-        var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
-        var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
-
-
 
         var tl2 = new TimelineMax({
             onComplete : () => {
-                canScroll = true
-                i--;
-                console.log('completed');
+                canScroll = true;
+                i=0;
             }
         });
 
         tl2
 
-        .to(wineId, .6, {
-            y:50,
-            opacity: 0,
-            ease: Power1.easeIn
+        .fromTo(carousel, 2, {
+            y : 0
+        }, {
+            y : -window.innerHeight,
+            ease : Power4.easeIn,
         })
 
-        .to(wineInfo, .6, {
-            y:50,
-            opacity: 0,
-            ease: Power2.easeIn
-        },'-=.8')
-
-        .to(wineBottle, .5, {
-            x:10,
-            opacity: 0,
-            ease: Power2.easeIn
-        },'+=.1')
-
-        .fromTo(nextSlideWineBottle, .7, {
+        .fromTo(nextSlideWineBottle, .6, {
             x:-10,
             opacity: 0
         },{
             x:0,
             opacity: 1,
             ease: Power2.easeOut
-        },'+=.2')
+        })
 
-        .fromTo(nextSlideWineId, .5, {
-            y:-50,
-            opacity: 0,
+        .fromTo(nextSlideWineId, .6, {
+            y:50,
+            opacity: 0
         },{
             y:0,
             opacity: 1,
@@ -228,29 +211,22 @@ const gotoSlide = (dir) => {
         })
 
         .fromTo(nextSlideWineInfo, .5, {
-            y:-50,
-            opacity: 0,
+            y:50,
+            opacity: 0
         },{
             y:0,
             opacity: 1,
             ease: Power2.easeOut
-        },"-=.8")
+        },"-=.9")
 
-
-
-    }
-
-
-}
-
-
-const slideNext = () => {
-    if(i < slides.length-1) {
-        gotoSlide('next');
     } else {
-        if(!isTouch) {
-            // document.body.classList.remove('lock');
-            // normalScroll = true;
+        if(i < slides.length-1 && i >=0) {
+            gotoSlide('next');
+        } else {
+            if(!isTouch) {
+                // document.body.classList.remove('lock');
+                // normalScroll = true;
+            }
         }
     }
 }
