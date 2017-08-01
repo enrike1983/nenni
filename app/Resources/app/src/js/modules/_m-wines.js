@@ -1,10 +1,14 @@
 import TweenLite from 'gsap';
 import isTouch from '../helpers/_h-isTouch.js'
+import _ from 'underscore'
 
 let carousel,slides,canScroll,normalScroll;
 let scrollings = [];
 let prevTime;
-var i = 0;
+let i = 0;
+let created = false;
+
+let firstSlideNextTimeline,firstSlidePrevTimeline,gotoSlideTimeline;
 
 const getAverage = (elements, number) => {
     var sum = 0;
@@ -29,7 +33,11 @@ const getScrollTop = () => {
     }
 }
 
-const init = ()=>{
+const init = () => {
+    create(window.location.hash);
+}
+
+const create = (slide) => {
     carousel = document.querySelector('.m-wine-carousel');
     slides = carousel.querySelectorAll('.m-wine-carousel__slide:not(.m-wine-carousel__slide--intro)');
     if(!carousel) return;
@@ -37,6 +45,29 @@ const init = ()=>{
     normalScroll = false;
     i = -1;    
     attachEvents();
+    created = window.innerWidth > 767;
+
+    if(slide) {
+        console.log('scrolling to slide: '  + slide)
+        scrollToSlide(slide.split('#')[1])
+    }
+} 
+
+const scrollToSlide = (slide) => {
+    if(created) {
+        TweenLite.to(carousel, 2, {
+            y : -window.innerHeight,
+            ease : Power4.easeIn,
+        })
+
+        i = slide - 1
+        if(i >= 0 ) {
+            gotoSlide('next')
+        } else {
+            slideNext()
+        }
+
+    }
 }
 
 const onScroll = () => {
@@ -49,9 +80,40 @@ const onScroll = () => {
     // }
 }
 
+const onResize = () => {
+    if(window.innerWidth < 767) {
+        destroy();
+    } else {
+        !created && create();
+    }
+    
+}
+
+const destroy = () => {
+    document.body.style.overflow = 'auto'
+    document.documentElement.scrollTop = document.body.scrollTop = 0;
+
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('wheel', onWheel);
+
+    TweenLite.set(carousel, {clearProps:"all"});
+    _.each(document.querySelectorAll('.m-wine-sheet__id'), el => {
+        TweenLite.set(el, {clearProps:"all"});
+    });
+    _.each(document.querySelectorAll('.m-wine-sheet__bottle'), el => {
+        TweenLite.set(el, {clearProps:"all"});
+    });
+    _.each(document.querySelectorAll('.m-wine-sheet__info'), el => {
+        TweenLite.set(el, {clearProps:"all"});
+    });
+    created = false;
+}
+
 const onWheel = (e) => {
 
-    e.preventDefault();
+    if(window.innerWidth < 767) return
+
+    e.preventDefault(); 
 
     if(normalScroll) return;
 
@@ -94,7 +156,7 @@ const onWheel = (e) => {
 
 const gotoSlide = (dir) => {
 
-    if(!canScroll) return;
+    if(!canScroll || i == -1) return;
 
     canScroll = false;
 
@@ -110,15 +172,15 @@ const gotoSlide = (dir) => {
     var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
     var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
 
-    var tl = new TimelineMax({
+    gotoSlideTimeline = new TimelineMax({
         onComplete : () => {
             canScroll = true;
             i += sign;
-            // console.log('completed',i);
+            window.location.hash  = i;
         }
     });
 
-    tl
+    gotoSlideTimeline
 
     .to(wineId, .6, {
         y:(-sign*50),
@@ -168,22 +230,24 @@ const gotoSlide = (dir) => {
 
 const slideNext = () => {
     if(i == -1) {
-        if(!canScroll) return;
 
+        if(!canScroll) return;
         canScroll = false;
+
         var nextSlide = slides[0]
         var nextSlideWineId = nextSlide.querySelector('.m-wine-sheet__id');
         var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
         var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
 
-        var tl2 = new TimelineMax({
+        firstSlideNextTimeline = new TimelineMax({
             onComplete : () => {
                 canScroll = true;
                 i=0;
+                window.location.hash  = i;
             }
         });
 
-        tl2
+        firstSlideNextTimeline
 
         .fromTo(carousel, 2, {
             y : 0
@@ -222,25 +286,48 @@ const slideNext = () => {
     } else {
         if(i < slides.length-1 && i >=0) {
             gotoSlide('next');
-        } else {
-            if(!isTouch) {
-                // document.body.classList.remove('lock');
-                // normalScroll = true;
-            }
         }
     }
 }
 
 const slidePrev = () => {
-    console.log(i);
-    if(i>0) {
+    if(i == 0) {
+
+        if(!canScroll) return;
+        canScroll = false;
+        
+        var nextSlide = slides[0]
+        var nextSlideWineId = nextSlide.querySelector('.m-wine-sheet__id');
+        var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
+        var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
+
+        firstSlidePrevTimeline = new TimelineMax({
+            onComplete : () => {
+                canScroll = true;
+                i=-1;
+                window.location.hash = '';
+            }
+        });
+
+        firstSlidePrevTimeline
+
+        .fromTo(carousel, 2, {
+            y : -window.innerHeight
+        }, {
+            y : 0,
+            ease : Power4.easeIn,
+        })
+
+    } else {
         gotoSlide('prev');
     }
 }
 
 
 const attachEvents = () => {
-    if(!isTouch){
+    window.addEventListener('resize', onResize);
+    if(!isTouch && window.innerWidth > 767) {
+        document.body.style.overflow = 'hidden';
         window.addEventListener('scroll', onScroll);
         window.addEventListener('wheel', onWheel);
     }

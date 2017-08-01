@@ -1,45 +1,63 @@
 .m-wine-carousel {
     position: relative;
     background:map-get($colors,black);
-    @media screen and (min-width: $tablet) {
-        height: 200vh;
-        min-height: 600px;
-    }
-    &__slide {
-        z-index: 1;
+    .no-touch & {
         @media screen and (min-width: $tablet) {
-            position: absolute;
-            left: 0;
-            top: 100vh;
-            width: 100%;
-            height: 100vh;
+            overflow: hidden;
+            height: 200vh;
+            min-height: 600px;    
+        }
+    }
+        
+    &__slide {
+        .no-touch & {
+            @media screen and (min-width: $tablet) {
+                z-index: 1;
+                position: absolute;
+                left: 0;
+                top: 100vh;
+                width: 100%;
+                height: 100vh;   
+            }
         }
         &--intro {
-            top: 0;
+            top: 0 !important;
         }
     }
 
-    .m-wine-sheet__frame {
-        display: block;
+    > .m-wine-sheet__frame {
+        display: none;
         top: 150vh;
         height: calc(80vh - 100px);
         transform: translateY(-50%);
         z-index: 0;
+        @media screen and (min-width: $tablet) {
+            .no-touch & {
+                display: block;
+            }
+        }
     }
 
     .m-wine-sheet {
         background:transparent;
-        @media screen and (min-width: $tablet) {
+        .no-touch & {
             height: 100%;
         }
         &__id,
         &__bottle,
         &__info {
-            opacity: 0;
+            opacity: 1;
+            .no-touch & {
+                @media screen and (min-width: $tablet) {
+                    opacity: 0;
+                }
+            }
         }
 
         .m-wine-sheet__frame {
-            display: none;
+            .no-touch & {
+                display: none;
+            }
         }
     }
 
