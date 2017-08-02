@@ -7,7 +7,8 @@ nenni_2
 
 ### struttura pagine + SEO
 - [x] struttura pagine
-- [ ] seo
+- [x] seo
+    - [ ] creare fixtures dei blocchi e caricarli "hidden" nella pagina
 
 ### tradurre stringhe
 - [ ] tradurre stringhe in giro per il sito
@@ -54,19 +55,12 @@ nenni_2
 ### i vini
 - [x] intro con testo dinamico
 - [x] controller
-- [ ] creazione blocchi 
+- [x] creazione blocchi
+    - [ ] pdf scaricabile
 
 ### pagina news
 - [x] lista automatica di news
 - [x] le mostra tutte ordinate in senso dalla piu recente
-
-### oggetto vino
-- [ ] creare oggetto vino con 
-    - [ ] immagine bottiglia
-    - [ ] logo vino
-    - [ ] descrizione logo
-    - [ ] descrizione
-    - [ ] pdf scaricabile
  
 ### singola news
 - [x] data
