@@ -3,24 +3,30 @@
 {% block content %}
     <div class="barba-container" data-namespace="products">
         <div class="m-wine-carousel">
+
             <div class="m-wine-carousel__slide m-wine-carousel__slide--intro">
-                <div class="m-video-full">
+                <div class="m-img-full">
                     <div class="m-intro-site">
-                        <div class="m-logo m-logo--white m-logo--center">{% include "_partials/logo.html" %}</div>
-                        <h2 class="m-intro-site__title m-title m-title--white a-fade-letter">Lorem ipsum dolor sit amet.</h2>
+                        <div class="m-logo  m-logo--white  m-logo--center">
+                            {% include "_partials/logo.html" %}
+                        </div>
+                        <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">
+                            Vini
+                        </h2>
                     </div>
-                    <video class="m-video-tag" width="640" height="360" preload loop muted playsinline data-intro-scale>
-                        <source src="/uploads/blocks/videos/demo_hp.mp4"/>
-                    </video>
+                    <img src='/img/vini/hero.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
                     <span class="m-intro-site__explore"><span></span></span>
                 </div>
             </div>
+
             {% for block in blocks %}
                 <div class="m-wine-carousel__slide">
                     {{ include(block.getTemplate(), { 'block': block, index: loop.index0 }) }}
                 </div>
             {% endfor %}
+
             <div class="m-wine-sheet__frame"></div>
+
         </div>
     </div>
 {% endblock %}

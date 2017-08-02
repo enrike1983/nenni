@@ -10,7 +10,7 @@ import Preloader from 'preloader.js'
 
 
 var productPage = Wines();
-productPage.init();
+
 
 if(isTouch) {
     document.body.classList.add('touch');
@@ -102,6 +102,21 @@ const HomePage = Barba.BaseView.extend({
     }
 });
 
+
+const Products = Barba.BaseView.extend({
+    namespace: 'products',
+    onLeave: function() {
+    },
+    onEnter: function() {
+        productPage.init();
+    },
+    onEnterCompleted: function() {
+        console.log('onEnterCompleted');
+        Animations().init();
+        Animations().intro();
+    }
+});
+
 window.onload = function() {
 
     var _images = document.querySelectorAll('[data-preload]');
@@ -136,6 +151,7 @@ window.onload = function() {
 
     preloader.addCompletionListener(() => {
         HomePage.init();
+        Products.init();
         Barba.Pjax.start();
         Barba.Prefetch.init();
         VideoFull.init();
