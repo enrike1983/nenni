@@ -37,6 +37,10 @@ const init = () => {
     create(window.location.hash);
 }
 
+const isActive = () => {
+    return created
+}
+
 const create = (slide) => {
     carousel = document.querySelector('.m-wine-carousel');
     slides = carousel.querySelectorAll('.m-wine-carousel__slide:not(.m-wine-carousel__slide--intro)');
@@ -336,7 +340,9 @@ const attachEvents = () => {
 
 export default () => {
     return {
-        init    
+        init,
+        destroy,
+        isActive
     }
     
 }

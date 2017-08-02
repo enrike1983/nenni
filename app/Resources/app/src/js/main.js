@@ -94,6 +94,7 @@ const HomePage = Barba.BaseView.extend({
     },
     onEnter: function() {
         VideoFull.init();
+        productPage.isActive() && productPage.destroy();
     },
     onEnterCompleted: function() {
         console.log('onEnterCompleted');
