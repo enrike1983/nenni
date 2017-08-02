@@ -1,0 +1,9 @@
+.m-wine-infos {
+    background:#fff;
+    padding: rem(50);
+    @media screen and (min-width: $tablet) {
+        .no-touch & {
+            margin-top: -100vh;
+        }
+    }
+}
