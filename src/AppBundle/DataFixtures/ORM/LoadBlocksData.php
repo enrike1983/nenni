@@ -525,12 +525,12 @@ class LoadBlocksData extends AbstractFixture
             #####################
           [
             'title' => [
-              'it' => 'VIno 1',
-              'en' => 'EN VIno 1',
+              'it' => 'San Galgano',
+              'en' => 'San Galgano',
             ],
             'subtitle' => [
-              'it' => 'VIno 1',
-              'en' => 'EN VIno 1',
+              'it' => 'San Galgano',
+              'en' => 'San Galgano',
             ],
             'content' => [
               'it' => '<h2>Lorem Ipsum 1</h2>',
@@ -546,19 +546,20 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_wine-sheet.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'primary_image' => 'wine-bottle_san-galgano.png',
           ],
           [
             'title' => [
-              'it' => 'VIno 2',
-              'en' => 'EN VIno 2',
+              'it' => 'Spada',
+              'en' => 'Spada',
             ],
             'subtitle' => [
-              'it' => 'VIno 2',
-              'en' => 'EN VIno 2',
+              'it' => 'Spada',
+              'en' => 'Spada',
             ],
             'content' => [
-              'it' => '<h2>Lorem Ipsum 2</h2>',
-              'en' => 'EN <h2>Lorem Ipsum 2</h2>',
+              'it' => '<h2>Lorem Ipsum 1</h2>',
+              'en' => 'EN <h2>Lorem Ipsum 1</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -570,19 +571,20 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_wine-sheet.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'primary_image' => 'wine-bottle_spada.png',
           ],
           [
             'title' => [
-              'it' => 'VIno 3',
-              'en' => 'EN VIno 3',
+              'it' => 'Pugnitello',
+              'en' => 'Pugnitello',
             ],
             'subtitle' => [
-              'it' => 'VIno 3',
-              'en' => 'EN VIno 3',
+              'it' => 'Pugnitello',
+              'en' => 'Pugnitello',
             ],
             'content' => [
-              'it' => '<h3>Lorem Ipsum 3</h3>',
-              'en' => 'EN <h2>Lorem Ipsum 2</h2>',
+              'it' => '<h2>Lorem Ipsum 1</h2>',
+              'en' => 'EN <h2>Lorem Ipsum 1</h2>',
             ],
             'link' => [
               'it' => 'www.google.com',
@@ -594,6 +596,57 @@ class LoadBlocksData extends AbstractFixture
             ],
             'template' => 'default/blocks/_wine-sheet.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'primary_image' => 'wine-bottle_pugnitello.png',
+          ],
+          [
+            'title' => [
+              'it' => 'Spada',
+              'en' => 'Spada',
+            ],
+            'subtitle' => [
+              'it' => 'Spada',
+              'en' => 'Spada',
+            ],
+            'content' => [
+              'it' => '<h2>Lorem Ipsum 1</h2>',
+              'en' => 'EN <h2>Lorem Ipsum 1</h2>',
+            ],
+            'link' => [
+              'it' => 'www.google.com',
+              'en' => 'www.google.com',
+            ],
+            'link_label' => [
+              'it' => 'scopri di piu',
+              'en' => 'discover more',
+            ],
+            'template' => 'default/blocks/_wine-sheet.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'primary_image' => 'wine-bottle_spada.png',
+          ],
+          [
+            'title' => [
+              'it' => 'Galgano',
+              'en' => 'Galgano',
+            ],
+            'subtitle' => [
+              'it' => 'Galgano',
+              'en' => 'Galgano',
+            ],
+            'content' => [
+              'it' => '<h2>Lorem Ipsum 1</h2>',
+              'en' => 'EN <h2>Lorem Ipsum 1</h2>',
+            ],
+            'link' => [
+              'it' => 'www.google.com',
+              'en' => 'www.google.com',
+            ],
+            'link_label' => [
+              'it' => 'scopri di piu',
+              'en' => 'discover more',
+            ],
+            'template' => 'default/blocks/_wine-sheet.html.twig',
+            'block_group' => BlocksManager::BLOCK_GROUP_VINI,
+            'primary_image' => 'wine-bottle_galgano.png',
           ],
         ];
     }

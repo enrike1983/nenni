@@ -7,7 +7,7 @@
             <p class="id-caption">{{ block.getTitle() }}</p>
         </div>
         <div class="m-wine-sheet__bottle">
-            <img src="{{ asset('img/wine-bottle-' ~ index ~ '.png') }}" alt="">
+            <img src="{{ vich_uploader_asset(block, 'imageFile') }}" alt="">
         </div>
         <div class="m-wine-sheet__info">
             <p class="info-text">{{index}} {{ block.getContent() }}</p>
