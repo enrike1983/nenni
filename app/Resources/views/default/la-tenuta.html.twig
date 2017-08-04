@@ -10,5 +10,8 @@
         {% for block in blocks %}
             {{ include(block.getTemplate(), { 'block': block }) }}
         {% endfor %}
+        
+        {% include "_partials/team-block.html.twig" %}
+
     </div>
 {% endblock %}

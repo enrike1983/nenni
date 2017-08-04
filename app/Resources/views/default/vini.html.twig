@@ -20,13 +20,37 @@
             </div>
 
             {% for block in blocks %}
-                <div class="m-wine-carousel__slide">
+                <div class="m-wine-carousel__slide {% if loop.last %}m-wine-carousel__slide--last{% endif %}">
                     {{ include(block.getTemplate(), { 'block': block, index: loop.index0 }) }}
                 </div>
             {% endfor %}
 
             <div class="m-wine-sheet__frame"></div>
 
+            <div class="m-wine-carousel__nav">
+                <a href="" class="m-wine-carousel__nav-prev disabled">
+                    <svg viewBox="0 0 30 30">
+                        <polygon points="15,22.6 0.5,8.1 1.2,7.4 15,21.2 28.8,7.4 29.5,8.1 "/>
+                    </svg>
+                </a>
+                <a href="" class="m-wine-carousel__nav-next">
+                    <svg viewBox="0 0 30 30">
+                        <polygon points="15,22.6 0.5,8.1 1.2,7.4 15,21.2 28.8,7.4 29.5,8.1 "/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="m-wine-infos">
+            <div class="m-wine-infos__wrapper">
+                <div class="m-wine-infos__image">
+                    <img src="{{ asset('img/wine-infos-logo.png') }}" alt="">
+                </div>
+                <div class="m-wine-infos__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quam, distinctio quas molestias quaerat, autem! Ab reiciendis illo ad porro reprehenderit odio quibusdam sed eaque vitae fuga, nulla nobis ut nam in debitis quas corporis non, laudantium recusandae accusantium deleniti. Velit autem ipsum nam error vero voluptatibus enim, assumenda nobis dolorum aspernatur quod maiores, veritatis id quasi consequuntur?</p>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

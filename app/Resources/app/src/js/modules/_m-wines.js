@@ -2,7 +2,7 @@ import TweenLite from 'gsap';
 import isTouch from '../helpers/_h-isTouch.js'
 import _ from 'underscore'
 
-let carousel,slides,canScroll,normalScroll;
+let carousel,slides,canScroll,normalScroll,carouselNav;
 let scrollings = [];
 let prevTime;
 let i = 0;
@@ -33,16 +33,30 @@ const getScrollTop = () => {
     }
 }
 
+const updateNav = (k) => {
+    if(k <= 0) {
+        carouselNav[0].classList.add('disabled');
+        carouselNav[1].classList.remove('disabled');
+    } else {
+        carouselNav[0].classList.remove('disabled');
+        if(k == slides.length-1) {
+            carouselNav[1].classList.add('disabled');
+        } else {
+            carouselNav[1].classList.remove('disabled');
+        }
+    }
+}
+
 const init = () => {
+    document.documentElement.scrollTop = document.body.scrollTop = 0;
     create(window.location.hash);
 }
 
-const isActive = () => {
-    return created
-}
+const isActive = () => created
 
 const create = (slide) => {
     carousel = document.querySelector('.m-wine-carousel');
+    carouselNav =  carousel.querySelectorAll('.m-wine-carousel__nav a');
     slides = carousel.querySelectorAll('.m-wine-carousel__slide:not(.m-wine-carousel__slide--intro)');
     if(!carousel) return;
     canScroll = true;
@@ -75,13 +89,12 @@ const scrollToSlide = (slide) => {
 }
 
 const onScroll = () => {
-    // if(getScrollTop() <= 0) {
-    //     document.body.classList.add('lock');
-    //     // kidsWrapperEl.style.position = 'fixed';
-    //     normalScroll = false;
-    // } else {
-    //     // scrollerMenu.classList.remove('active')
-    // }
+    if(getScrollTop() <= 0) {
+        document.body.style.overflow = 'hidden'
+        normalScroll = false;
+    } else {
+        normalScroll = true;
+    }
 }
 
 const onResize = () => {
@@ -100,6 +113,10 @@ const destroy = () => {
     window.removeEventListener('scroll', onScroll);
     window.removeEventListener('wheel', onWheel);
 
+    _.each(carouselNav,(button,j)=>{
+        button.removeEventListener('click', onNavClick.bind(null,j))
+    })
+
     TweenLite.set(carousel, {clearProps:"all"});
     _.each(document.querySelectorAll('.m-wine-sheet__id'), el => {
         TweenLite.set(el, {clearProps:"all"});
@@ -115,11 +132,9 @@ const destroy = () => {
 
 const onWheel = (e) => {
 
-    if(window.innerWidth < 767) return
+    if((window.innerWidth < 767) || normalScroll) return
 
     e.preventDefault(); 
-
-    if(normalScroll) return;
 
     var curTime = new Date().getTime();
 
@@ -175,6 +190,8 @@ const gotoSlide = (dir) => {
     var nextSlideWineId = nextSlide.querySelector('.m-wine-sheet__id');
     var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
     var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
+
+    updateNav(i + sign);
 
     gotoSlideTimeline = new TimelineMax({
         onComplete : () => {
@@ -243,11 +260,14 @@ const slideNext = () => {
         var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
         var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
 
+        updateNav(i + 1);
+
         firstSlideNextTimeline = new TimelineMax({
             onComplete : () => {
                 canScroll = true;
                 i=0;
                 window.location.hash  = i;
+                // updateNav(i + sign);
             }
         });
 
@@ -290,6 +310,10 @@ const slideNext = () => {
     } else {
         if(i < slides.length-1 && i >=0) {
             gotoSlide('next');
+        } else {
+            console.log('end');
+            normalScroll = true
+            document.body.style.overflow = 'auto'
         }
     }
 }
@@ -305,11 +329,14 @@ const slidePrev = () => {
         var nextSlideWineBottle = nextSlide.querySelector('.m-wine-sheet__bottle');
         var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
 
+        updateNav(i - 1);
+
         firstSlidePrevTimeline = new TimelineMax({
             onComplete : () => {
                 canScroll = true;
                 i=-1;
                 window.location.hash = '';
+                // updateNav(i + sign);
             }
         });
 
@@ -323,8 +350,13 @@ const slidePrev = () => {
         })
 
     } else {
-        gotoSlide('prev');
+        if(!normalScroll) gotoSlide('prev');
     }
+}
+
+const onNavClick = (j,e) => {
+    e.preventDefault();
+    j%2==0 ? slidePrev() : slideNext();
 }
 
 
@@ -334,6 +366,9 @@ const attachEvents = () => {
         document.body.style.overflow = 'hidden';
         window.addEventListener('scroll', onScroll);
         window.addEventListener('wheel', onWheel);
+        _.each(carouselNav,(button,j)=>{
+            button.addEventListener('click', onNavClick.bind(null,j))
+        })
     }
 }
 

@@ -7,10 +7,10 @@ import VideoFull from './modules/_m-video-full'
 import Animations from './modules/_m-animations'
 import Wines from './modules/_m-wines'
 import Preloader from 'preloader.js'
+import Team from './modules/_m-team'
 
-
+var teamBlock = Team();
 var productPage = Wines();
-
 
 if(isTouch) {
     document.body.classList.add('touch');
@@ -98,6 +98,7 @@ const HomePage = Barba.BaseView.extend({
     },
     onEnterCompleted: function() {
         console.log('onEnterCompleted');
+        teamBlock.init();
         Animations().init();
         Animations().intro();
     }

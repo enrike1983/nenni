@@ -68,6 +68,74 @@
             opacity: 1;
         }
     }
+
+    &__nav {
+        position: absolute;
+        top: 75%;
+        right: 100px;
+        width: 30px;
+        height: 80px;
+        transform: translateY(-50%);
+        z-index: 99;
+        display: none;
+
+        @media screen and (min-width: $tablet) {
+            .no-touch & {
+                display: block;
+            }
+        }
+
+    }
+
+    &__nav-prev,
+    &__nav-next {
+        display: block;
+        cursor: pointer;
+        transition: all .3s;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        svg {
+            fill : map-get($colors,yellow)
+        }
+        .no-touch & {
+            &:hover {
+                transform: translateY(-3px);   
+                opacity: .7;
+            }
+        }
+        &.disabled {
+            opacity: .2;
+            cursor: default;
+            &:hover {
+                transform: none;   
+                opacity: .2;
+            }
+        }
+    }
+
+    &__nav-next {
+        top: auto;
+        bottom: 0;
+        .no-touch & {
+            &:hover {
+                transform: translateY(3px);   
+            }
+        }
+    }
+
+    &__nav-prev svg {
+        transform: rotate(180deg);
+    }
+}
+
+.m-wine-carousel__slide--last .m-wine-sheet {
+    padding-bottom: rem(150);
+    @media screen and (min-width: $tablet) {
+        padding-bottom: 0;
+    }
+    
 }
 
 

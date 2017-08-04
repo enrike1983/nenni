@@ -1,0 +1,42 @@
+.m-wine-infos {
+    background:#fff;
+    @media screen and (min-width: $tablet) {
+        .no-touch & {
+            margin-top: -100vh;
+        }
+    }
+
+    &__wrapper {
+        padding: rem(80) rem(30);
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            align-items: center;
+            max-width: rem(1280);
+            margin: 0 auto;
+            padding: rem(150) rem(30);
+        }
+    }
+
+    &__image {
+        padding: 0 15%;
+        max-width:400px;
+        margin: rem(40) auto;
+        margin-top: 0;
+        @media screen and (min-width: $tablet) {
+            width: 50%;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__text {
+        @media screen and (min-width: $tablet) {
+            width: 50%;
+        }
+        p {
+            line-height: 1.4;
+        }
+    }
+}
