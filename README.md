@@ -32,7 +32,7 @@ nenni_2
 - [x] partial statico news:
     - [x] non è spostabile
     - [x] mostra le ultime max 4 news
-    - [ ] mettere blocco di 1 vino a sua scelta
+    - [x] mettere primo blocco di vino della lista
 
 ### multilingua
 - [x] attivazione 
@@ -57,7 +57,7 @@ nenni_2
 - [x] intro con testo dinamico
 - [x] controller
 - [x] creazione blocchi
-    - [ ] mettere nelle fixtures l'immagine del vino 
+    - [x] mettere nelle fixtures l'immagine del vino 
     - [ ] pdf scaricabile
     
 
