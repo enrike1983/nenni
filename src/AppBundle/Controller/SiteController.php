@@ -32,10 +32,15 @@ class SiteController extends Controller
             NewsManager::HOME_NEWS_LIMIT
         );
 
+        $wine = $this->container->get('app.blocks_manager')->getFirstBlock(
+            BlocksManager::BLOCK_GROUP_VINI
+        );
+
         return $this->render(
             'default/home.html.twig', [
                 'blocks' => $blocks,
-                'news' => $news
+                'news' => $news,
+                'wine' => $wine
             ]
         );
     }

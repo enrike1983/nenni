@@ -48,7 +48,7 @@ class BlockTranslation
     /**
      * @var string
      *
-     * @ORM\Column(name="link_label", type="string", length=255)
+     * @ORM\Column(name="link_label", type="string", length=255, nullable=true)
      */
     private $link_label;
 

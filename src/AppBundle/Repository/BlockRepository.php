@@ -36,4 +36,18 @@ class BlockRepository extends \Doctrine\ORM\EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findFirstBlock($block_group = null)
+    {
+        $qb = $this->getBaseQuery();
+
+        if($block_group) {
+        $qb->andWhere('b.block_group = :block_group')
+            ->setParameter('block_group', $block_group);
+        }
+
+        return $qb->getQuery()
+          ->setMaxResults(1)
+          ->getSingleResult();
+    }
 }

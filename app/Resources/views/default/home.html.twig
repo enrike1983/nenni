@@ -3,10 +3,15 @@
 {% block content %}
     <div class="barba-container" data-namespace="homepage">
 
+        {# Blocks #}
         {% for block in blocks %}
             {{ include(block.getTemplate(), { 'block': block }) }}
         {% endfor %}
 
+        {# Wine Block #}
+        {{ include(wine.getTemplate(), { 'block': wine }) }}
+
+        {# News Block #}
         <div class="a-stagger-y">
             <div class="m-news-list">
                 {% for single_news in news %}

@@ -536,14 +536,14 @@ class LoadBlocksData extends AbstractFixture
               'it' => '<h2>Lorem Ipsum 1</h2>',
               'en' => 'EN <h2>Lorem Ipsum 1</h2>',
             ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
+//            'link' => [
+//              'it' => 'www.google.com',
+//              'en' => 'www.google.com',
+//            ],
+//            'link_label' => [
+//              'it' => 'scopri di piu',
+//              'en' => 'discover more',
+//            ],
             'template' => 'default/blocks/_wine-sheet.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VINI,
             'primary_image' => 'wine-bottle_san-galgano.png',
@@ -561,14 +561,14 @@ class LoadBlocksData extends AbstractFixture
               'it' => '<h2>Lorem Ipsum 1</h2>',
               'en' => 'EN <h2>Lorem Ipsum 1</h2>',
             ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
+//            'link' => [
+//              'it' => 'www.google.com',
+//              'en' => 'www.google.com',
+//            ],
+//            'link_label' => [
+//              'it' => 'scopri di piu',
+//              'en' => 'discover more',
+//            ],
             'template' => 'default/blocks/_wine-sheet.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VINI,
             'primary_image' => 'wine-bottle_spada.png',
@@ -586,14 +586,14 @@ class LoadBlocksData extends AbstractFixture
               'it' => '<h2>Lorem Ipsum 1</h2>',
               'en' => 'EN <h2>Lorem Ipsum 1</h2>',
             ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
+//            'link' => [
+//              'it' => 'www.google.com',
+//              'en' => 'www.google.com',
+//            ],
+//            'link_label' => [
+//              'it' => 'scopri di piu',
+//              'en' => 'discover more',
+//            ],
             'template' => 'default/blocks/_wine-sheet.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VINI,
             'primary_image' => 'wine-bottle_pugnitello.png',
@@ -611,14 +611,14 @@ class LoadBlocksData extends AbstractFixture
               'it' => '<h2>Lorem Ipsum 1</h2>',
               'en' => 'EN <h2>Lorem Ipsum 1</h2>',
             ],
-            'link' => [
-              'it' => 'www.google.com',
-              'en' => 'www.google.com',
-            ],
-            'link_label' => [
-              'it' => 'scopri di piu',
-              'en' => 'discover more',
-            ],
+//            'link' => [
+//              'it' => 'www.google.com',
+//              'en' => 'www.google.com',
+//            ],
+//            'link_label' => [
+//              'it' => 'scopri di piu',
+//              'en' => 'discover more',
+//            ],
             'template' => 'default/blocks/_wine-sheet.html.twig',
             'block_group' => BlocksManager::BLOCK_GROUP_VINI,
             'primary_image' => 'wine-bottle_spada.png',
@@ -659,8 +659,14 @@ class LoadBlocksData extends AbstractFixture
             $translation->setTitle($block['title'][$locale]);
             $translation->setSubtitle($block['subtitle'][$locale]);
             $translation->setContent($block['content'][$locale]);
-            $translation->setLink($block['link'][$locale]);
-            $translation->setLinkLabel($block['link_label'][$locale]);
+            if(isset($block['link'])) {
+                $translation->setLink($block['link'][$locale]);
+            }
+
+            if(isset($block['link_label'])) {
+                $translation->setLinkLabel($block['link_label'][$locale]);
+            }
+
             $translation->setLocale($locale);
             $translation->setTranslatable($this->getReference($key));
 

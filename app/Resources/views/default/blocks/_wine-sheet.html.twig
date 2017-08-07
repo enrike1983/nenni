@@ -10,7 +10,7 @@
             <img src="{{ vich_uploader_asset(block, 'imageFile') }}" alt="">
         </div>
         <div class="m-wine-sheet__info">
-            <p class="info-text">{{index}} {{ block.getContent()|raw }}</p>
+            <p class="info-text">{{ block.getContent()|raw }}</p>
             <a class="info-cta" href="{{ block.getLink() }}">{{ block.getLinkLabel() }}</a>
         </div>
     </div>

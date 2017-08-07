@@ -38,6 +38,12 @@ class BlocksManager {
           ->findBlocks($block_group);
     }
 
+    public function getFirstBlock($block_group)
+    {
+      return $this->entityManager->getRepository('AppBundle:Block')
+        ->findFirstBlock($block_group);
+    }
+
     /**
     * @param $ids
     *
