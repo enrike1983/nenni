@@ -2,6 +2,7 @@
 
 {% import "_macro/_m-video-ratio.html" as mVideoRatio %}
 {% import "_macro/_m-full-text.html" as mFullText %}
+{% import "_macro/_m-full-img-text.html" as mFullBgText %}
 {% import "_macro/_m-text-media.html" as mTextMedia %}
 {% import "_macro/_m-embed-video.html" as mEmbedVideo %}
 
@@ -20,6 +21,18 @@
             <img src='/img/le-vigne/hero.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
             <span class="m-intro-site__explore"><span></span></span>
         </div>
+
+
+        {# FULL TEXT IMG BG #}
+        {{ mFullBgText.build({
+            'title': 'FULL PIPPO IMG BG',
+            'text': 'Testo block',
+            'img': '/img/test-1.jpg',
+            'link': '#',
+            'label': 'CTA',
+        }) }}
+
+
 
         {# VIDEO BLOCK #}
         {{ mVideoRatio.build({
