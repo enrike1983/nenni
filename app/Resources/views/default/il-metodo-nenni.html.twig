@@ -7,8 +7,61 @@
 {% block content %}
     <div class="barba-container" data-namespace="homepage">
 
+        <div class="m-img-full">
+            <div class="m-intro-site">
+                <div class="m-logo  m-logo--white  m-logo--center">
+                    {% include "_partials/logo.html" %}
+                </div>
+                <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">
+                    IL METODO NENNI
+                </h2>
+            </div>
+            <img src='/img/il-metodo/hero_il_metodo.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
+            <span class="m-intro-site__explore"><span></span></span>
+        </div>
+
         {% for block in blocks %}
             {{ include(block.getTemplate(), { 'block': block }) }}
         {% endfor %}
+
+        {{ mTextMedia.build({
+            'title': 'TEXT IMG BLOCK',
+            'text': 'Testo block',
+            'media': '/img/il-metodo/1.jpg',
+            'link': 'http://www.google.it',
+            'label': 'cta',
+            'type': 'img',
+            'align': 'left'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'TEXT IMG BLOCK',
+            'text': 'Testo block',
+            'media': '/img/il-metodo/2.jpg',
+            'link': 'http://www.google.it',
+            'label': 'cta',
+            'type': 'img',
+            'align': 'right'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'TEXT VIDEO BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': '/img/il-metodo/3.mp4',
+            'label': 'cta',
+            'type': 'video',
+            'align': 'left'
+        }) }}
+
+        {{ mTextMedia.build({
+            'title': 'TEXT VIDEO BLOCK',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': '/img/il-metodo/4.mp4',
+            'label': 'cta',
+            'type': 'video',
+            'align': 'right'
+        }) }}
     </div>
 {% endblock %}
