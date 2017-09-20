@@ -26,7 +26,7 @@ nenni_2
     - [x] campo label
 
 ### utenti
-- [ ] creare utenti e integrarli con sonata
+- [x] creare utenti e integrarli con sonata
 
 ### blocchi
 - [ ] aggiungere campo poster del video
@@ -42,7 +42,7 @@ nenni_2
 ### multilingua
 - [x] attivazione 
 - [x] sticky locale
-- [ ] disabilitare italiano
+- [x] disabilitare italiano
  
 ### "la tenuta"
 - [x] intro con testo dinamico

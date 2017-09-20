@@ -23,7 +23,7 @@ services:
 
     app.redirect_listener:
         class: AppBundle\EventListener\RedirectListener
-        arguments: ['@router', 'home', '%kernel.default_locale%']
+        arguments: ['@router', 'index', '%kernel.default_locale%']
         tags:
             - { name: kernel.event_subscriber }
 

@@ -18,9 +18,9 @@ class RedirectListener implements EventSubscriberInterface
     private $router;
 
     /**
-     * @var $home_route
+     * @var $index_route
      */
-    private $home_route;
+    private $index_route;
 
     /**
      * @var $default_locale
@@ -31,19 +31,19 @@ class RedirectListener implements EventSubscriberInterface
      * RedirectListener constructor.
      *
      * @param \Symfony\Component\Routing\Router $router
-     * @param $home_route
+     * @param $index_route
      * @param $default_locale
      */
-    public function __construct(Router $router, $home_route, $default_locale)
+    public function __construct(Router $router, $index_route, $default_locale)
     {
         $this->router = $router;
-        $this->home_route = $home_route;
+        $this->index_route = $index_route;
         $this->default_locale = $default_locale;
     }
 
     public function onKernelRequest(GetResponseEvent $event)
     {
-        if(!$event->getRequest()->get('_locale')) {
+        if(!$event->getRequest()->get('_locale') && $event->getRequest()->get('_route') === $this->index_route) {
             $url = $this->router->generate('home', ['_locale' => $this->default_locale]);
             $response = new RedirectResponse($url);
             $event->setResponse($response);
