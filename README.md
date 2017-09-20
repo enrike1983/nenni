@@ -59,7 +59,7 @@ nenni_2
 - [x] intro con testo dinamico
 - [x] controller
 - [x] creazione blocchi 
-- [ ] caricare blocchi e immagini ( attendo asset da nic )
+- [x] caricare blocchi e immagini ( attendo asset da nic )
 
 ### i vini
 - [x] intro con testo dinamico
