@@ -8,14 +8,41 @@ nenni_2
 - [x] costruire menu dinamico multilingua
 - [x] linkare menu
 
+### "la tenuta"
+- [x] intro con testo dinamico
+- [x] controller
+- [x] creazione blocchi
+- [ ] dinamizzare la tab "people" e i testi multilingua
+
+### i vini
+- [x] intro con testo dinamico
+- [x] controller
+- [x] creazione blocchi
+    - [x] mettere nelle fixtures l'immagine del vino 
+    - [ ] pdf scaricabile e caricabile da backend
+
+### home
+- [x] partial statico news:
+    - [x] non è spostabile
+    - [x] mostra le ultime max 4 news
+    - [x] mettere primo blocco di vino della lista
+    - [ ] invertire vini con persone in home
+
 ### struttura pagine + SEO
 - [x] struttura pagine
 - [x] seo
     - [ ] creare fixtures dei blocchi e caricarli "hidden" nella pagina
       - [ ] caricare i contenuti dal sito attuale
+      
+### pagina 404 / 500
+- [ ] TODO
 
-### tradurre stringhe
-- [ ] tradurre stringhe in giro per il sito
+### contatti
+- [ ] TODO
+   
+### privacy / legal / credits   
+- [ ] creare pagine ( attendo blocco generico da nic )
+- [ ] linkarle sul footer      
 
 ### backend
 - [x] file upload
@@ -32,23 +59,13 @@ nenni_2
 - [ ] aggiungere campo poster del video
 - [NO] logica per creare blocco di tipo "vino" ( avrà una relazione col l'oggetto vino )
 
-### home
-- [x] partial statico news:
-    - [x] non è spostabile
-    - [x] mostra le ultime max 4 news
-    - [x] mettere primo blocco di vino della lista
-    - [ ] invertire vini con persone in home
+### tradurre stringhe
+- [ ] tradurre stringhe in giro per il sito
     
 ### multilingua
 - [x] attivazione 
 - [x] sticky locale
 - [x] disabilitare italiano
- 
-### "la tenuta"
-- [x] intro con testo dinamico
-- [x] controller
-- [x] creazione blocchi
-- [ ] dinamizzare la tab "people" e i testi multilingua
 
 ### "le vigne"
 - [x] intro con testo dinamico
@@ -60,13 +77,6 @@ nenni_2
 - [x] controller
 - [x] creazione blocchi 
 - [x] caricare blocchi e immagini ( attendo asset da nic )
-
-### i vini
-- [x] intro con testo dinamico
-- [x] controller
-- [x] creazione blocchi
-    - [x] mettere nelle fixtures l'immagine del vino 
-    - [ ] pdf scaricabile e caricabile da backend
     
 
 ### pagina news
@@ -78,16 +88,5 @@ nenni_2
 - [x] titolo
 - [x] testo
 - [x] url
-- [ ] mettere controllo in home e nel menu. Se ci non ci sono news nascondiamo
+- [x] mettere controllo in home e nel menu. Se ci non ci sono news nascondiamo
 - [ ] immagine
-
-
-### pagina 404 / 500
-- [ ] TODO
-
-### contatti
-- [ ] TODO
-   
-### privacy / legal / credits   
-- [ ] creare pagine ( attendo blocco generico da nic )
-- [ ] linkarle sul footer
