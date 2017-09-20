@@ -18,7 +18,7 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
 
-    default_locale: it
+    default_locale: en
 
-    active_locales: it|en
-    active_locales_array: [it, en]
+    active_locales: en|it
+    active_locales_array: [en, it]

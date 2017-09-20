@@ -21,11 +21,11 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
-#    app.redirect_listener:
-#        class: AppBundle\EventListener\RedirectListener
-#        arguments: ['@router', 'home']
-#        tags:
-#            - { name: kernel.event_subscriber }
+    app.redirect_listener:
+        class: AppBundle\EventListener\RedirectListener
+        arguments: ['@router', 'home', '%kernel.default_locale%']
+        tags:
+            - { name: kernel.event_subscriber }
 
     # Sonata
     admin.home_blocks:

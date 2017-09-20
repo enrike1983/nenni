@@ -15,6 +15,7 @@ use HttpInvalidParamException;
 
 class SiteController extends Controller
 {
+
     /**
      * @Route("/", name="home")
      * @param \Symfony\Component\HttpFoundation\Request $request
@@ -24,24 +25,25 @@ class SiteController extends Controller
     public function homepageAction(Request $request)
     {
         $blocks = $this->container->get('app.blocks_manager')->getBlocks(
-            BlocksManager::BLOCK_GROUP_HOME
+          BlocksManager::BLOCK_GROUP_HOME
         );
 
         $news = $this->container->get('app.news_manager')->getNewsByLocale(
-            $request->getLocale(),
-            NewsManager::HOME_NEWS_LIMIT
+          $request->getLocale(),
+          NewsManager::HOME_NEWS_LIMIT
         );
 
         $wine = $this->container->get('app.blocks_manager')->getFirstBlock(
-            BlocksManager::BLOCK_GROUP_VINI
+          BlocksManager::BLOCK_GROUP_VINI
         );
 
         return $this->render(
-            'default/home.html.twig', [
-                'blocks' => $blocks,
-                'news' => $news,
-                'wine' => $wine
-            ]
+          'default/home.html.twig',
+          [
+            'blocks' => $blocks,
+            'news' => $news,
+            'wine' => $wine,
+          ]
         );
     }
 
@@ -51,13 +53,14 @@ class SiteController extends Controller
     public function laTenutaAction()
     {
         $blocks = $this->container->get('app.blocks_manager')->getBlocks(
-            BlocksManager::BLOCK_GROUP_LA_TENUTA
+          BlocksManager::BLOCK_GROUP_LA_TENUTA
         );
 
         return $this->render(
-            'default/la-tenuta.html.twig', [
-                'blocks' => $blocks
-            ]
+          'default/la-tenuta.html.twig',
+          [
+            'blocks' => $blocks,
+          ]
         );
     }
 
@@ -67,12 +70,13 @@ class SiteController extends Controller
     public function leVigneAction()
     {
         $blocks = $this->container->get('app.blocks_manager')->getBlocks(
-            BlocksManager::BLOCK_GROUP_VIGNE
+          BlocksManager::BLOCK_GROUP_VIGNE
         );
 
         return $this->render(
-            'default/le-vigne.html.twig', [
-              'blocks' => $blocks
+          'default/le-vigne.html.twig',
+          [
+            'blocks' => $blocks,
           ]
         );
     }
@@ -83,12 +87,13 @@ class SiteController extends Controller
     public function ilMetodoNenniAction()
     {
         $blocks = $this->container->get('app.blocks_manager')->getBlocks(
-            BlocksManager::BLOCK_GROUP_IL_METODO_NENNI
+          BlocksManager::BLOCK_GROUP_IL_METODO_NENNI
         );
 
         return $this->render(
-            'default/il-metodo-nenni.html.twig', [
-              'blocks' => $blocks
+          'default/il-metodo-nenni.html.twig',
+          [
+            'blocks' => $blocks,
           ]
         );
     }
@@ -98,16 +103,19 @@ class SiteController extends Controller
      */
     public function newsAction(Request $request)
     {
-        $news = $this->container->get('app.news_manager')->getNewsByLocale($request->getLocale());
+        $news = $this->container->get('app.news_manager')->getNewsByLocale(
+          $request->getLocale()
+        );
 
-        if(!count($news)) {
+        if (!count($news)) {
             $this->createNotFoundException();
         }
 
         return $this->render(
-            'default/news.html.twig', [
-                'news' => $news
-            ]
+          'default/news.html.twig',
+          [
+            'news' => $news,
+          ]
         );
     }
 
@@ -124,19 +132,21 @@ class SiteController extends Controller
     public function singleNewsAction(Request $request, $news_url)
     {
         //cerca la news dato lo slug. Se esiste ok altrimenti manda a 404
-        $news = $this->container->get('app.news_manager')->getSingleNewsByUrlAndLocale(
+        $news = $this->container->get('app.news_manager')
+          ->getSingleNewsByUrlAndLocale(
             $news_url,
             $request->getLocale()
-        );
+          );
 
-        if(!$news) {
+        if (!$news) {
             $this->createNotFoundException();
         }
 
         return $this->render(
-            'default/single-news.html.twig', [
-                'news' => $news
-            ]
+          'default/single-news.html.twig',
+          [
+            'news' => $news,
+          ]
         );
     }
 
@@ -146,13 +156,14 @@ class SiteController extends Controller
     public function viniAction()
     {
         $blocks = $this->container->get('app.blocks_manager')->getBlocks(
-            BlocksManager::BLOCK_GROUP_VINI
+          BlocksManager::BLOCK_GROUP_VINI
         );
 
         return $this->render(
-            'default/vini.html.twig', [
-                'blocks' => $blocks
-            ]
+          'default/vini.html.twig',
+          [
+            'blocks' => $blocks,
+          ]
         );
     }
 
@@ -164,7 +175,7 @@ class SiteController extends Controller
     public function listModulesAction()
     {
         return $this->render(
-            'default/list-modules.html.twig'
+          'default/list-modules.html.twig'
         );
     }
 }
