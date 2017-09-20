@@ -1,0 +1,43 @@
+{% macro build(arg) %}
+
+    <div class="m-img-ratio">
+
+        <div class="m-media-info">
+            <span class="m-title  m-title--white  a-fade-letter">{{arg.title}}</span>
+            {% if arg.text is not empty %}
+                <p class="a-fade-word">
+                    {{arg.text}}
+                </p>
+            {% endif %}
+            {% if arg.link is not empty %}
+                <a href="{{ arg.link }}" class="m-cta  m-cta--white">
+                    <span>
+                        {{ arg.label }}
+                    </span>
+                </a>
+            {% endif %}
+        </div>
+
+        <img src="{{arg.img}}" alt="">
+
+    </div>
+
+    <div class="m-video-ratio__mobile-box">
+        <div class="m-text-media__text">
+            <article>
+                <span class="m-title  m-title--white  a-fade-letter">{{arg.title}}</span>
+                {% if arg.text is defined %}
+                    <p class="a-fade-word">
+                        {{arg.text}}
+                    </p>
+                {% endif %}
+                <a href="{{ arg.link }}" class="m-cta  m-cta--white">
+                    <span>
+                        {{ arg.label }}
+                    </span>
+                </a>
+            </article>
+        </div>
+    </div>
+
+{% endmacro build %}

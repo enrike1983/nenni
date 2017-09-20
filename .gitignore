@@ -29,5 +29,4 @@ composer.phar
 .DS_Store
 
 export.sql
-app/Resources/views/_macro/_m-full-img-text.html
 todo.txt
