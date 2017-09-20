@@ -1,12 +1,7 @@
 nenni_2
 =======
 
-### redirect
-- [x] aggiungere redirect a lingua preferita ( EN )
 
-### menu
-- [x] costruire menu dinamico multilingua
-- [x] linkare menu
 
 ### "la tenuta"
 - [x] intro con testo dinamico
@@ -44,6 +39,20 @@ nenni_2
 - [ ] creare pagine ( attendo blocco generico da nic )
 - [ ] linkarle sul footer      
 
+### blocchi
+- [ ] aggiungere campo poster del video
+- [NO] logica per creare blocco di tipo "vino" ( avrà una relazione col l'oggetto vino )
+
+### tradurre stringhe
+- [ ] tradurre stringhe in giro per il sito
+
+### redirect
+- [x] aggiungere redirect a lingua preferita ( EN )
+
+### menu
+- [x] costruire menu dinamico multilingua
+- [x] linkare menu
+
 ### backend
 - [x] file upload
 - [x] creazione dei blocchi deve settare automaticamente il "block_group"
@@ -54,13 +63,6 @@ nenni_2
 
 ### utenti
 - [x] creare utenti e integrarli con sonata
-
-### blocchi
-- [ ] aggiungere campo poster del video
-- [NO] logica per creare blocco di tipo "vino" ( avrà una relazione col l'oggetto vino )
-
-### tradurre stringhe
-- [ ] tradurre stringhe in giro per il sito
     
 ### multilingua
 - [x] attivazione 
@@ -90,3 +92,5 @@ nenni_2
 - [x] url
 - [x] mettere controllo in home e nel menu. Se ci non ci sono news nascondiamo
 - [ ] immagine
+
+
