@@ -11,8 +11,8 @@ nenni_2
 ### struttura pagine + SEO
 - [x] struttura pagine
 - [x] seo
-    - [ ] caricare i contenuti dal sito attuale
-    - [NO] creare fixtures dei blocchi e caricarli "hidden" nella pagina
+    - [ ] creare fixtures dei blocchi e caricarli "hidden" nella pagina
+      - [ ] caricare i contenuti dal sito attuale
 
 ### tradurre stringhe
 - [ ] tradurre stringhe in giro per il sito
