@@ -2,7 +2,7 @@ nenni_2
 =======
 
 ### redirect
-- [ ] aggiungere redirect a lingua preferita
+- [ ] aggiungere redirect a lingua preferita ( EN )
 
 ### menu
 - [x] costruire menu dinamico multilingua
