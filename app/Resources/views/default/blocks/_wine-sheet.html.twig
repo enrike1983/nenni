@@ -2,7 +2,9 @@
     <div class="m-wine-sheet__wrapper">
         <div class="m-wine-sheet__frame"></div>
         <div class="m-wine-sheet__id">
-            <div class="id-logo"><img src="{{ vich_uploader_asset(block, 'logoFile') }}" alt=""></div>
+            {% if vich_uploader_asset(block, 'logoFile') %}
+                <div class="id-logo"><img src="{{ vich_uploader_asset(block, 'logoFile') }}" alt=""></div>
+            {% endif %}
             <div class="id-wings"><img src="{{ asset('img/wine-wings.png') }}" alt=""></div>
             <p class="id-caption">{{ block.getTitle()|raw }}</p>
         </div>
