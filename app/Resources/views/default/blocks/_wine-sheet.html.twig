@@ -2,7 +2,7 @@
     <div class="m-wine-sheet__wrapper">
         <div class="m-wine-sheet__frame"></div>
         <div class="m-wine-sheet__id">
-            <div class="id-logo"><img src="{{ asset('img/wine-logo.png') }}" alt=""></div>
+            <div class="id-logo"><img src="{{ vich_uploader_asset(block, 'logoFile') }}" alt=""></div>
             <div class="id-wings"><img src="{{ asset('img/wine-wings.png') }}" alt=""></div>
             <p class="id-caption">{{ block.getTitle()|raw }}</p>
         </div>
@@ -23,14 +23,14 @@
             <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="5" data-tilt-speed="70">
                 <article>
                     <span class="m-title  m-title--white  a-fade-letter">
-                        Lorem Ipsum
+                        {{ block.getTitle()|raw }}
                     </span>
                     <p class="a-fade-word">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ducimus fuga nisi quidem, adipisci id praesentium dolore nam aliquid molestiae omnis.
+                        {{ block.getContent()|raw }}
                     </p>
-                    <a href="{{ block.getLink() }}" class="m-cta  m-cta--white">
+                    <a href="{{ vich_uploader_asset(block, 'pdfFile') }}" class="m-cta  m-cta--white">
                         <span>
-                            SCARICA PDF
+                            DOWNLOAD PDF:
                         </span>
                     </a>
                 </article>
