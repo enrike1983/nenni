@@ -193,6 +193,9 @@ const gotoSlide = (dir) => {
 
     updateNav(i + sign);
 
+    currentSlide.classList.remove('active');
+    nextSlide.classList.add('active');
+
     gotoSlideTimeline = new TimelineMax({
         onComplete : () => {
             canScroll = true;
@@ -262,6 +265,8 @@ const slideNext = () => {
 
         updateNav(i + 1);
 
+        nextSlide.classList.add('active');
+
         firstSlideNextTimeline = new TimelineMax({
             onComplete : () => {
                 canScroll = true;
@@ -311,7 +316,7 @@ const slideNext = () => {
         if(i < slides.length-1 && i >=0) {
             gotoSlide('next');
         } else {
-            console.log('end');
+            // console.log('end');
             normalScroll = true
             document.body.style.overflow = 'auto'
         }
@@ -330,6 +335,8 @@ const slidePrev = () => {
         var nextSlideWineInfo = nextSlide.querySelector('.m-wine-sheet__info');
 
         updateNav(i - 1);
+
+        nextSlide.classList.add('active');
 
         firstSlidePrevTimeline = new TimelineMax({
             onComplete : () => {

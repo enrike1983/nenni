@@ -23,6 +23,9 @@
         &--intro {
             top: 0 !important;
         }
+        &.active {
+            z-index: 2;
+        }
     }
 
     > .m-wine-sheet__frame {
