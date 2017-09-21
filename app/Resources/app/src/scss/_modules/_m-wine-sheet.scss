@@ -5,7 +5,7 @@
     @media screen and (min-width: $tablet) {
         height: 100%;
     }
-    
+
     img {
         display: block;
         width: 100%;
@@ -28,7 +28,7 @@
             max-width: 1440px;
         }
         @media screen and (min-width: 1900px) {
-            max-width: 1600px;   
+            max-width: 1600px;
         }
         @media screen and (min-width: $tablet) {
             height: 100%;
@@ -49,6 +49,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+    }
+    &__info {
+        .m-text-media__text {
+            padding: 0 rem(50) 0 0;
         }
     }
 
@@ -99,7 +104,7 @@
     }
 
     &__info {
-        width: 100%;    
+        width: 100%;
         padding: rem(30) rem(10);
         text-align: center;
         @media screen and (min-width: $tablet) {

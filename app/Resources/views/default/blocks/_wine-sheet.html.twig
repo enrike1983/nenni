@@ -10,8 +10,33 @@
             <img src="{{ vich_uploader_asset(block, 'imageFile') }}" alt="">
         </div>
         <div class="m-wine-sheet__info">
-            <p class="info-text">{{ block.getContent()|raw }}</p>
-            <a class="info-cta" href="{{ block.getLink() }}">{{ block.getLinkLabel() }}</a>
+            {# <p class="info-text">{{ block.getContent()|raw }}</p>
+
+            <div>
+                <a class="m-cta  m-cta--white" href="{{ block.getLink() }}">
+                    <span>
+                        {{ block.getLinkLabel() }}
+                    </span>
+                </a>
+            </div> #}
+
+            <div class="m-text-media__text  a-tilt" data-tilt-reset="false" data-tilt-max="5" data-tilt-speed="70">
+                <article>
+                    <span class="m-title  m-title--white  a-fade-letter">
+                        Lorem Ipsum
+                    </span>
+                    <p class="a-fade-word">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ducimus fuga nisi quidem, adipisci id praesentium dolore nam aliquid molestiae omnis.
+                    </p>
+                    <a href="{{ block.getLink() }}" class="m-cta  m-cta--white">
+                        <span>
+                            SCARICA PDF
+                        </span>
+                    </a>
+                </article>
+            </div>
+
+
         </div>
     </div>
 </div>
