@@ -3,6 +3,9 @@
 namespace AppBundle\Admin;
 
 use AppBundle\Manager\BlocksManager;
+use Sonata\AdminBundle\Form\FormMapper;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ViniBlocksAdmin extends BaseBlocksAdmin
 {
@@ -17,6 +20,25 @@ class ViniBlocksAdmin extends BaseBlocksAdmin
         );
         $query->setParameter('block_group', BlocksManager::BLOCK_GROUP_VINI);
         return $query;
+    }
+
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        parent::configureFormFields($formMapper);
+
+        $formMapper->with('Logo')
+              ->add('logoFile', VichImageType::class, [
+                  'required' => false,
+                  'allow_delete' => true,
+              ])
+          ->end();
+
+        $formMapper->with('Pdf')
+              ->add('pdfFile', VichFileType::class, [
+                  'required' => false,
+                  'allow_delete' => true,
+              ])
+          ->end();
     }
 
     public function getNewInstance()

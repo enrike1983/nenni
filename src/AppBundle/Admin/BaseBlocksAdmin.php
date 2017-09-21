@@ -10,6 +10,7 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 use A2lix\TranslationFormBundle\Form\Type\TranslationsType;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class BaseBlocksAdmin extends AbstractAdmin
 {
@@ -25,20 +26,31 @@ class BaseBlocksAdmin extends AbstractAdmin
           ->with('Country')
               ->add('translations', TranslationsType::class)
           ->end()
-          ->with('Common')
+          ->with('Template')
             ->add('template', ChoiceType::class, [
                 'choices' => $this->getTemplatesList(),
                 'attr' => ['class' => 'nenni-block-template']
             ])
-            ->add('imageFile', VichFileType::class, [
-                'required' => false,
-                'allow_delete' => true,
-            ])
-            ->add('videoFile', VichFileType::class, [
-                'required' => false,
-                'allow_delete' => true,
-            ])
+            ->end()
+            ->with('Image')
+                ->add('imageFile', VichImageType::class, [
+                    'required' => false,
+                    'allow_delete' => true,
+                ])
+            ->end()
+            ->with('Video')
+                ->add('videoFile', VichFileType::class, [
+                    'required' => false,
+                    'allow_delete' => true,
+                ])
             ->end();
+//            ->with('Pdf')
+//                ->add('pdfFile', VichFileType::class, [
+//                    'required' => false,
+//                    'allow_delete' => true,
+//                ])
+//            ->end();
+
   }
 
   protected function configureDatagridFilters(DatagridMapper $datagridMapper)

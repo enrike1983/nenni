@@ -1,20 +1,23 @@
 nenni_2
 =======
 
-
+### fine tuning
+- [ ] mettere una label distintiva per il tipo di template o uno screenshot
 
 ### "la tenuta"
 - [x] intro con testo dinamico
 - [x] controller
 - [x] creazione blocchi
-- [ ] dinamizzare la tab "people" e i testi multilingua
+- [NO] dinamizzare la tab "people" e i testi multilingua
+    - per ora la teniamo statica, non so come dinamicizzarla decentemente
 
 ### i vini
 - [x] intro con testo dinamico
 - [x] controller
 - [x] creazione blocchi
     - [x] mettere nelle fixtures l'immagine del vino 
-    - [ ] pdf scaricabile e caricabile da backend
+    - [x] pdf scaricabile e caricabile da backend
+    - [ ] logo del vino ( ? chiedere a nick )
 
 ### home
 - [x] partial statico news:
@@ -27,7 +30,7 @@ nenni_2
 - [x] struttura pagine
 - [x] seo
     - [ ] creare fixtures dei blocchi e caricarli "hidden" nella pagina
-      - [ ] caricare i contenuti dal sito attuale
+        - [ ] caricare i contenuti dal sito attuale
       
 ### pagina 404 / 500
 - [ ] TODO
