@@ -17,7 +17,7 @@ nenni_2
 - [x] creazione blocchi
     - [x] mettere nelle fixtures l'immagine del vino 
     - [x] pdf scaricabile e caricabile da backend
-    - [ ] logo del vino ( ? chiedere a nick )
+    - [x] logo del vino ( ? chiedere a nick )
 
 ### home
 - [x] partial statico news:

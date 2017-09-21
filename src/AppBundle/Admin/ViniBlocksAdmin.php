@@ -6,6 +6,7 @@ use AppBundle\Manager\BlocksManager;
 use Sonata\AdminBundle\Form\FormMapper;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 
 class ViniBlocksAdmin extends BaseBlocksAdmin
 {
@@ -40,7 +41,7 @@ class ViniBlocksAdmin extends BaseBlocksAdmin
               ])
           ->end();
     }
-
+    
     public function getNewInstance()
     {
         $instance = parent::getNewInstance();

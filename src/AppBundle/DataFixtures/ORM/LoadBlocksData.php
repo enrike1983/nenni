@@ -640,6 +640,7 @@ class LoadBlocksData extends AbstractFixture
             'block_group' => BlocksManager::BLOCK_GROUP_VINI,
             'primary_image' => 'wine-bottle_san-galgano.png',
             'wine_logo' => 'wine-logo.png',
+            'pdf' => 'pdf-test.pdf'
           ],
           [
             'title' => [
@@ -777,6 +778,14 @@ class LoadBlocksData extends AbstractFixture
                 $logo->setName($block['wine_logo']);
                 $logo->setOriginalName($block['wine_logo']);
                 $home_block->setLogo($logo);
+            }
+
+            $pdf = new File();
+
+            if (isset($block['pdf'])) {
+                $pdf->setName($block['pdf']);
+                $pdf->setOriginalName($block['pdf']);
+                $home_block->setPdf($pdf);
             }
 
             $this->addReference($i, $home_block);
