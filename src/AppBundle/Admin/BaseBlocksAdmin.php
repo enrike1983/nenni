@@ -70,7 +70,9 @@ class BaseBlocksAdmin extends AbstractAdmin
           ->add('link_label', null, array(
               'template' => 'admin/Common/transl-link-label.html.twig'
           ))
-          ->add('template')
+          ->add('template', null, array(
+              'template' => 'admin/Common/template-prev.html.twig'
+          ))
           ->add('_action', 'actions', array(
               'actions' => array(
                   'edit' => array(),
