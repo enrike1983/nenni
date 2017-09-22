@@ -11,7 +11,7 @@ security:
             memory:
                 users:
                     admin:
-                        password: admin
+                        password: n3nn1534g
                         roles: 'ROLE_ADMIN'
 
     firewalls:
