@@ -1,1 +1,6 @@
-CICCIO
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field %}
+    {% set template_name = 'img/prevs/' ~ object.getTemplate()|replace({'default/blocks': ''}) ~ '.jpg' %}
+    <img width="200" src="{{ asset(template_name) }}">
+{% endblock %}
