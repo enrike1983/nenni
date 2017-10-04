@@ -21,11 +21,11 @@ const Animations = function() {
                 var parallaxRoot = parallaxMonitor.create(el);
                 var parallaxChild = parallaxRoot.add(child, {
                     start: {
-                        y: -200,
-                        scale: 1.3
+                        y: -100,
+                        scale: 1.1
                     },
                     end: {
-                        y: 200,
+                        y: 100,
                         scale: 1
                     }
                 });
