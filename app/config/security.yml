@@ -16,6 +16,13 @@ security:
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
+
+        # DISABLE ME AS SOON AS WE GO ONLINE!!
+        basic_auths:
+            pattern:   ^/
+            http_basic: ~
+            provider: in_memory
+
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false

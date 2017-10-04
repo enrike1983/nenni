@@ -14,11 +14,11 @@
             <li>
                 <a href="{{ url('vini') }}" class="a-fade-letter" data-delay="3">{{ 'i vini'|trans }}</a>
             </li>
-            {% if(news_manager.getNewsByLocale(app.request.getLocale())|length > 0) %}
-             <li>
-                <a href="{{ url('news_list') }}" class="a-fade-letter" data-delay="4">{{ 'news'|trans }}</a>
-            </li>
-            {% endif %}
+            {#{% if(news_manager.getNewsByLocale(app.request.getLocale())|length > 0) %}#}
+             {#<li>#}
+                {#<a href="{{ url('news_list') }}" class="a-fade-letter" data-delay="4">{{ 'news'|trans }}</a>#}
+            {#</li>#}
+            {#{% endif %}#}
             <li>
                 <a href="#" class="a-fade-letter" data-delay="5">{{ 'contatti'|trans }}</a>
             </li>
