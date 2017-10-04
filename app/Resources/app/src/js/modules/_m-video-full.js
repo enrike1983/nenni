@@ -20,7 +20,6 @@ const VideoFull = (function() {
 
     function _init() {
 
-        console.log('VIDEO INIT')
         var _el = document.querySelector('.m-video-full video');
 
         if (_el) {
