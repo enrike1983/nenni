@@ -62,5 +62,15 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+
+        try {
+            (new Dotenv\Dotenv(__DIR__.'/../'))->load();
+            $envParameters = $this->getEnvParameters();
+            $loader->load(function($container) use($envParameters) {
+                $container->getParameterBag()->add($envParameters);
+            });
+        } catch (Dotenv\Exception\InvalidPathException $e) {
+            // don't do much at the moment, possibly the env variables are set differently (e.g. AWS)
+        }
     }
 }

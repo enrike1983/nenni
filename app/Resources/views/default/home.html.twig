@@ -12,24 +12,24 @@
         {{ include(wine.getTemplate(), { 'block': wine }) }}
 
         {# News Block #}
-        {% if(news|length > 0) %}
-            <div class="a-stagger-y">
-                <div class="m-news-list">
-                    {% for single_news in news %}
-                        <article class="m-news-list__el  a-stagger-y__el">
-                            <img src="https://source.unsplash.com/random/800x600" alt="" class="m-news-list__img" data-preload>
-                            <a href="{{ url('single_news', {'news_url': single_news.url}) }}" class="m-news-list__wrapper-info">
-                                <div class="a-fade-in">
-                                    <time datetime="{{ single_news.date|date("d/m/Y") }}" class="m-news__time">{{ single_news.date|date("d/m/Y") }}</time>
-                                    <h1 class="m-news__title  a-fade-word">
-                                        {{ single_news.title }}
-                                    </h1>
-                                </div>
-                            </a>
-                        </article>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endif %}
+        {#{% if(news|length > 0) %}#}
+            {#<div class="a-stagger-y">#}
+                {#<div class="m-news-list">#}
+                    {#{% for single_news in news %}#}
+                        {#<article class="m-news-list__el  a-stagger-y__el">#}
+                            {#<img src="https://source.unsplash.com/random/800x600" alt="" class="m-news-list__img" data-preload>#}
+                            {#<a href="{{ url('single_news', {'news_url': single_news.url}) }}" class="m-news-list__wrapper-info">#}
+                                {#<div class="a-fade-in">#}
+                                    {#<time datetime="{{ single_news.date|date("d/m/Y") }}" class="m-news__time">{{ single_news.date|date("d/m/Y") }}</time>#}
+                                    {#<h1 class="m-news__title  a-fade-word">#}
+                                        {#{{ single_news.title }}#}
+                                    {#</h1>#}
+                                {#</div>#}
+                            {#</a>#}
+                        {#</article>#}
+                    {#{% endfor %}#}
+                {#</div>#}
+            {#</div>#}
+        {#{% endif %}#}
     </div>
 {% endblock %}

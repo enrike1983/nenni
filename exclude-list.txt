@@ -1,0 +1,7 @@
+.DS_Store
+.env
+.git
+.idea
+var/cache
+var/logs
+app/config/parameters.yml
