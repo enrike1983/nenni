@@ -54,7 +54,6 @@ const Animations = function() {
                         mySplitText = new SplitText(phrase, {type:"words, chars"}),
                         chars = mySplitText.chars;
 
-
                     phrase.style.opacity = 1;
 
                     tl.staggerFromTo(chars, 2,
@@ -69,13 +68,10 @@ const Animations = function() {
 
                     phrase.classList.add('is-animated');
 
-
                 }
 
             });
-
         }
-
     }
 
     function _fadeWord() {
@@ -115,31 +111,61 @@ const Animations = function() {
 
     }
 
+    function _fadeLines() {
+
+        var _phrases = _doc.querySelectorAll('.a-fade-lines');
+
+        if (_phrases) {
+
+            inView('.a-fade-lines')
+            .on('enter', phrase => {
+
+                if (!phrase.classList.contains('is-animated')) {
+
+                    var tl = new TimelineLite,
+                        mySplitText = new SplitText(phrase, {type:"lines"}),
+                        lines = mySplitText.lines;
+
+                    phrase.style.opacity = 1;
+
+                    tl.staggerFromTo(lines, 1,
+                        {
+                            opacity: 0,
+                            y: 10,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                        }, .2, "+=.2");
+
+                    phrase.classList.add('is-animated');
+
+                }
+
+            });
+
+        }
+
+    }
+
     function _staggerY() {
 
         var _elements = _doc.querySelectorAll('.a-stagger-y');
 
         if (_elements) {
-
             inView('.a-stagger-y')
             .on('enter', element => {
-
                 if (!element.classList.contains('is-animated')) {
-
                     var tl = new TimelineLite;
                     var _elementsChild = element.querySelectorAll('.a-stagger-y__el');
-
                     tl.staggerTo(_elementsChild, 1,
                         {
                             y: 0
                         }, .2, "-=.7");
 
                     element.classList.add('is-animated');
-
                 }
-
             });
-
         }
 
     }
@@ -223,6 +249,7 @@ const Animations = function() {
         }
         _fadeIn();
         _fadeLetters();
+        _fadeLines();
         _fadeWord();
         _staggerY();
         _scaleOpacity();

@@ -57,19 +57,12 @@
     will-change: opacity;
 }
 
-.a-fade-letter {
+.a-fade-letter, .a-fade-word, .a-fade-lines {
     opacity: 0;
     div {
         div {
             will-change: transform, opacity;
         }
-    }
-}
-
-.a-fade-word {
-    opacity: 0;
-    div {
-        will-change: transform, opacity;
     }
 }
 

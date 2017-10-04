@@ -21,6 +21,7 @@
         transform: translate(-50%, -50%);
         height: rem(130);
         width: rem(130);
+        opacity: 0;
         .m-logo {
             border-radius: 100%;
             background: map-get($colors, white);

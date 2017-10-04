@@ -149,6 +149,9 @@ window.onload = function() {
             roundProps: "score",
             onUpdate: function(){
                 preloaderDisplay.innerHTML = counter.score;
+                TweenLite.to('.m-preloader__logo', 1, {
+                    opacity: loaded / length
+                })
             },
             ease: Quad.easeInOut
         });
