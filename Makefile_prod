@@ -1,0 +1,7 @@
+SSH_USER=nennii5
+SSH_HOST=ecbiz173.inmotionhosting.com
+WEB_DIR=/home/nennii5/public_html
+
+rsync:
+	rsync -e "ssh -p 2222" -az --no-perms --delete -i --omit-dir-times . ${SSH_USER}@${SSH_HOST}:${WEB_DIR} --exclude-from 'exclude-list.txt'
+deploy: rsync
