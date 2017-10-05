@@ -49,7 +49,7 @@ const Animations = function() {
                 if (!phrase.classList.contains('is-animated')) {
 
                     var tl = new TimelineLite({
-                            delay: delay*.5
+                            delay: delay*.2
                         }),
                         mySplitText = new SplitText(phrase, {type:"words, chars"}),
                         chars = mySplitText.chars;
