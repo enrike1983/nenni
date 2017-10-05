@@ -14,6 +14,12 @@ services:
         class: AppBundle\Manager\NewsManager
         arguments: ['@doctrine.orm.entity_manager']
 
+
+    app.common_manager:
+        class: AppBundle\Manager\CommonManager
+        arguments: ['@doctrine.orm.entity_manager']
+
+
     # Subscribers
     app.locale_listener:
         class: AppBundle\EventListener\LocaleListener
@@ -63,6 +69,14 @@ services:
         arguments: [~, AppBundle\Entity\News, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: News, group: "Pagine" }
+
+    admin.menu:
+        class: AppBundle\Admin\MenuItemAdmin
+        arguments: [~, AppBundle\Entity\MenuItem, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Menu Items, group: "Menu" }
+        calls:
+            - [ setTemplate, [list, SonataAdminBundle:CRUD:menu_list.html.twig]]
 
     admin.seo:
         class: AppBundle\Admin\SeoBlocksAdmin

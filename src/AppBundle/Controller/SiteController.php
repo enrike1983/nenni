@@ -168,6 +168,16 @@ class SiteController extends Controller
     }
 
     /**
+     * @Route("/contatti", name="contatti")
+     */
+    public function contattiAction()
+    {
+        return $this->render(
+          'default/contatti.html.twig'
+        );
+    }
+
+    /**
      * DEBUG ROUTE
      *
      * @Route("/list-modules")

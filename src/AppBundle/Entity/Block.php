@@ -19,7 +19,7 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
  */
 class Block
 {
-  use ORMBehaviors\Translatable\Translatable;
+    use ORMBehaviors\Translatable\Translatable;
 
     /**
      * @var int

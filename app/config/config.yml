@@ -41,6 +41,7 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
         default_locale: '%default_locale%'
+        common_manager: '@app.common_manager'
         news_manager: '@app.news_manager'
 
 # Doctrine Configuration

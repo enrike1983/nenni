@@ -2,26 +2,29 @@
 
     <div class="m-menu__box-list">
         <ul>
+            {% for key,menu_item in common_manager.getMenuItems %}
             <li>
-                <a href="{{ url('la-tenuta') }}" class="a-fade-letter" data-delay="0">{{ 'la tenuta'|trans }}</a>
+                <a href="{{ url(menu_item.getRoute) }}" class="a-fade-letter" data-delay="{{ key }}">{{ menu_item.getLabel }}</a>
             </li>
-            <li>
-                <a href="{{ url('le-vigne') }}" class="a-fade-letter" data-delay="1">{{ 'le vigne'|trans }}</a>
-            </li>
-            <li>
-                <a href="{{ url('il-metodo-nenni') }}" class="a-fade-letter" data-delay="2">{{ 'il metodo nenni'|trans }}</a>
-            </li>
-            <li>
-                <a href="{{ url('vini') }}" class="a-fade-letter" data-delay="3">{{ 'i vini'|trans }}</a>
-            </li>
+            {% endfor %}
+
+            {#<li>#}
+                {#<a href="{{ url('le-vigne') }}" class="a-fade-letter" data-delay="1">{{ 'le vigne'|trans }}</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ url('il-metodo-nenni') }}" class="a-fade-letter" data-delay="2">{{ 'il metodo nenni'|trans }}</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ url('vini') }}" class="a-fade-letter" data-delay="3">{{ 'i vini'|trans }}</a>#}
+            {#</li>#}
             {#{% if(news_manager.getNewsByLocale(app.request.getLocale())|length > 0) %}#}
              {#<li>#}
                 {#<a href="{{ url('news_list') }}" class="a-fade-letter" data-delay="4">{{ 'news'|trans }}</a>#}
             {#</li>#}
             {#{% endif %}#}
-            <li>
-                <a href="#" class="a-fade-letter" data-delay="5">{{ 'contatti'|trans }}</a>
-            </li>
+            {#<li>#}
+                {#<a href="#" class="a-fade-letter" data-delay="5">{{ 'contatti'|trans }}</a>#}
+            {#</li>#}
         </ul>
 
         <div class="m-menu__close">

@@ -43,37 +43,4 @@ class BlocksManager {
       return $this->entityManager->getRepository('AppBundle:Block')
         ->findFirstBlock($block_group);
     }
-
-    /**
-    * @param $ids
-    *
-    * @throws \RuntimeException
-    * @throws \Doctrine\ORM\ORMInvalidArgumentException
-    * @throws \Doctrine\ORM\OptimisticLockException
-    * @throws \Psr\Log\InvalidArgumentException
-    */
-    public function updateBlockPosition(array $ids = [])
-    {
-        if($ids === null) {
-            throw new InvalidArgumentException('Some parameter was not set up');
-        }
-
-        if(!count($ids)) {
-            throw new InvalidArgumentException('Ids must be an array of values, comma separated');
-        }
-
-        foreach($ids as $i => $block_id) {
-            $block = $this->entityManager->getRepository('AppBundle:Block')
-                ->findOneBy(['id' => $block_id]);
-
-            if(!$block) {
-            throw new \RuntimeException('No block found inside ids array!');
-            }
-
-            $block->setPosition($i);
-            $this->entityManager->persist($block);
-        }
-
-        $this->entityManager->flush();
-    }
 }

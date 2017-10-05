@@ -14,7 +14,7 @@ use HttpInvalidParamException;
 class CommonController extends Controller
 {
   /**
-   * @Route("/update-block-sort", name="update_block_sort")
+   * @Route("/update-elements-sort", name="update_elements_sort")
    * @param \Symfony\Component\HttpFoundation\Request $request
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
@@ -25,9 +25,12 @@ class CommonController extends Controller
     $ids_string = $request->request->get('ids');
     $ids = explode(',', $ids_string);
 
+    $object_class = $request->request->get('object_class');
+
     try {
-      $this->container->get('app.blocks_manager')->updateBlockPosition(
-        $ids
+      $this->container->get('app.common_manager')->updateElementsPosition(
+        $ids,
+        $object_class
       );
 
       $message = 'Sort updated!';
