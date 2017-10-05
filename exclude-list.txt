@@ -7,3 +7,4 @@ var/logs
 var/sessions
 web/uploads
 app/config/parameters.yml
+db_backup
