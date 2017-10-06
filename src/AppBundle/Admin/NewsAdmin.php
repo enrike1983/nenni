@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use A2lix\TranslationFormBundle\Form\Type\TranslationsType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class NewsAdmin extends AbstractAdmin
 {
@@ -24,6 +25,10 @@ class NewsAdmin extends AbstractAdmin
           ->end()
           ->with('Common')
             ->add('date')
+            ->add('imageFile', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => true,
+            ])
           ->end();
   }
 

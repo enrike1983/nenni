@@ -178,6 +178,28 @@ class SiteController extends Controller
     }
 
     /**
+     * Team block partial
+     *
+     * @param $team_block_title
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function renderTeamBlockAction($team_block_title)
+    {
+        $team_members = $this->container->get('app.blocks_manager')->getBlocks(
+          BlocksManager::BLOCK_GROUP_TEAM
+        );
+
+        return $this->render(
+             'default/partials/_team.html.twig',
+             [
+               'team_block_title' => $team_block_title,
+               'team_members' => $team_members
+             ]
+        );
+    }
+
+    /**
      * DEBUG ROUTE
      *
      * @Route("/list-modules")

@@ -44,18 +44,10 @@ class BaseBlocksAdmin extends AbstractAdmin
                     'allow_delete' => true,
                 ])
             ->end();
-//            ->with('Pdf')
-//                ->add('pdfFile', VichFileType::class, [
-//                    'required' => false,
-//                    'allow_delete' => true,
-//                ])
-//            ->end();
-
   }
 
   protected function configureDatagridFilters(DatagridMapper $datagridMapper)
   {
-      //$datagridMapper->add('title');
   }
 
   protected function configureListFields(ListMapper $listMapper)

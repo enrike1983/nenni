@@ -721,6 +721,81 @@ class LoadBlocksData extends AbstractFixture
             'primary_image' => 'wine-bottle_galgano.png',
             'wine_logo' => 'wine-logo.png',
           ],
+          [
+            'title' => [
+              'it' => 'team member 1',
+              'en' => 'team member 1',
+            ],
+            'subtitle' => [
+              'it' => 'subtitle member 1',
+              'en' => 'subtitle member 1',
+            ],
+            'content' => [
+              'it' => '<h2>Lorem Ipsum Team Member 1</h2>',
+              'en' => 'EN <h2>Lorem Ipsum Team Member 1</h2>',
+            ],
+            'link' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => '',
+            'block_group' => BlocksManager::BLOCK_GROUP_TEAM,
+            'primary_image' => '',
+          ],
+          [
+            'title' => [
+              'it' => 'team member 2',
+              'en' => 'team member 2',
+            ],
+            'subtitle' => [
+              'it' => 'subtitle member 2',
+              'en' => 'subtitle member 2',
+            ],
+            'content' => [
+              'it' => '<h2>Lorem Ipsum Team Member 2</h2>',
+              'en' => 'EN <h2>Lorem Ipsum Team Member 2</h2>',
+            ],
+            'link' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => '',
+            'block_group' => BlocksManager::BLOCK_GROUP_TEAM,
+            'primary_image' => '',
+          ],
+          [
+            'title' => [
+              'it' => 'team member 3',
+              'en' => 'team member 3',
+            ],
+            'subtitle' => [
+              'it' => 'subtitle member 3',
+              'en' => 'subtitle member 3',
+            ],
+            'content' => [
+              'it' => '<h2>Lorem Ipsum Team Member 3</h2>',
+              'en' => 'EN <h2>Lorem Ipsum Team Member 3</h2>',
+            ],
+            'link' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'link_label' => [
+              'it' => '',
+              'en' => '',
+            ],
+            'template' => '',
+            'block_group' => BlocksManager::BLOCK_GROUP_TEAM,
+            'primary_image' => '',
+          ],
         ];
     }
 

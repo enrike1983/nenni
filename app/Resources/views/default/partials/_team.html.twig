@@ -1,0 +1,14 @@
+<ul class="m-team__members">
+    {% for member in team_members %}
+        <li class="m-team__member {% if loop.first %}active{% endif %}">
+            <div class="m-team__member-title">
+                <strong class="m-team__member-label">{{ team_block_title }}</strong>
+                <h2 class="m-title m-team__member-name">{{ member.getTitle }}</h2>
+                <p class="m-team__member-caption">{{ member.getSubtitle }}</p>
+            </div>
+            <div class="m-team__member-descr">
+                {{ member.getContent|raw }}
+            </div>
+        </li>
+    {% endfor %}
+</ul>

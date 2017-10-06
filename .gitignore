@@ -18,6 +18,7 @@
 /web/bundles/
 .web-server-pid
 
+/web/uploads
 /web/css
 /web/js
 /web/webfonts

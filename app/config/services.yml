@@ -64,6 +64,13 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: Vini, group: "Pagine" }
 
+    # il Team è una sezione di blocchi speciale
+    admin.il_team:
+        class: AppBundle\Admin\TeamBlocksAdmin
+        arguments: [~, AppBundle\Entity\Block, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Le Persone, group: "Il Team" }
+
     admin.news:
         class: AppBundle\Admin\NewsAdmin
         arguments: [~, AppBundle\Entity\News, ~]

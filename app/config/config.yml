@@ -28,7 +28,7 @@ framework:
         # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         handler_id: session.handler.native_file
         #save_path: "%kernel.root_dir%/../var/sessions/%kernel.environment%"
-        save_path: /var/lib/php/sessions
+        save_path: "%kernel.root_dir%/../var/sessions/%kernel.environment%"
     fragments: ~
     http_method_override: true
     assets: ~
@@ -98,6 +98,15 @@ vich_uploader:
         block_image:
             uri_prefix:         /uploads/blocks/images
             upload_destination: '%kernel.root_dir%/../web/uploads/blocks/images'
+            namer:              vich_uploader.namer_uniqid
+
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+
+        news_image:
+            uri_prefix:         /uploads/news/images
+            upload_destination: '%kernel.root_dir%/../web/uploads/news/images'
             namer:              vich_uploader.namer_uniqid
 
             inject_on_load:     false
