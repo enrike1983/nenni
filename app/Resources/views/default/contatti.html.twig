@@ -1,5 +1,32 @@
 {% extends 'base.html.twig' %}
 
+{% import "_macro/_m-text-media.html" as mTextMedia %}
+
 {% block content %}
-    contatti
+    <div class="barba-container" data-namespace="homepage">
+
+        <div class="m-img-full">
+            <div class="m-intro-site">
+                <div class="m-logo  m-logo--white  m-logo--center">
+                    {% include "_partials/logo.html" %}
+                </div>
+                <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">
+                    Contacts
+                </h2>
+            </div>
+            <img src='/img/menu/hero_contatti.jpg' alt="" class="m-img-full__img" data-preload data-intro-scale>
+            <span class="m-intro-site__explore"><span></span></span>
+        </div>
+
+        {{ mTextMedia.build({
+            'title': 'Contacts',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': 'http://www.google.it',
+            'label': 'vedi mappa',
+            'type': 'img',
+            'align': 'left'
+        }) }}
+
+    </div>
 {% endblock %}
