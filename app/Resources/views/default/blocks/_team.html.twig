@@ -1,20 +1,6 @@
 <div id="people" class="m-team">
-    <div class="m-team__wrapper">
-        <ul class="m-team__images">    
-            <li class="active"><img src="{{ asset('img/family_1.png') }}" alt=""></li>
-            <li><img src="{{ asset('img/family_2.png') }}" alt=""></li>
-            <li><img src="{{ asset('img/family_3.png') }}" alt=""></li>
-        </ul>
-        <ul class="m-team__hotspots">
-            <li class="active"><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-        </ul>
-    </div>
-    <div class="m-team__wrapper">
-        {{ render(controller(
-            'AppBundle:Site:renderTeamBlock',
-            { 'team_block_title': block.getTitle() }
-        )) }}
-    </div>
+    {{ render(controller(
+        'AppBundle:Site:renderTeamBlock',
+        { 'team_block_title': block.getTitle() }
+    )) }}
 </div>

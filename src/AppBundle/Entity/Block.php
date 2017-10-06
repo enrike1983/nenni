@@ -33,7 +33,7 @@ class Block
     /**
      * @var string
      *
-     * @ORM\Column(name="template", type="text")
+     * @ORM\Column(name="template", type="text", nullable=true)
      */
     private $template;
 

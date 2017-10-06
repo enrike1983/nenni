@@ -1,14 +1,28 @@
-<ul class="m-team__members">
-    {% for member in team_members %}
-        <li class="m-team__member {% if loop.first %}active{% endif %}">
-            <div class="m-team__member-title">
-                <strong class="m-team__member-label">{{ team_block_title }}</strong>
-                <h2 class="m-title m-team__member-name">{{ member.getTitle }}</h2>
-                <p class="m-team__member-caption">{{ member.getSubtitle }}</p>
-            </div>
-            <div class="m-team__member-descr">
-                {{ member.getContent|raw }}
-            </div>
-        </li>
-    {% endfor %}
-</ul>
+<div class="m-team__wrapper">
+    <ul class="m-team__images">
+        {% for member in team_members %}
+            <li {% if loop.first %}class="active"{% endif %}><img src="{{ vich_uploader_asset(member, 'imageFile') }}" alt=""></li>
+        {% endfor %}
+    </ul>
+    <ul class="m-team__hotspots">
+        <li class="active"><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+</div>
+<div class="m-team__wrapper">
+    <ul class="m-team__members">
+        {% for member in team_members %}
+            <li class="m-team__member {% if loop.first %}active{% endif %}">
+                <div class="m-team__member-title">
+                    <strong class="m-team__member-label">{{ team_block_title }}</strong>
+                    <h2 class="m-title m-team__member-name">{{ member.getTitle }}</h2>
+                    <p class="m-team__member-caption">{{ member.getSubtitle }}</p>
+                </div>
+                <div class="m-team__member-descr">
+                    {{ member.getContent|raw }}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
