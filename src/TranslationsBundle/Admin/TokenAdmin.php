@@ -3,13 +3,13 @@
 namespace TranslationsBundle\Admin;
 
 use A2lix\TranslationFormBundle\Form\Type\TranslationsType;
-use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class TokenAdmin extends Admin
+class TokenAdmin extends AbstractAdmin
 {
     /**
      * @param \Sonata\AdminBundle\Show\ShowMapper $showMapper
