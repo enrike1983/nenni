@@ -5,6 +5,7 @@ namespace AppBundle\Admin;
 use A2lix\TranslationFormBundle\Form\Type\TranslationsType;
 use AppBundle\Manager\BlocksManager;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 
 class TeamBlocksAdmin extends BaseBlocksAdmin
 {
@@ -27,9 +28,19 @@ class TeamBlocksAdmin extends BaseBlocksAdmin
 
         $formMapper
           ->remove('template')
-          ->remove('imageFile')
           ->remove('videoFile');
+    }
 
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        parent::configureListFields($listMapper);
+
+        $listMapper
+           ->remove('link_label')
+           ->remove('template')
+           ->add('template', null, array(
+               'template' => 'admin/Common/team-prev.html.twig'
+           ));
     }
 
     public function getNewInstance()
