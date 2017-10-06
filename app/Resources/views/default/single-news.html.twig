@@ -1,5 +1,32 @@
 {% extends 'base.html.twig' %}
 
+{% import "_macro/_m-text-media.html" as mTextMedia %}
+
 {% block content %}
-    {{ dump(news) }}
+    <div class="barba-container" data-namespace="homepage">
+
+
+        <div class="m-img-full no-img">
+            <div class="m-intro-site">
+                <div class="m-logo  m-logo--white  m-logo--center">
+                    {% include "_partials/logo.html" %}
+                </div>
+                <h2 class="m-intro-site__title   m-title  m-title--white  a-fade-letter">
+                    Titolo news
+                </h2>
+            </div>
+            <span class="m-intro-site__explore"><span></span></span>
+        </div>
+
+        {{ mTextMedia.build({
+            'title': 'Titolo news',
+            'text': 'Testo block',
+            'media': '/img/test-1.jpg',
+            'link': 'http://www.google.it',
+            'label': 'cta',
+            'type': 'img',
+            'align': 'left'
+        }) }}
+
+    </div>
 {% endblock %}

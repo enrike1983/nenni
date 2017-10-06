@@ -13,6 +13,14 @@
         left: 0;
         background: rgba(0,0,0,0.4);
     }
+    &.no-img {
+        background: -webkit-linear-gradient(to bottom, #434343, map-get($colors, black));  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #434343, map-get($colors, black)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        img {
+            display: none;
+        }
+    }
 }
 
 .m-img-full__img {
