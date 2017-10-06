@@ -95,18 +95,19 @@ vich_uploader:
     db_driver: orm
 
     mappings:
-        block_image:
-            uri_prefix:         /uploads/blocks/images
-            upload_destination: '%kernel.root_dir%/../web/uploads/blocks/images'
+
+        news_image:
+            uri_prefix:         /uploads/news/images
+            upload_destination: '%kernel.root_dir%/../web/uploads/news/images'
             namer:              vich_uploader.namer_uniqid
 
             inject_on_load:     false
             delete_on_update:   true
             delete_on_remove:   true
 
-        news_image:
-            uri_prefix:         /uploads/news/images
-            upload_destination: '%kernel.root_dir%/../web/uploads/news/images'
+        block_image:
+            uri_prefix:         /uploads/blocks/images
+            upload_destination: '%kernel.root_dir%/../web/uploads/blocks/images'
             namer:              vich_uploader.namer_uniqid
 
             inject_on_load:     false
@@ -143,6 +144,7 @@ vich_uploader:
 # Knp doctrine behaviours
 knp_doctrine_behaviors:
     translatable: true
+    sluggable: true
 
 a2lix_translation_form:
     locale_provider: default

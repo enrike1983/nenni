@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Entity\File as EmbeddedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
@@ -18,7 +19,9 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
  */
 class News
 {
-    use ORMBehaviors\Translatable\Translatable;
+    use
+      ORMBehaviors\Sluggable\Sluggable,
+      ORMBehaviors\Translatable\Translatable;
 
     /**
      * @var int
@@ -28,6 +31,13 @@ class News
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255)
+     */
+    protected $url;
 
     /**
      * @Vich\UploadableField(mapping="news_image", fileNameProperty="image.name", size="image.size", mimeType="image.mimeType", originalName="image.originalName")
@@ -49,6 +59,14 @@ class News
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
+
 
     public function __construct()
     {
@@ -75,6 +93,16 @@ class News
     {
         return $this->id;
     }
+
+    public function getSluggableFields()
+    {
+        return [ 'url' ];
+    }
+
+//    public function generateSlugValue($values)
+//    {
+//        return implode('-', $values);
+//    }
 
     /**
      * Set date
@@ -142,6 +170,29 @@ class News
     public function getImage()
     {
         return $this->image;
+    }
+
+
+    /**
+     * Set url
+     *
+     * @param $url
+     *
+     * @return News
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }
 

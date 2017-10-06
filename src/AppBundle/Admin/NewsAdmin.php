@@ -25,6 +25,9 @@ class NewsAdmin extends AbstractAdmin
           ->end()
           ->with('Common')
             ->add('date')
+            ->add('url')
+          ->end()
+          ->with('Image')
             ->add('imageFile', VichImageType::class, [
                 'required' => false,
                 'allow_delete' => true,
@@ -42,9 +45,8 @@ class NewsAdmin extends AbstractAdmin
       $listMapper
           ->add('date')
           ->add('title', null, array(
-              'template' => 'admin/Common/transl-subtitle.html.twig'
+              'template' => 'admin/Common/transl-title.html.twig'
           ))
-          ->add('template')
           ->add('_action', 'actions', array(
               'actions' => array(
                   'edit' => array(),
