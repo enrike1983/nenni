@@ -18,7 +18,7 @@
                     {% for single_news in news %}
                         <article class="m-news-list__el  a-stagger-y__el">
                             <img src="{{ vich_uploader_asset(single_news, 'imageFile') }}" alt="" class="m-news-list__img" data-preload>
-                            <a href="{{ url('single_news', {'news_url': single_news.getSlug}) }}" class="m-news-list__wrapper-info">
+                            <a href="{{ url('single_news', {'slug': single_news.getSlug}) }}" class="m-news-list__wrapper-info">
                                 <div class="a-fade-in">
                                     <time datetime="{{ single_news.date|date("d/m/Y") }}" class="m-news__time">{{ single_news.date|date("d/m/Y") }}</time>
                                     <h1 class="m-news__title  a-fade-word">
