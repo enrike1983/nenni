@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="translation.db_loader" class="TranslationsBundle\Translation\DbLoader">
+            <call method="setEntityManager">
+                <argument type="service" id="doctrine.orm.entity_manager" />
+            </call>
+            <tag name="translation.loader" alias="db" />
+        </service>
+        <service id="mutti.admin.token" class="TranslationsBundle\Admin\TokenAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Traduzioni" label="Token"/>
+            <argument/>
+            <argument>TranslationsBundle\Entity\Token</argument>
+            <argument></argument>
+        </service>
+    </services>
+
+</container>
