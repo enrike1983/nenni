@@ -172,8 +172,15 @@ class SiteController extends Controller
      */
     public function contattiAction()
     {
+        $blocks = $this->container->get('app.blocks_manager')->getBlocks(
+          BlocksManager::BLOCK_GROUP_CONTATTI
+        );
+
         return $this->render(
-          'default/contatti.html.twig'
+          'default/contatti.html.twig',
+          [
+            'blocks' => $blocks,
+          ]
         );
     }
 

@@ -58,6 +58,12 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: Il Metodo Nenni, group: "Pagine" }
 
+    admin.contatti:
+        class: AppBundle\Admin\ContattiBlocksAdmin
+        arguments: [~, AppBundle\Entity\Block, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Contatti, group: "Pagine" }
+
     admin.vini_blocks:
         class: AppBundle\Admin\ViniBlocksAdmin
         arguments: [~, AppBundle\Entity\Block, ~]
