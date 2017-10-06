@@ -39,13 +39,11 @@ class NewsManager {
     /**
     * @param $slug
     *
-    * @param $locale
-    *
     * @return mixed
     */
-    public function getSingleNewsByUrlAndLocale($slug, $locale)
+    public function findSingleNewsBySlug($slug)
     {
         return $this->entityManager->getRepository('AppBundle:News')
-          ->findSingleNewsByUrlAndLocale($slug, $locale);
+          ->findSingleNewsBySlug($slug);
     }
 }

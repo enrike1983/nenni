@@ -5,8 +5,8 @@
         <div class="m-news-list  m-news-list--complete">
             {% for i, single_news in news %}
                 <article class="m-news-list__el">
-                    <img src="https://source.unsplash.com/random/80{{i}}x60{{i}}" alt="" class="m-news-list__img" data-preload>
-                    <a href="{{ url('single_news', {'news_url': single_news.url}) }}" class="m-news-list__wrapper-info">
+                    <img src="{{ vich_uploader_asset(single_news, 'imageFile') }}" alt="" class="m-news-list__img" data-preload>
+                    <a href="{{ url('single_news', {'news_url': single_news.getSlug}) }}" class="m-news-list__wrapper-info">
                         <div class="a-fade-in">
                             <time datetime="{{ single_news.date|date("d/m/Y") }}" class="m-news__time">{{ single_news.date|date("d/m/Y") }}</time>
                             <h1 class="m-news__title  a-fade-word">

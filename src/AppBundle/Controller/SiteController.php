@@ -120,27 +120,27 @@ class SiteController extends Controller
     }
 
     /**
-     * @Route("/news/{news_url}", requirements={
+     * @Route("/news/{slug}", requirements={
      *     "news_url": "^[a-z0-9-\/]*$"
      * }, name="single_news")
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param $news_url
+     * @param $slug
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function singleNewsAction(Request $request, $news_url)
+    public function singleNewsAction(Request $request, $slug)
     {
         //cerca la news dato lo slug. Se esiste ok altrimenti manda a 404
         $news = $this->container->get('app.news_manager')
-          ->getSingleNewsByUrlAndLocale(
-            $news_url,
-            $request->getLocale()
+          ->findSingleNewsBySlug(
+            $slug
           );
 
         if (!$news) {
             $this->createNotFoundException();
         }
+
 
         return $this->render(
           'default/single-news.html.twig',

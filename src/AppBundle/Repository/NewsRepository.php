@@ -39,16 +39,18 @@ class NewsRepository extends \Doctrine\ORM\EntityRepository
     }
 
     /**
-     * @param $url
-     * @param $locale
+     * @param $slug
      *
      * @return array
      */
-    public function findSingleNewsByUrlAndLocale($url, $locale)
+    public function findSingleNewsBySlug($slug)
     {
-        $qb = $this->getBaseQuery($locale);
-        $qb->andWhere('t.url = :url');
-        $qb->setParameter('url', $url);
-        return $qb->getQuery()->getOneOrNullResult();
+        return $this->createQueryBuilder('n')
+          ->select('n')
+          ->addOrderBy('n.date', 'ASC')
+          ->andWhere('n.slug = :slug')
+          ->setParameter('slug', $slug)
+          ->getQuery()
+          ->getOneOrNullResult();
     }
 }
