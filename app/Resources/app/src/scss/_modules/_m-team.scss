@@ -39,7 +39,7 @@
             &:after {
                 position: absolute;
                 width: 45%;
-                left: 50%;        
+                left: 50%;
                 top: 50%;
                 content: '';
                 background:#aaa;
@@ -49,7 +49,7 @@
                 transition: background .3s;
             }
             &:after {
-                transform: translate(-50%,-50%) rotate(90deg);   
+                transform: translate(-50%,-50%) rotate(90deg);
             }
              &:hover {
                 &:before,
@@ -58,7 +58,7 @@
                 }
             }
             &.active {
-                transform: rotate(45deg);   
+                transform: rotate(45deg);
                 &:before,
                 &:after {
                     background:#000;
@@ -108,11 +108,9 @@
         }
     }
     &__member-descr {
+        line-height: 1.4;
         @media screen and (min-width: $tablet) {
             width: 50%;
-        }
-        p {
-            line-height: 1.4;
         }
     }
     &__member-label {
