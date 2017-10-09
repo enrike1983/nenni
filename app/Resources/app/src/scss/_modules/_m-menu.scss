@@ -77,13 +77,22 @@
             }
         }
     }
+    &__square-wrapper-out {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 50% !important;
+        top: 50% !important;
+        z-index: 8;
+        transform: translate(-50%,-50%) scale(.9, .85);
+    }
     &__square {
         display: none;
         @media screen and (min-width: $tablet) {
-            width: 80%;
-            height: 80%;
-            left: 5%;
-            top: 5%;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
             position: absolute;
             border: 2px solid map-get($colors, yellow);
             z-index: 8;

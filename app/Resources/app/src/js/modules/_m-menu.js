@@ -39,10 +39,20 @@ const Menu = function() {
                 TweenLite.to('.m-bg-' + getElementIndex(this.parentNode), .3, {
                     opacity: 1
                 })
+                TweenLite.to('.m-menu__square-wrapper-out', 1, {
+                    scaleX: 1.1,
+                    scaleY: 1.1,
+                    ease: Expo.easeInOut
+                })
             }, false);
             el.addEventListener("mouseout", function(e) {
                 TweenLite.to('.m-menu__square-wrapper > div', .3, {
                     opacity: 0
+                })
+                TweenLite.to('.m-menu__square-wrapper-out', 1, {
+                    scaleX: .9,
+                    scaleY: .85,
+                    ease: Expo.easeInOut
                 })
             }, false);
         });
