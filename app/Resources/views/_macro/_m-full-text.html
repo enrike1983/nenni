@@ -19,10 +19,10 @@
                     {% endif %}
                 {% else %}
                     <span class="m-title  a-fade-letter">
-                        {{ arg.title }}
+                        {{ arg.title|raw }}
                     </span>
                     <p class="a-fade-lines">
-                        {{ arg.text }}
+                        {{ arg.text|raw }}
                     </p>
                     {% if arg.link is not empty %}
                         <a href="{{ arg.link }}" class="m-cta">
