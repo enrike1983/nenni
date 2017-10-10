@@ -25,9 +25,9 @@ class BlockTranslation
     private $title;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="subtitle", type="string", length=255, nullable=true)
+     * @ORM\Column(name="subtitle", type="text", nullable=true)
      */
     private $subtitle;
 

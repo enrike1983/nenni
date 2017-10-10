@@ -4,7 +4,7 @@
         <ul>
             {% for key,menu_item in common_manager.getMenuItems %}
             <li>
-                <a href="{{ url(menu_item.getRoute) }}" class="a-fade-letter" data-delay="{{ key }}">{{ menu_item.getLabel }}</a>
+                <a href="{% if menu_item.getExternalUrl %}{{ menu_item.getExternalUrl }}{% else %}{% if(menu_item.getRoute) %}{{ url(menu_item.getRoute) }}{% endif %}{% endif %}" class="a-fade-letter" data-delay="{{ key }}">{{ menu_item.getLabel }}</a>
             </li>
             {% endfor %}
 

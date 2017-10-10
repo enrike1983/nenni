@@ -14,6 +14,29 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class BaseBlocksAdmin extends AbstractAdmin
 {
+  protected function getLabelByBlockTemplate($template_name)
+  {
+      $labels = [
+          '_full_bg_text.html.twig' => 'Testo con sfondo fullscreen',
+          '_full_text--dark.html.twig' => 'Testo al centro con sfondo scuro',
+          '_full_text--light.html.twig' => 'Testo al centro con sfondo chiaro',
+          '_imageleft_textright.html.twig' => 'Immagine a sinistra, testo a destra',
+          '_intro-image.html.twig' => 'Immagine intro ( fullscreen )',
+          '_intro-video.html.twig' => 'Video intro ( fullscreen )',
+          '_people.html.twig' => 'Le Persone',
+          '_team.html.twig' => 'Il Team',
+          '_textleft_imageright.html.twig' => 'Testo a sinistra, Immagine a destra',
+          '_textleft_videoright.html.twig' => 'Testo a sinistra, video a destra',
+          '_textright_videoleft.html.twig' => 'Testo a destra, video a sinistra',
+          '_video-embed.html.twig' => 'Video Embeddato',
+          '_videofullwidth.html.twig' => 'Video fullscreen',
+          '_wine-sheet.html.twig' => 'Scheda di un vino'
+      ];
+
+      return isset($labels[$template_name]) ? $labels[$template_name] : $template_name;
+  }
+
+
   protected $datagridValues = array(
       '_page' => 1,
       '_sort_order' => 'ASC',
@@ -82,7 +105,7 @@ class BaseBlocksAdmin extends AbstractAdmin
 
       foreach($finder as $file) {
           $pathname = $file->getRelativePathname();
-          $formatted[$pathname] = 'default/blocks/'.$pathname;
+          $formatted[$this->getLabelByBlockTemplate($pathname)] = 'default/blocks/'.$pathname;
       }
       return $formatted;
   }
