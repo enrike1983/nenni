@@ -20,5 +20,5 @@ parameters:
 
     default_locale: en
 
-    active_locales: en|it
-    active_locales_array: [en, it]
+    active_locales: en|it|jp
+    active_locales_array: [en, it, jp]
