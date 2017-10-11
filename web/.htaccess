@@ -20,6 +20,10 @@ DirectoryIndex app.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    RewriteCond %{HTTP_HOST} ^www.nennitoscana.com$ [OR]
+    RewriteCond %{HTTP_HOST} ^nennitoscana.com$
+    RewriteRule ^(.*)$ http://www.nenni.it [R=301,L]
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper
