@@ -15,22 +15,18 @@
         <meta name="theme-color" content="#9dccd5">
 
         <!-- Basic meta data, share -->
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="website"/>
         <meta property="og:title" content="">
         <meta property="og:description" content="">
-        <meta property="og:site_name" content="">
-        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="{{ asset('img/sharer/fb.jpg') }}">
+        <meta property="og:url" content="">
+
         <meta name="twitter:title" content="">
         <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="{{ asset('img/sharer/tw.jpg') }}">
+        <meta name="twitter:card" content="summary_large_image">
 
         <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
-
-        {% block socialImage %}
-            <meta name="twitter:image" content="">
-            <meta property="og:image" content="">
-            <meta name="twitter:url" content="">
-            <meta property="og:url" content="">
-        {% endblock %}
 
         <!-- Google Tag Manager -->
         <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
