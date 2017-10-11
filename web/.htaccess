@@ -24,6 +24,38 @@ DirectoryIndex app.php
     RewriteCond %{HTTP_HOST} ^nennitoscana.com$
     RewriteRule ^(.*)$ http://www.nenni.it [R=301,L]
 
+    Redirect 301 /2013/  								http://www.nenni.it/en/news
+    Redirect 301 /2014/ 								http://www.nenni.it/en/news
+    Redirect 301 /2015/ 								http://www.nenni.it/en/news
+    Redirect 301 /2016/ 								http://www.nenni.it/en/news
+    Redirect 301 /2017/ 								http://www.nenni.it/en/news
+    Redirect 301 /2017/06/ 								http://www.nenni.it/en/news
+    Redirect 301 /2016/12/ 								http://www.nenni.it/en/news
+    Redirect 301 /2014/03/ 								http://www.nenni.it/en/news
+    Redirect 301 /2016/07/ 								http://www.nenni.it/en/news
+    Redirect 301 /2016/11/ 								http://www.nenni.it/en/news
+    Redirect 301 /2013/12/ 								http://www.nenni.it/en/news
+    Redirect 301 /2014/04/ 								http://www.nenni.it/en/news
+    Redirect 301 /2017/01/ 								http://www.nenni.it/en/news
+    Redirect 301 /2015/11/ 								http://www.nenni.it/en/news
+    Redirect 301 /2016/03/ 								http://www.nenni.it/en/news
+    Redirect 301 /2015/02/ 								http://www.nenni.it/en/news
+    Redirect 301 /2016/10/ 								http://www.nenni.it/en/news
+    Redirect 301 /2015_11_01_archive.html 				http://www.nenni.it/en/news
+    Redirect 301 /p/video.html 							http://www.nenni.it/en/news
+    Redirect 301 /p/about-us.html 						http://www.nenni.it/en/la-tenuta
+    Redirect 301 /2016/12/blog-post.html			 	http://www.nenni.it/en/news
+    Redirect 301 /2016/03/sangalgano-terroir.html 		http://www.nenni.it/en/le-vigne
+    Redirect 301 /2015/08/archimedes-principle.html 	http://www.nenni.it/en/news
+    Redirect 301 /2016/10/harvest-2016.html 			http://www.nenni.it/en/news
+    Redirect 301 /2016/11/harvest-2016.html 			http://www.nenni.it/en/news
+    Redirect 301 /2016/07/sangalgano-vineyards-2016.html http://www.nenni.it/en/news
+    Redirect 301 /2017/06/the-winner-issangalgano.html 		http://www.nenni.it/en/news
+    Redirect 301 /2015/04/sangalgano-red-is-coming.html 	http://www.nenni.it/en/news
+    Redirect 301 /2013/12/vigna-victoria-making-of-2013-nenni.html 		http://www.nenni.it/en/news
+    Redirect 301 /2016/12/made-in-italy-app-for-nenni-toscana.html 		http://www.nenni.it/en/news
+    Redirect 301 /p/video.html?m=1 										http://www.nenni.it
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper
